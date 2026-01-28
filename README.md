@@ -1,0 +1,92 @@
+# CaSLearn
+## 1. Introduction
+This Library is a supplementary material for paper(**paper**).
+
+CaSLearn simulation platform for PC algorithm in causal structure learning research. In this platform, researcher can easily
+take experiments on their conditional independence tests(CITs), according to the following steps.
+
+Currently, we support 14 CITs. There are *fisherz*, *spearman*, *kendall*, *robustQn*, *kci*, *gcm*, *wgcm*, *classifier*,
+*lp*, *knn*, *gan*, *dgan*, *diffusion*. Please refer to our paper(**paper**) for more information of these methods. 
+
+## 2. Installation required package
+
+- Python 3.11
+- numpy 
+- pandas
+- networkx
+- causal-learn
+- scipy
+- cdt
+- pyyaml
+- scikit-learn
+- tqdm
+
+Optional requirements:
+- xgboost
+- [ccit](https://github.com/rajatsen91/CCIT)
+- torch (for cit based on deep learning model)
+- robustbase
+- openpyxl
+- matplotlib
+- rpy2(for cit that based on R)
+
+You can follow the instruction below to set up your working environment.
+```bash
+conda create -n CausalLearning python=3.11 r-base=4.5.2 -y
+conda activate CausalLearning
+
+pip install cdt
+pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+pip install rpy2==3.5.16
+pip install imbalanced-learn
+pip install causal-learn pyaml robustbase momentchi2 openpyxl imblearn openpyxl xgboost ccit joblib==1.3.2
+```
+
+``` R
+install.packages('weightedGCM')  
+install.packages('energy')   
+install.packages('GeneralisedCovarianceMeasure')   
+install.packages('cdcsis')   
+```
+
+There are some CITs' code realization is on R. If you are interested in these method, you can install their package on R,
+and perform PC algorithm on our platform.
+
+## 3. Start Experiments
+
+Before starting experiments, we should set configration of our simualtion study by modifying config files in folder 
+```configs```. Then we can start our experiments by running **run.py** in the terminal by:
+```bash
+conda activate your_env
+cd .
+python run.py --config config_10.yml --seed 8888
+
+```
+
+## 4. Benchmark Results
+Here we have the simulation results in folder *result*. In *result*, there are 24 seperated folders which contains simulation
+results for each CIT(this can be easily inferred by folder name). And there are five xlsx file that is the summary of our 
+simulation study.
+
+1. **summary.xlsx** --> Containing merged results of replicates via calculating average and standard error of considered metrics.
+2. **summary_10.xlsx** or **summary_50.xlsx**  --> Dividing summary.xlsx in terms of number of variables.
+3. **raw_summary_10.xlsx** or **raw_summary_50.xlsx** --> Raw simulation results without merging.  
+
+## 5. Visualization
+
+We use results in folder ```result``` for visualization. All figures are stored in folder ```figure```. 
+![Figure1](/figure/Neural%20Network_10_Cauchy.png "10nn_cauchy")
+![Figure2](/figure/Polynomial_50_GaussianMixture5.png "50poly_gaumix")
+
+Above are two pictures displayed in our paper.
+
+## 6. Acknowledgement
+
+This is platform is build on the basis of Python Package [causal-learn](https://github.com/py-why/causal-learn), which inspired
+me update our code and make some extension functions. 
+
+## 7. Citation
+Please cite as:
+```
+@article{}
+```

@@ -1,0 +1,36 @@
+!!python/object:argparse.Namespace
+n_samples:
+- 200
+n_points:
+- 10
+exp_degree:
+- 3
+causal_mechanism:
+- nn
+- polynomial
+noise_coeff: 1.0
+noise_type:
+- GaussianMixture5
+- Cauchy
+root:
+- Gaussian
+replicates: 64
+graph_num: 1
+designate: true
+dag_type: erdos
+weight_distribution_function: normal
+weight_kwargs:
+  mu: 0
+  sigma: 1
+  clip: 0.1
+mechanism_kwargs: !!python/object:argparse.Namespace
+  rescale: false
+  hidden_layer_num: 5
+  activation_function: Tanh
+  nh: 20
+  d: 3
+copula_trans: false
+copula_trans_kwargs: !!python/object:argparse.Namespace
+  dfn: 3
+  dfd: 3
+seed: 8888

@@ -1,0 +1,125 @@
+augment:
+  n_samples: 150
+  models: [ 'AdaSyn' ]  # 'SMOTE', 'tabDiffusion', 'AdaSyn'
+  model_params:
+    tabDiffusion:
+      batch_size: 4096
+      dropout: 0.0
+      hidden_dim_layer: [ 512,256 ]
+      dim_t: 128
+      num_timesteps: 1000
+      gaussian_loss_type: 'kl'  # 'mse', 'kl'
+      lr: 0.001
+      fold: 5
+      is_y_cond: False
+
+      epochs: 60000
+      eval_freq: 10000
+      print_freq: 5000
+    # SMOTE has Resample Limitation !
+    SMOTE:
+      k_neighbors: 5
+    AdaSyn:
+      n_neighbors: 5
+
+evaluation:
+    algorithm:
+      algo: 'pc' # pc, fdr_pc
+      fdr_pc:
+        # Option for p-value-based Procedure:
+        # BHProcedure, BCProcedure,
+        # HybAdaProcedure, FastHybAdaProcedure
+        procedure: BHProcedure
+      deduce_dep_pc:
+        deduce_dep_k: 1
+
+    multiple_test_kwargs: {
+      alpha: 0.1,
+      epsilon: 0.001,
+    }
+
+test:
+  alpha: 0.05  # For voting methods such as pcor and vt
+  ## pc kwargs
+  # d_separation, fisherz, spearman, kendall, robustQn, conditional_distance, kci, gcm, classifier, hsic
+  # rruit, vt, pval_ensemble, eval_ensemble
+  uit: spearman
+  # d_separation, fisherz, spearman, kendall, robustQn, conditional_distance, kci, gcm, classifier, wgcm,
+  # lp, knn, gan, dgan, diffusion, vt, pval_ensemble, eval_ensemble
+  cit: kci
+
+  eval_ensemble:
+    func: product  # mean
+    uit_l: [ spearman,robustQn,kci,kendall,conditional_distance ]
+    cit_l: [ spearman,robustQn,kci,kendall,conditional_distance ]
+  pval_ensemble:
+    p_combination: 'stouffer'  # 'cauchy', 'stouffer', 'fisher'
+    uit_l: [ spearman,robustQn,kci,kendall ]
+    cit_l: [ spearman,robustQn,kci,kendall ]
+  vt:
+    uit_l: [ spearman,robustQn,kci,kendall,conditional_distance ]
+    cit_l: [ spearman,robustQn,kci,kendall,conditional_distance ]
+  dgan:
+    batch_size: 64  # default value
+    dgan_n_iter: 1000  # default value
+    M: 500  # default value
+    b: 30  # default value
+    j: 1000  # default value
+    dgan_kold: 2  # default value
+  gan:
+    statistic: 'rdc'   # corr, rdc, mmd, kolmogorov, wilcox, default rdc
+    lamda: 10  # default value
+    gan_normalize: True  # default value
+    gan_n_iter: 1000  # default value
+  diffusion:
+    stat: 'cmi'  # rdc, cmi, corr
+    sampling_model: ddpm
+    centralize: False
+    num_steps: 1000
+    repeat: 100
+    diffusion_seed: 8888
+  knn:
+    classifier: 'xgb'  # 'xgb', 'rf', 'lgb', 'nn'
+    knn_normalize: False
+    shuffle_neighbors: 7
+    sig_samples: 200
+  lp:
+    rank: 1000
+    rank_GP: 200
+    J: 5
+    p_norm: 2
+    mu: 0.0001
+    optimizer: False
+  wgcm:
+    regr_meth: gam
+    weight_meth: sign
+    weight_num: 7
+    beta: 0.3
+    wgcm_nsim: 499
+  classifier:
+    max_depths: [ 6,10,13 ]
+    n_estimators: [ 100, 200, 300 ]
+    colsample_bytrees: [ 0.8 ]
+    nfold: 5
+    feature_selection: 0
+    train_samp: -1
+    classifier_k: 1
+    threshold: 0.03
+    num_iter: 20
+    nthread: 8
+    bootstrap: False
+  conditional_distance:
+    num_bootstrap: 99
+    num_thread: 16
+    cdcov_seed: 8888
+  gcm:
+    regr_method: xgboost
+    gcm_nsim: 499
+  rr:
+    rr_n_sim: 20
+    lp: 1
+
+cache:
+  save_cache: True
+  use_cache: True  #  False when comparing run time
+  save_cache_cycle_seconds: -1

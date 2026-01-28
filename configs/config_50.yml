@@ -1,0 +1,146 @@
+storage:
+  cache_dir: cache
+  data_dir: data
+  temp_dir: temp_dir
+  eval_dir: result
+  log_dir: logs
+
+mode:
+  parallel: True
+  n_jobs: 64
+
+simulation:
+  n_samples: [ 200 ]
+  n_points: [ 50 ]  # 10, 50
+  exp_degree: [ 0.4,2 ]  # expectation of edge is n_points * exp_degree
+  causal_mechanism: [ 'nn','polynomial' ] # ['linear', 'polynomial', 'sigmoid_add', 'sigmoid_mix', 'gp_add', 'gp_mix', 'nn']
+  noise_coeff: 1.
+  noise_type: [ 'GaussianMixture5','Cauchy' ] # 'Gaussian', 'GaussianCauchyMixture5', 'Cauchy', 'T5'
+  root: [ 'Gaussian' ]  # 'Gaussian', 'Cauchy', 'Uniform'
+  replicates: 64
+  graph_num: 1
+  designate: True
+  dag_type: 'erdos'
+  weight_distribution_function: 'normal'  # 'uniform', 'normal'
+  ## uniform
+  #  weight_kwargs: { 'low': -1,'high': 1 }
+  ## normal
+  weight_kwargs: { 'mu': 0, 'sigma': 1 ,'clip': 0.1 }
+  mechanism_kwargs:
+    rescale: False
+    ### nn
+    hidden_layer_num: 5
+    activation_function: Tanh  # Tanh, ReLU, Sigmoid
+    nh: 20
+
+    ### polynomial
+    d: 3
+  copula_trans: False
+  copula_trans_kwargs:
+    dfn: 3
+    dfd: 3
+
+evaluation:
+  alpha: 0.05
+  algorithm:
+    algo: 'pc' # pc, deduce_dep_pc, voting_edge, deduce_dep_voting_edge, copula_pc
+    threshold: 0.4 # Different parameters are enabled depending on the 'algo'
+    deduce_dep_k: 1
+    ## copula_pc kwargs
+    copula_pc_kwargs:
+      copula_pc_stable: True
+      beta: 0.4
+      l: 20  # The number of equal distance sampling correlation matrix
+      burn_in: 20
+      post_burn_in: 100
+
+test:
+  alpha: 0.05  # For voting methods such as pcor and vt
+  ## pc kwargs
+  # fisherz, spearman, kendall, robustQn, pcor, conditional_distance, kci, gcm, classifier, vt, d_separation, hsic
+  # rruit
+  uit: d_separation
+  # fisherz, spearman, kendall, robustQn, pcor, conditional_distance, kci, gcm, classifier, vt, d_separation, wgcm,
+  # lp, knn, gan, dgan, diffusion
+  cit: robustQn
+
+  ### dgan kwargs
+  batch_size: 64  # default value
+  dgan_n_iter: 1000  # default value
+  M: 500  # default value
+  b: 30  # default value
+  j: 1000  # default value
+  dgan_kold: 2  # default value
+
+  ### gan kwargs
+  statistic: 'rdc'   # corr, rdc, mmd, kolmogorov, wilcox, default rdc
+  lamda: 10  # default value
+  gan_normalize: True  # default value
+  gan_n_iter: 1000  # default value
+
+  ### diffusion kwargs
+  stat: 'cmi'  # rdc, cmi, corr
+  sampling_model: ddpm
+  centralize: False
+  num_steps: 1000
+  repeat: 100
+  diffusion_seed: 8888
+
+  ### knn kwargs
+  classifier: 'xgb'  # 'xgb', 'rf', 'lgb', 'nn'
+  knn_normalize: False
+  shuffle_neighbors: 7
+  sig_samples: 200
+
+  ### lp kwargs
+  rank: 1000
+  rank_GP: 200
+  J: 5
+  p_norm: 2
+  mu: 0.0001
+  optimizer: False
+
+  ### wgcm kwargs
+  regr_meth: xgboost
+  weight_meth: sign
+  weight_num: 7
+  beta: 0.3
+  wgcm_nsim: 499
+
+  ### classifier kwargs
+  max_depths: [ 6,10,13 ]
+  n_estimators: [ 100, 200, 300 ]
+  colsample_bytrees: [ 0.8 ]
+  nfold: 5
+  feature_selection: 0
+  train_samp: -1
+  classifier_k: 1
+  threshold: 0.03
+  num_iter: 20
+  nthread: 8
+  bootstrap: False
+
+  ### conditional distance kwargs
+  num_bootstrap: 99
+  num_thread: 16
+  cdcov_seed: 8888
+
+  ### gcm kwargs
+  regr_method: xgboost
+  gcm_nsim: 499
+
+  ### rr kwargs
+  rr_n_sim: 100
+  lp: 1
+
+  ### pcor, vt kwargs
+  fisher_combine: False
+
+cache:
+  save_cache: True
+  use_cache: True  #  False when comparing run time
+  save_cache_cycle_seconds: 99999999
+
+other:
+  description: 'Running !'
+
