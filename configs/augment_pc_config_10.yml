@@ -1,10 +1,10 @@
 mode:
-    parallel: True
-    n_jobs: 16
+  parallel: True
+  n_jobs: 16
 
 simulation:
   augment:
-    n_samples: 150
+    n_samples: 20
     models: [ 'gt_graph','AdaSyn' ]  # 'gt_graph', 'SMOTE', 'tabDiffusion', 'AdaSyn'
     model_params:
       tabDiffusion:
@@ -30,8 +30,8 @@ simulation:
         n_neighbors: 5
   ori:
     n_samples: [ 200 ]
-    n_points: [ 10 ]  # 10, 50
-    exp_degree: [ 3 ]  # expectation of edge is n_points * exp_degree
+    n_points: [ 50 ]  # 10, 50
+    exp_degree: [ 0.5,2 ]  # expectation of edge is n_points * exp_degree
     causal_mechanism: [ 'polynomial','nn' ] # ['linear', 'polynomial', 'sigmoid_add', 'sigmoid_mix', 'gp_add', 'gp_mix', 'nn']
     noise_coeff: 1.
     noise_type: [ 'Cauchy','GaussianMixture5' ] # 'Gaussian', 'GaussianMixture5', 'Cauchy', 'T5'
@@ -60,20 +60,20 @@ simulation:
       dfd: 3
 
 evaluation:
-    algorithm:
-      algo: 'fdr_pc' # pc, deduce_dep_pc, fdr_pc
-      fdr_pc:
-        # Option for p-value-based Procedure:
-        # BHProcedure, BCProcedure,
-        # HybAdaProcedure, FastHybAdaProcedure
-        procedure: BHProcedure
-      deduce_dep_pc:
-        deduce_dep_k: 1
+  algorithm:
+    algo: 'pc' # pc, deduce_dep_pc, fdr_pc
+    fdr_pc:
+      # Option for p-value-based Procedure:
+      # BHProcedure, BCProcedure,
+      # HybAdaProcedure, FastHybAdaProcedure
+      procedure: BHProcedure
+    deduce_dep_pc:
+      deduce_dep_k: 1
 
-    multiple_test_kwargs: {
-      alpha: 0.1,
-      epsilon: 0.001,
-    }
+  multiple_test_kwargs: {
+    alpha: 0.1,
+    epsilon: 0.001,
+  }
 
 test:
   alpha: 0.05  # For voting methods such as pcor and vt

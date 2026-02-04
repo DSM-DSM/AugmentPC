@@ -1,14 +1,14 @@
 #!/bin/bash
 
 #SBATCH --comment=causal_learning
-#SBATCH --job-name=fdr_pc_BH_spearman_AdaSyn_gtGraph_AugData_150
+#SBATCH --job-name=50_pc_spearman_AdaSyn_gtGraph_AugData_
 #SBATCH --nodes=1
 
 
 #SBATCH --partition=cpu64c1t  # cpu64c6530, cpu64c1t, cpu64c, cpu40c, cpu24c, gpu-titan, gpu-5090
 ###SBATCH --gres=gpu:1
 #SBATCH --ntasks=16
-#SBATCH --output=logs/hpc/fdr_pc_BH_spearman_AdaSyn_gtGraph_AugData_150.out
+#SBATCH --output=logs/hpc/50_pc_spearman_AdaSyn_gtGraph_AugData_20.out
 
 ### hostname
 # 使用 bash 显式解释器
