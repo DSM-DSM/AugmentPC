@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="359de60c-710e-472c-9f0d-0a7dd658a83a" name="更改" comment="modify config">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/augment_pc_config_10.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/augment_pc_config_10.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run_aug_pc.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run_aug_pc.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -271,6 +272,9 @@
         <option value="bundled-python-sdk-a101402ee41c-968fe969f28a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.28238.29" />
       </set>
     </attachedChunks>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\YJY\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
@@ -646,7 +650,7 @@
       <workItem from="1769661266550" duration="21000" />
       <workItem from="1770087731431" duration="500000" />
       <workItem from="1770176081942" duration="596000" />
-      <workItem from="1770189652724" duration="5550000" />
+      <workItem from="1770189652724" duration="6178000" />
     </task>
     <task id="LOCAL-00001" summary="Init Upload">
       <option name="closed" value="true" />
@@ -672,7 +676,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770196836406</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="modify config">
+      <option name="closed" value="true" />
+      <created>1770196930143</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1770196930143</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

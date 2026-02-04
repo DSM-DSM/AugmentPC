@@ -30,7 +30,7 @@ simulation:
         n_neighbors: 5
   ori:
     n_samples: [ 200 ]
-    n_points: [ 50 ]  # 10, 50
+    n_points: [ 10 ]  # 10, 50
     exp_degree: [ 0.5,2 ]  # expectation of edge is n_points * exp_degree
     causal_mechanism: [ 'polynomial','nn' ] # ['linear', 'polynomial', 'sigmoid_add', 'sigmoid_mix', 'gp_add', 'gp_mix', 'nn']
     noise_coeff: 1.
