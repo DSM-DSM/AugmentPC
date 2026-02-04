@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH --comment=causal_learning
-#SBATCH --job-name=50_pc_spearman_AdaSyn_gtGraph_AugData_
+#SBATCH --job-name=50_pc_spearman_AdaSyn_gtGraph_AugData_20
 #SBATCH --nodes=1
 
 
