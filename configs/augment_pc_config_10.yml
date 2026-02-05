@@ -31,7 +31,7 @@ simulation:
   ori:
     n_samples: [ 200 ]
     n_points: [ 10 ]  # 10, 50
-    exp_degree: [ 0.5,2 ]  # expectation of edge is n_points * exp_degree
+    exp_degree: [ 3 ]  # expectation of edge is n_points * exp_degree
     causal_mechanism: [ 'polynomial','nn' ] # ['linear', 'polynomial', 'sigmoid_add', 'sigmoid_mix', 'gp_add', 'gp_mix', 'nn']
     noise_coeff: 1.
     noise_type: [ 'Cauchy','GaussianMixture5' ] # 'Gaussian', 'GaussianMixture5', 'Cauchy', 'T5'
@@ -61,12 +61,12 @@ simulation:
 
 evaluation:
   algorithm:
-    algo: 'pc' # pc, deduce_dep_pc, fdr_pc
+    algo: 'fdr_pc' # pc, deduce_dep_pc, fdr_pc
     fdr_pc:
       # Option for p-value-based Procedure:
       # BHProcedure, BCProcedure,
       # HybAdaProcedure, FastHybAdaProcedure
-      procedure: BHProcedure
+      procedure: BCProcedure
     deduce_dep_pc:
       deduce_dep_k: 1
 
@@ -83,7 +83,7 @@ test:
   uit: d_separation
   # d_separation, fisherz, spearman, kendall, robustQn, conditional_distance, kci, gcm, classifier, wgcm,
   # lp, knn, gan, dgan, diffusion, vt, pval_ensemble, eval_ensemble
-  cit: spearman
+  cit: kci
 
   eval_ensemble:
     func: product  # mean

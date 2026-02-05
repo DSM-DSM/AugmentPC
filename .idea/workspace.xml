@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="359de60c-710e-472c-9f0d-0a7dd658a83a" name="更改" comment="add augment_pc_config_50.yml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/data_augment.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/data_augment.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/augment_pc_config_50.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/augment_pc_config_50.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fdr_control/demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/fdr_control/demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fdr_control/multi_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/fdr_control/multi_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_aug_pc.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_aug_pc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/augment_pc_config_10.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/augment_pc_config_10.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run_aug_pc.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run_aug_pc.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +109,7 @@
     "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
     "WebServerToolWindowPanel.toolwindow.show.size": "false",
     "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "p__calibrator",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "D:/CausalLearning/code",
@@ -724,7 +719,9 @@
     <MESSAGE value="add gitignore" />
     <MESSAGE value="modify config" />
     <MESSAGE value="add augment_pc_config_50.yml" />
-    <option name="LAST_COMMIT_MESSAGE" value="add augment_pc_config_50.yml" />
+    <MESSAGE value="modify multiple_test.py" />
+    <MESSAGE value="modify multiple_test.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify multiple_test.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
