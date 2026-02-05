@@ -22,7 +22,7 @@ class MultiTestBase(object):
         if threshold > 0:
             e_values = [e_func(indicator, threshold) for indicator in reject]
         else:
-            e_values = [math.inf] * len(p_list)
+            e_values = [math.inf if indicator else 0 for indicator in reject]
         return reject, e_values, threshold
 
     def BHProcedure(self, p_list):
@@ -93,11 +93,13 @@ class MultiTestBase(object):
         f = lambda x: n / (x * self.alpha)
         e_threshold = np.array([f(i) for i in range(1, n + 1)])
 
-        indicator = sorted_e_values >= e_threshold
-        reject = np.array([True] * n)
-        for num, idx in enumerate(descending_idx.tolist()):
-            reject[idx] = bool(indicator[num])
-            e_threshold[idx] = e_threshold[num]
+        try:
+            k_hat = np.where(sorted_e_values >= e_threshold)[0][-1]
+        except IndexError:
+            k_hat = -1
+        reject_index = descending_idx[:k_hat + 1]
+        reject = np.array([True if i in reject_index else False for i in range(n)])
+
         # For Validation
         # df = pd.DataFrame({'e_values': e_values, 'threshold': e_threshold, 'reject': reject})
         return reject

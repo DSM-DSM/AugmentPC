@@ -83,7 +83,7 @@ test:
   uit: d_separation
   # d_separation, fisherz, spearman, kendall, robustQn, conditional_distance, kci, gcm, classifier, wgcm,
   # lp, knn, gan, dgan, diffusion, vt, pval_ensemble, eval_ensemble
-  cit: spearman
+  cit: kci
 
   eval_ensemble:
     func: product  # mean

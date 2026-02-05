@@ -1,0 +1,46 @@
+INFO - run_aug_pc.py - 2026-02-05 09:59:59,300 - Using device: cuda
+INFO - run_aug_pc.py - 2026-02-05 09:59:59,307 - Writing evaluation result to 2026_Feb_05_09_59_56_d_separation_spearman_pc_gt_graph_AdaSyn_20_40640
+INFO - run_aug_pc.py - 2026-02-05 09:59:59,307 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-05 09:59:59,307 - Experiment instance id = 40640
+INFO - run_aug_pc.py - 2026-02-05 09:59:59,307 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-05 09:59:59,307 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-02-05 09:59:59,307 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-05 09:59:59,307 - augment sample generating models: ['gt_graph', 'AdaSyn']
+INFO - run_aug_pc.py - 2026-02-05 09:59:59,307 - augment sample size: 20
+INFO - run_aug_pc.py - 2026-02-05 09:59:59,307 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-05 09:59:59,307 - Using UIT is d_separation, CIT is spearman
+INFO - run_aug_pc.py - 2026-02-05 09:59:59,307 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-05 09:59:59,307 - Algorithm is pc
+INFO - run_aug_pc.py - 2026-02-05 09:59:59,307 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-05 09:59:59,307 - gt_graph training kwargs is Namespace(kwarg='None')
+INFO - run_aug_pc.py - 2026-02-05 09:59:59,307 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-05 09:59:59,307 - AdaSyn training kwargs is Namespace(n_neighbors=5)
+INFO - run_aug_pc.py - 2026-02-05 09:59:59,307 - ----------------------------------------------------------------------------------------------------
+INFO - aug_pc_simulation.py - 2026-02-05 09:59:59,489 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-05 09:59:59,489 - Start to generate Original and Augment samples !
+INFO - simulation.py - 2026-02-05 09:59:59,496 - previous hash does not match current hash.
+ERROR - run_aug_pc.py - 2026-02-05 10:00:06,586 - Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 121, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 245, in __call__
+    SimulationAugPC.__call__(self, *args, **kwargs)
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 235, in __call__
+    self.generate_augment_sample()
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 157, in generate_augment_sample
+    self.generate_original_sample()  # self.original_sample_group has been created
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 108, in generate_original_sample
+    self.original_sample_group = generate_original_sample_group(self)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 78, in generate_original_sample_group
+    original_simu_res_list = Parallel(n_jobs=n_jobs, temp_folder=temp_folder)(
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 1952, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 1595, in _get_outputs
+    yield from self._retrieve()
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 1707, in _retrieve
+    time.sleep(0.01)
+KeyboardInterrupt
+

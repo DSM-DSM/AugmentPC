@@ -32,7 +32,7 @@ Optional requirements:
 
 You can follow the instruction below to set up your working environment.
 ```bash
-conda create -n CausalLearning python=3.11 r-base=4.5.2 -y
+conda create -n CausalLearning python=3.11 r-base=4.5.2 -c conda-forge -y
 conda activate CausalLearning
 
 pip install cdt
@@ -43,9 +43,9 @@ pip install causal-learn pyaml robustbase momentchi2 openpyxl imblearn openpyxl 
 ```
 
 ``` R
+install.packages('GeneralisedCovarianceMeasure')
 install.packages('weightedGCM')  
 install.packages('energy')   
-install.packages('GeneralisedCovarianceMeasure')   
 install.packages('cdcsis')   
 ```
 
