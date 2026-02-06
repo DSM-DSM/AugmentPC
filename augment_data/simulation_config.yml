@@ -30,9 +30,9 @@ ori: !!python/object:argparse.Namespace
   n_samples:
   - 200
   n_points:
-  - 50
+  - 10
   exp_degree:
-  - 0.4
+  - 3
   causal_mechanism:
   - polynomial
   - nn

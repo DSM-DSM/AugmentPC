@@ -201,6 +201,10 @@ class HybridMultiTest(MultiTestBase):
         weight_bh = np.array(weight_bh)
         weight_bc = np.array(weight_bc)
 
+        weight_bh = np.clip(weight_bh, self.epsilon**2, 1 - self.epsilon**2)
+        weight_bc = np.clip(weight_bc, self.epsilon**2, 1 - self.epsilon**2)
+        weight_bh = weight_bh / (weight_bh + weight_bc)
+        weight_bc = weight_bc / (weight_bh + weight_bc)
         e_values = weight_bh * e_values_bh + weight_bc * e_values_bc
         reject = self.eBHProcedure(e_values)
         return np.array(reject), e_values

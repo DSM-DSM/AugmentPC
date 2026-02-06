@@ -1,0 +1,55 @@
+INFO - run_aug_pc.py - 2026-02-06 11:43:52,991 - Using device: cuda
+INFO - run_aug_pc.py - 2026-02-06 11:43:52,995 - Writing evaluation result to 2026_Feb_06_11_43_52_d_separation_kci_pc_gt_graph_AdaSyn_20_4596
+INFO - run_aug_pc.py - 2026-02-06 11:43:52,995 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-06 11:43:52,995 - Experiment instance id = 4596
+INFO - run_aug_pc.py - 2026-02-06 11:43:52,996 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-06 11:43:52,996 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-02-06 11:43:52,996 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-06 11:43:52,997 - augment sample generating models: ['gt_graph', 'AdaSyn']
+INFO - run_aug_pc.py - 2026-02-06 11:43:52,997 - augment sample size: 20
+INFO - run_aug_pc.py - 2026-02-06 11:43:52,997 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-06 11:43:52,997 - Using UIT is d_separation, CIT is kci
+INFO - run_aug_pc.py - 2026-02-06 11:43:52,997 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-06 11:43:52,997 - Algorithm is pc
+INFO - run_aug_pc.py - 2026-02-06 11:43:52,997 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-06 11:43:52,997 - gt_graph training kwargs is Namespace(kwarg='None')
+INFO - run_aug_pc.py - 2026-02-06 11:43:52,997 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-06 11:43:52,997 - AdaSyn training kwargs is Namespace(n_neighbors=5)
+INFO - run_aug_pc.py - 2026-02-06 11:43:52,997 - ----------------------------------------------------------------------------------------------------
+INFO - aug_pc_simulation.py - 2026-02-06 11:43:53,147 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-06 11:43:53,147 - Start to generate Original and Augment samples !
+INFO - aug_pc_simulation.py - 2026-02-06 11:43:53,185 - Original data has been loaded from D:\CausalLearning\code\augment_data\original_sample_group.pkl
+INFO - aug_pc_simulation.py - 2026-02-06 11:43:53,258 - Augmented data of gt_graph have been loaded from D:\CausalLearning\code\augment_data\gt_graph_augmented_sample_group.pkl
+INFO - aug_pc_simulation.py - 2026-02-06 11:43:53,265 - Augmented data of AdaSyn have been loaded from D:\CausalLearning\code\augment_data\AdaSyn_augmented_sample_group.pkl
+INFO - aug_pc_simulation.py - 2026-02-06 11:43:53,318 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-06 11:43:53,318 - Generating  Original and Augment samples is over !
+INFO - aug_pc_simulation.py - 2026-02-06 11:43:53,318 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-06 11:43:53,318 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-06 11:43:53,319 -                                                                                                     
+INFO - aug_pc_evaluation.py - 2026-02-06 11:43:53,319 - Evaluating Original data !
+INFO - aug_pc_evaluation.py - 2026-02-06 11:43:53,319 -                                                                                                     
+INFO - aug_pc_evaluation.py - 2026-02-06 11:43:53,319 - ****************************************************************************************************
+INFO - tools.py - 2026-02-06 11:43:53,368 - Empty file scanning done! We find empty file(s) and Delete them.
+INFO - tools.py - 2026-02-06 11:43:53,370 - [Deleted] D:\CausalLearning\code\cache\4b413540ac6180f4fd5b0f81b0423ae9.json
+INFO - tools.py - 2026-02-06 11:43:53,373 - [Deleted] D:\CausalLearning\code\cache\ea2f578cc4b5da60fe2c0315da3fd598.json
+INFO - tools.py - 2026-02-06 11:43:53,392 - [Deleted] D:\CausalLearning\code\cache\205f4367ef65730da2caed831a8e66b3.json
+INFO - tools.py - 2026-02-06 11:43:53,394 - [Deleted] D:\CausalLearning\code\cache\a3616f0492fd3f852b02233a1cd18ea4.json
+INFO - tools.py - 2026-02-06 11:43:53,401 - [Deleted] D:\CausalLearning\code\cache\602298ded42882595328879db0488107.json
+INFO - aug_pc_evaluation.py - 2026-02-06 11:43:53,414 - Evaluation of Original Data is starting !
+ERROR - run_aug_pc.py - 2026-02-06 11:44:06,396 - Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 121, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 251, in __call__
+    self.eval_original_sample()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 141, in eval_original_sample
+    original_pc_fit_list = Parallel(n_jobs=self.mode.n_jobs, temp_folder=temp_folder)(
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 1952, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 1595, in _get_outputs
+    yield from self._retrieve()
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 1707, in _retrieve
+    time.sleep(0.01)
+KeyboardInterrupt
+

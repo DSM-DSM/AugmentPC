@@ -1,0 +1,78 @@
+INFO - run_aug_pc.py - 2026-02-06 11:44:35,485 - Using device: cuda
+INFO - run_aug_pc.py - 2026-02-06 11:44:35,490 - Writing evaluation result to 2026_Feb_06_11_44_35_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_20_12972
+INFO - run_aug_pc.py - 2026-02-06 11:44:35,490 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-06 11:44:35,490 - Experiment instance id = 12972
+INFO - run_aug_pc.py - 2026-02-06 11:44:35,490 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-06 11:44:35,490 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-02-06 11:44:35,490 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-06 11:44:35,490 - augment sample generating models: ['gt_graph', 'AdaSyn']
+INFO - run_aug_pc.py - 2026-02-06 11:44:35,490 - augment sample size: 20
+INFO - run_aug_pc.py - 2026-02-06 11:44:35,490 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-06 11:44:35,490 - Using UIT is d_separation, CIT is kci
+INFO - run_aug_pc.py - 2026-02-06 11:44:35,490 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-06 11:44:35,490 - Algorithm is fdr_pc
+INFO - run_aug_pc.py - 2026-02-06 11:44:35,491 - FDR Method is BHProcedure
+INFO - run_aug_pc.py - 2026-02-06 11:44:35,491 - FDR Significant Level is 0.05
+INFO - run_aug_pc.py - 2026-02-06 11:44:35,491 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-06 11:44:35,491 - gt_graph training kwargs is Namespace(kwarg='None')
+INFO - run_aug_pc.py - 2026-02-06 11:44:35,491 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-06 11:44:35,491 - AdaSyn training kwargs is Namespace(n_neighbors=5)
+INFO - run_aug_pc.py - 2026-02-06 11:44:35,491 - ----------------------------------------------------------------------------------------------------
+INFO - aug_pc_simulation.py - 2026-02-06 11:44:35,642 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-06 11:44:35,642 - Start to generate Original and Augment samples !
+INFO - simulation.py - 2026-02-06 11:44:35,647 - previous hash does not match current hash.
+INFO - simulation.py - 2026-02-06 11:44:49,212 - previous hash does not match current hash.
+INFO - aug_pc_simulation.py - 2026-02-06 11:44:49,213 - Using gt_graph to generate augmented sample !
+INFO - aug_pc_simulation.py - 2026-02-06 11:44:53,138 - Using AdaSyn to generate augmented sample !
+INFO - aug_pc_simulation.py - 2026-02-06 11:44:53,649 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-06 11:44:53,649 - Generating  Original and Augment samples is over !
+INFO - aug_pc_simulation.py - 2026-02-06 11:44:53,649 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-06 11:44:53,649 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-06 11:44:53,649 -                                                                                                     
+INFO - aug_pc_evaluation.py - 2026-02-06 11:44:53,649 - Evaluating Original data !
+INFO - aug_pc_evaluation.py - 2026-02-06 11:44:53,649 -                                                                                                     
+INFO - aug_pc_evaluation.py - 2026-02-06 11:44:53,649 - ****************************************************************************************************
+INFO - tools.py - 2026-02-06 11:44:53,719 - Empty file scanning done! We find empty file(s) and Delete them.
+ERROR - run_aug_pc.py - 2026-02-06 11:45:16,654 - Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 121, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 251, in __call__
+    self.eval_original_sample()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 133, in eval_original_sample
+    pc_fit_res = eval_func(key, aug=False)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 89, in fdr_pc
+    param['esti_graph'] = algo(
+                          ^^^^^
+  File "D:\CausalLearning\code\algo\pc_extension.py", line 22, in fdr_pc
+    return fdr_pc_alg(data=data, uit=uit, cit=cit, alpha=alpha, hmt=hmt, node_names=node_names,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\algo\pc_extension.py", line 32, in fdr_pc_alg
+    cg_1 = fdr_skeleton_discovery(data, uit, cit, hmt, alpha, stable, background_knowledge=background_knowledge,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\algo\skeleton_discovery.py", line 339, in fdr_skeleton_discovery
+    p = cg.idep_test(x, y, S)
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\algo\graphs.py", line 26, in idep_test
+    return self.citest_instance(i, j, S)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\stat_test\u_cit\kernel.py", line 18, in __call__
+    return self.cache_management(X, Y, condition_set, self.p_cal_func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\stat_test\init.py", line 109, in cache_management
+    p = p_cal_func(Xs, Ys, condition_set)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\stat_test\u_cit\kernel.py", line 14, in p_cal_func
+    self.kci_ci.compute_pvalue(self.data[:, Xs], self.data[:, Ys], self.data[:, condition_set])[0]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\causallearn\utils\KCI\KCI.py", line 304, in compute_pvalue
+    uu_prod, size_u = self.get_uuprod(KxR, KyR)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\causallearn\utils\KCI\KCI.py", line 527, in get_uuprod
+    wy, vy = eigh(0.5 * (Ky + Ky.T))
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\numpy\linalg\_linalg.py", line 1656, in eigh
+    w, vt = gufunc(a, signature=signature)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+

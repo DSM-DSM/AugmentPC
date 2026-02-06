@@ -1,0 +1,67 @@
+INFO - run_aug_pc.py - 2026-02-06 11:45:37,265 - Using device: cuda
+INFO - run_aug_pc.py - 2026-02-06 11:45:37,271 - Writing evaluation result to 2026_Feb_06_11_45_37_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_22784
+INFO - run_aug_pc.py - 2026-02-06 11:45:37,271 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-06 11:45:37,271 - Experiment instance id = 22784
+INFO - run_aug_pc.py - 2026-02-06 11:45:37,271 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-06 11:45:37,271 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-02-06 11:45:37,271 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-06 11:45:37,271 - augment sample generating models: ['gt_graph', 'AdaSyn']
+INFO - run_aug_pc.py - 2026-02-06 11:45:37,271 - augment sample size: 20
+INFO - run_aug_pc.py - 2026-02-06 11:45:37,271 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-06 11:45:37,271 - Using UIT is d_separation, CIT is kci
+INFO - run_aug_pc.py - 2026-02-06 11:45:37,271 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-06 11:45:37,271 - Algorithm is fdr_pc
+INFO - run_aug_pc.py - 2026-02-06 11:45:37,271 - FDR Method is HybAdaProcedure
+INFO - run_aug_pc.py - 2026-02-06 11:45:37,271 - FDR Significant Level is 0.05
+INFO - run_aug_pc.py - 2026-02-06 11:45:37,272 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-06 11:45:37,272 - gt_graph training kwargs is Namespace(kwarg='None')
+INFO - run_aug_pc.py - 2026-02-06 11:45:37,272 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-06 11:45:37,272 - AdaSyn training kwargs is Namespace(n_neighbors=5)
+INFO - run_aug_pc.py - 2026-02-06 11:45:37,272 - ----------------------------------------------------------------------------------------------------
+INFO - aug_pc_simulation.py - 2026-02-06 11:45:37,422 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-06 11:45:37,422 - Start to generate Original and Augment samples !
+INFO - aug_pc_simulation.py - 2026-02-06 11:45:37,441 - Original data has been loaded from D:\CausalLearning\code\augment_data\original_sample_group.pkl
+INFO - aug_pc_simulation.py - 2026-02-06 11:45:37,510 - Augmented data of gt_graph have been loaded from D:\CausalLearning\code\augment_data\gt_graph_augmented_sample_group.pkl
+INFO - aug_pc_simulation.py - 2026-02-06 11:45:37,514 - Augmented data of AdaSyn have been loaded from D:\CausalLearning\code\augment_data\AdaSyn_augmented_sample_group.pkl
+INFO - aug_pc_simulation.py - 2026-02-06 11:45:37,531 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-06 11:45:37,531 - Generating  Original and Augment samples is over !
+INFO - aug_pc_simulation.py - 2026-02-06 11:45:37,531 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-06 11:45:37,531 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-06 11:45:37,531 -                                                                                                     
+INFO - aug_pc_evaluation.py - 2026-02-06 11:45:37,531 - Evaluating Original data !
+INFO - aug_pc_evaluation.py - 2026-02-06 11:45:37,531 -                                                                                                     
+INFO - aug_pc_evaluation.py - 2026-02-06 11:45:37,531 - ****************************************************************************************************
+INFO - tools.py - 2026-02-06 11:45:37,579 - Empty file scanning done! We find empty file(s) and Delete them.
+ERROR - run_aug_pc.py - 2026-02-06 11:45:48,452 - Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 121, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 251, in __call__
+    self.eval_original_sample()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 133, in eval_original_sample
+    pc_fit_res = eval_func(key, aug=False)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 89, in fdr_pc
+    param['esti_graph'] = algo(
+                          ^^^^^
+  File "D:\CausalLearning\code\algo\pc_extension.py", line 22, in fdr_pc
+    return fdr_pc_alg(data=data, uit=uit, cit=cit, alpha=alpha, hmt=hmt, node_names=node_names,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\algo\pc_extension.py", line 32, in fdr_pc_alg
+    cg_1 = fdr_skeleton_discovery(data, uit, cit, hmt, alpha, stable, background_knowledge=background_knowledge,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\algo\skeleton_discovery.py", line 361, in fdr_skeleton_discovery
+    rejection=procedure(df_unique['p'].values)[0],  # Using FDR Procedure
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\fdr_control\multi_test.py", line 188, in HybAdaProcedure
+    _, _, t_bc_j_i = mtb.BCProcedure(p_list_sub_j_i)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\fdr_control\multi_test.py", line 59, in BCProcedure
+    r_t_range = [int(np.sum(p_list <= v)) for v in np.unique(np.sort(p_list)) if v < 0.5]
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\numpy\lib\_arraysetops_impl.py", line 296, in unique
+    ret = _unique1d(ar, return_index, return_inverse, return_counts,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\numpy\lib\_arraysetops_impl.py", line 385, in _unique1d
+    ar.sort()
+KeyboardInterrupt
+
