@@ -30,16 +30,16 @@ ori: !!python/object:argparse.Namespace
   n_samples:
   - 200
   n_points:
-  - 10
+  - 50
   exp_degree:
-  - 3
+  - 0.4
   causal_mechanism:
   - polynomial
   - nn
   noise_coeff: 1.0
   noise_type:
   - Cauchy
-  - GaussianCauchyMixture5
+  - GaussianMixture5
   root:
   - Gaussian
   replicates: 64

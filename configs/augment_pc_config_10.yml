@@ -1,5 +1,5 @@
 mode:
-  parallel: True
+  parallel: False
   n_jobs: 16
 
 simulation:
@@ -66,12 +66,12 @@ evaluation:
       # Option for p-value-based Procedure:
       # BHProcedure, BCProcedure,
       # HybAdaProcedure, FastHybAdaProcedure
-      procedure: BCProcedure
+      procedure: BHProcedure
     deduce_dep_pc:
       deduce_dep_k: 1
 
   multiple_test_kwargs: {
-    alpha: 0.1,
+    alpha: 0.05,
     epsilon: 0.001,
   }
 

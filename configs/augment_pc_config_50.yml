@@ -31,7 +31,7 @@ simulation:
   ori:
     n_samples: [ 200 ]
     n_points: [ 50 ]  # 10, 50
-    exp_degree: [ 0.5,2 ]  # expectation of edge is n_points * exp_degree
+    exp_degree: [ 0.4 ]  # expectation of edge is n_points * exp_degree
     causal_mechanism: [ 'polynomial','nn' ] # ['linear', 'polynomial', 'sigmoid_add', 'sigmoid_mix', 'gp_add', 'gp_mix', 'nn']
     noise_coeff: 1.
     noise_type: [ 'Cauchy','GaussianMixture5' ] # 'Gaussian', 'GaussianMixture5', 'Cauchy', 'T5'
@@ -71,7 +71,7 @@ evaluation:
       deduce_dep_k: 1
 
   multiple_test_kwargs: {
-    alpha: 0.1,
+    alpha: 0.2,
     epsilon: 0.001,
   }
 
