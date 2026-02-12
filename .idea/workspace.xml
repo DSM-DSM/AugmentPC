@@ -4,23 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="359de60c-710e-472c-9f0d-0a7dd658a83a" name="更改" comment="upload new aug_pc_result">
+    <list default="true" id="359de60c-710e-472c-9f0d-0a7dd658a83a" name="更改" comment="solve RuntimeWarning">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_05_17_55_16_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_920424/aug_pc_eval_res.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_05_17_55_16_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_920424/aug_pc_raw_eval_res.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_05_17_55_16_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_920424/ori_pc_eval_res.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_05_17_55_16_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_920424/ori_pc_raw_eval_res.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_05_17_55_16_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_920424/results.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_05_17_57_24_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_921611/aug_pc_eval_res.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_05_17_57_24_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_921611/aug_pc_raw_eval_res.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_05_17_57_24_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_921611/ori_pc_eval_res.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_05_17_57_24_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_921611/ori_pc_raw_eval_res.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_05_17_57_24_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_921611/results.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_11_23_22_d_separation_kci_pc_gt_graph_AdaSyn_20_3001859/results.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_11_23_22_d_separation_kci_pc_gt_graph_AdaSyn_20_3001859/results.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Jan_21_11_42_50_d_separation_spearman_pc_gt_graph_AdaSyn_20_910963/results.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Jan_21_11_42_50_d_separation_spearman_pc_gt_graph_AdaSyn_20_910963/results.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Jan_21_12_32_24_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_20_920341/results.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Jan_21_12_32_24_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_20_920341/results.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aug_pc_result/data_augment.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/data_augment.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/augment_data/AdaSyn_augmented_sample_group.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/augment_data/AdaSyn_augmented_sample_group.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/augment_data/gt_graph_augmented_sample_group.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/augment_data/gt_graph_augmented_sample_group.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/augment_data/original_sample_group.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/augment_data/original_sample_group.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/augment_data/simulation_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/augment_data/simulation_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/205f4367ef65730da2caed831a8e66b3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/4b413540ac6180f4fd5b0f81b0423ae9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/602298ded42882595328879db0488107.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/a1da1dace60a3d6a1cff0c4f07505d70.json" beforeDir="false" afterPath="$PROJECT_DIR$/cache/a1da1dace60a3d6a1cff0c4f07505d70.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/a3616f0492fd3f852b02233a1cd18ea4.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/b1fd52dbd388e2af47e96e9d19757f66.json" beforeDir="false" afterPath="$PROJECT_DIR$/cache/b1fd52dbd388e2af47e96e9d19757f66.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/ea2f578cc4b5da60fe2c0315da3fd598.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aug_pc_result/fdr_control.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/fdr_control.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aug_pc_result/p_ensemble.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/p_ensemble.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/augment_pc_config_10.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/augment_pc_config_10.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fdr_control/multi_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/fdr_control/multi_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_aug_pc.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_aug_pc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/augment_pc_config_50.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/augment_pc_config_50.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_aug_pc.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run_aug_pc.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visualize.py" beforeDir="false" afterPath="$PROJECT_DIR$/visualization/cit_benchmark.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,59 +87,59 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Notification.DisplayName-DoNotAsk-DSTableLoadingError": "加载表数据失败",
-    "Notification.DoNotAsk-DSTableLoadingError": "true",
-    "Python.1.executor": "Debug",
-    "Python.adasyn.executor": "Run",
-    "Python.aug_pc.executor": "Run",
-    "Python.demo (1).executor": "Run",
-    "Python.demo.executor": "Debug",
-    "Python.enn.executor": "Run",
-    "Python.evaluation.executor": "Debug",
-    "Python.experiment.executor": "Debug",
-    "Python.grid_data_generator.executor": "Run",
-    "Python.noise_generator.executor": "Run",
-    "Python.p_value_fdr.executor": "Run",
-    "Python.pc.executor": "Debug",
-    "Python.pipeline.executor": "Debug",
-    "Python.plot_test.executor": "Run",
-    "Python.run.executor": "Run",
-    "Python.run_aug_pc.executor": "Debug",
-    "Python.run_ebh_pc.executor": "Debug",
-    "Python.run_vpca.executor": "Run",
-    "Python.s.executor": "Debug",
-    "Python.sdas.executor": "Run",
-    "Python.sdgfsd.executor": "Run",
-    "Python.test.executor": "Run",
-    "Python.tools.executor": "Run",
-    "Python.visualize.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHELLCHECK.PATH": "C:\\Users\\YJY\\AppData\\Roaming\\JetBrains\\PyCharm2025.2\\plugins\\Shell Script\\shellcheck.exe",
-    "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
-    "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
-    "WebServerToolWindowPanel.toolwindow.show.date": "false",
-    "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
-    "WebServerToolWindowPanel.toolwindow.show.size": "false",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "D:/CausalLearning/code",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "ssh.settings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-DSTableLoadingError&quot;: &quot;加载表数据失败&quot;,
+    &quot;Notification.DoNotAsk-DSTableLoadingError&quot;: &quot;true&quot;,
+    &quot;Python.1.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.adasyn.executor&quot;: &quot;Run&quot;,
+    &quot;Python.aug_pc.executor&quot;: &quot;Run&quot;,
+    &quot;Python.demo (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.demo.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.enn.executor&quot;: &quot;Run&quot;,
+    &quot;Python.evaluation.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.experiment.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.grid_data_generator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.noise_generator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.p_value_fdr.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pc.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.pipeline.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.plot_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run_aug_pc.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.run_ebh_pc.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.run_vpca.executor&quot;: &quot;Run&quot;,
+    &quot;Python.s.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.sdas.executor&quot;: &quot;Run&quot;,
+    &quot;Python.sdgfsd.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tools.executor&quot;: &quot;Run&quot;,
+    &quot;Python.visualize.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHELLCHECK.PATH&quot;: &quot;C:\\Users\\YJY\\AppData\\Roaming\\JetBrains\\PyCharm2025.2\\plugins\\Shell Script\\shellcheck.exe&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/CausalLearning/code&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ssh.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReadonlyStatusHandler">
     <option name="SHOW_DIALOG" value="false" />
   </component>
@@ -147,11 +152,11 @@
       <recent name="D:\CausalLearning\code\data_gen" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CausalLearning\code\visualization" />
       <recent name="D:\CausalLearning\code\workflow" />
       <recent name="D:\CausalLearning\code" />
       <recent name="D:\CausalLearning\code\fdr_control" />
       <recent name="D:\CausalLearning\code\augment_pc\data_augment" />
-      <recent name="D:\CausalLearning\code\augment_pc\data_augment\post_process" />
     </key>
   </component>
   <component name="RunManager" selected="Python.run_aug_pc">
@@ -647,7 +652,27 @@
       <workItem from="1770216069273" duration="1557000" />
       <workItem from="1770256592214" duration="9670000" />
       <workItem from="1770303688157" duration="1655000" />
-      <workItem from="1770346909394" duration="5108000" />
+      <workItem from="1770346909394" duration="10955000" />
+      <workItem from="1770361291011" duration="4000" />
+      <workItem from="1770368424889" duration="6481000" />
+      <workItem from="1770387210309" duration="678000" />
+      <workItem from="1770428214409" duration="2909000" />
+      <workItem from="1770471128366" duration="6987000" />
+      <workItem from="1770527954291" duration="5346000" />
+      <workItem from="1770561332492" duration="1472000" />
+      <workItem from="1770565087381" duration="234000" />
+      <workItem from="1770607339682" duration="987000" />
+      <workItem from="1770620330793" duration="362000" />
+      <workItem from="1770622912762" duration="3000" />
+      <workItem from="1770628003143" duration="29000" />
+      <workItem from="1770640148312" duration="770000" />
+      <workItem from="1770646828362" duration="27000" />
+      <workItem from="1770692024225" duration="725000" />
+      <workItem from="1770692865931" duration="2183000" />
+      <workItem from="1770733748944" duration="660000" />
+      <workItem from="1770782716524" duration="2531000" />
+      <workItem from="1770813142469" duration="1369000" />
+      <workItem from="1770866365535" duration="2695000" />
     </task>
     <task id="LOCAL-00001" summary="Init Upload">
       <option name="closed" value="true" />
@@ -721,7 +746,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770349427855</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="solve RuntimeWarning">
+      <option name="closed" value="true" />
+      <created>1770353986638</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1770353986638</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -761,7 +794,8 @@
     <MESSAGE value="modify multiple_test.py" />
     <MESSAGE value="modify multiple_test.py" />
     <MESSAGE value="upload new aug_pc_result" />
-    <option name="LAST_COMMIT_MESSAGE" value="upload new aug_pc_result" />
+    <MESSAGE value="solve RuntimeWarning" />
+    <option name="LAST_COMMIT_MESSAGE" value="solve RuntimeWarning" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -805,7 +839,7 @@
     <SUITE FILE_PATH="coverage/code$sdas.coverage" NAME="sdas 覆盖结果" MODIFIED="1750304326298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/config" />
     <SUITE FILE_PATH="coverage/CausalLearning$adasyn.coverage" NAME="adasyn 覆盖结果" MODIFIED="1767947319887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/augment_data_gen/SMOTE" />
     <SUITE FILE_PATH="coverage/CausalLearning$enn.coverage" NAME="enn 覆盖结果" MODIFIED="1767871380810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/augdata_postprocess" />
-    <SUITE FILE_PATH="coverage/code$run_aug_pc.coverage" NAME="run_aug_pc 覆盖结果" MODIFIED="1770353430520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/code$run_aug_pc.coverage" NAME="run_aug_pc 覆盖结果" MODIFIED="1770473056247" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CausalLearning$test.coverage" NAME="test 覆盖结果" MODIFIED="1765856374314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CausalLearning$p_value_fdr.coverage" NAME="p_value_fdr 覆盖结果" MODIFIED="1768205760833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fdr_control" />
     <SUITE FILE_PATH="coverage/code$experiment.coverage" NAME="experiment 覆盖结果" MODIFIED="1750644679696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/run" />

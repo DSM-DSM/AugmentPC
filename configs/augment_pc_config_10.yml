@@ -1,6 +1,6 @@
 mode:
-  parallel: False
-  n_jobs: 16
+  parallel: True
+  n_jobs: 64
 
 simulation:
   augment:
@@ -61,7 +61,7 @@ simulation:
 
 evaluation:
   algorithm:
-    algo: 'fdr_pc' # pc, deduce_dep_pc, fdr_pc
+    algo: 'pc' # pc, deduce_dep_pc, fdr_pc
     fdr_pc:
       # Option for p-value-based Procedure:
       # BHProcedure, BCProcedure,
@@ -83,19 +83,19 @@ test:
   uit: d_separation
   # d_separation, fisherz, spearman, kendall, robustQn, conditional_distance, kci, gcm, classifier, wgcm,
   # lp, knn, gan, dgan, diffusion, vt, pval_ensemble, eval_ensemble
-  cit: kci
+  cit: pval_ensemble
 
   eval_ensemble:
     func: product  # mean
-    uit_l: [ spearman,robustQn,kci,kendall,conditional_distance ]
-    cit_l: [ spearman,robustQn,kci,kendall,conditional_distance ]
+    uit_l: [ spearman,kci ]
+    cit_l: [ spearman,kci ]
   pval_ensemble:
     p_combination: 'stouffer'  # 'cauchy', 'stouffer', 'fisher'
-    uit_l: [ spearman,robustQn,kci,kendall ]
-    cit_l: [ spearman,robustQn,kci,kendall ]
+    uit_l: [ spearman,kci ]
+    cit_l: [ spearman,kci ]
   vt:
-    uit_l: [ spearman,robustQn,kci,kendall,conditional_distance ]
-    cit_l: [ spearman,robustQn,kci,kendall,conditional_distance ]
+    uit_l: [ spearman,kci ]
+    cit_l: [ spearman,kci ]
   dgan:
     batch_size: 64  # default value
     dgan_n_iter: 1000  # default value
