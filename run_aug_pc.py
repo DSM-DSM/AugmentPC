@@ -90,9 +90,10 @@ def main():
     logging.info("Experiment instance id = {}".format(os.getpid()))
     logging.info("-" * 100)
     logging.info("Experiment description = {}".format(configs.other.description))
-    logging.info("-" * 100)
-    logging.info(f"augment sample generating models: {configs.simulation.augment.models}")
-    logging.info(f"augment sample size: {configs.simulation.augment.n_samples}")
+    if configs.mode.eval_augment_sample:
+        logging.info("-" * 100)
+        logging.info(f"augment sample generating models: {configs.simulation.augment.models}")
+        logging.info(f"augment sample size: {configs.simulation.augment.n_samples}")
     logging.info("-" * 100)
     logging.info(f"Using UIT is {configs.test.uit}, CIT is {configs.test.cit}")
     if configs.test.uit in ['vt', 'pval_ensemble', 'eval_ensemble']:
@@ -108,10 +109,11 @@ def main():
     if configs.evaluation.algorithm.algo == 'fdr_pc':
         logging.info(f"FDR Method is {configs.evaluation.algorithm.fdr_pc.procedure}")
         logging.info(f"FDR Significant Level is {configs.evaluation.multiple_test_kwargs.alpha}")
-    logging.info("-" * 100)
-    for model in configs.simulation.augment.models:
-        logging.info(f"{model} training kwargs is {vars(configs.simulation.augment.model_params)[model]}")
+    if configs.mode.eval_augment_sample:
         logging.info("-" * 100)
+        for model in configs.simulation.augment.models:
+            logging.info(f"{model} training kwargs is {vars(configs.simulation.augment.model_params)[model]}")
+            logging.info("-" * 100)
     try:
         # from src.ebh_pc_evaluation import SimulationAugPC
         # ebh_pc_simulation = SimulationAugPC(args, configs)
