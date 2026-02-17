@@ -19,8 +19,6 @@ class EvaluationAugPC(SimulationAugPC, Evaluation):
 
         # Multiple succession follows MRO order
         # print(EvaluationAugPC.__mro__)
-        self.ori_pc_eval_res = None
-        self.fdr_pc_eval_res = None
         self.cache_config = self.configs.cache
         self.raw_eval_res = []
         self.ci_sbtester_auxiliary_dir = os.path.join(self.storage.root_dir, self.storage.auxiliary,
@@ -179,91 +177,118 @@ class EvaluationAugPC(SimulationAugPC, Evaluation):
             finally:
                 shutil.rmtree(temp_folder, ignore_errors=True)
 
+    def eval_result_aggregation(self, prefix):
+        result = getattr(self, f'{prefix}_pc_eval_result')
+        agg_file_name = f'{prefix}_pc_eval_res.xlsx'
+        raw_file_name = f'{prefix}_pc_raw_eval_res.xlsx'
+
+        res = []
+        for key, v in result.items():
+            v.update({k: key[i] for i, k in enumerate(self.keys2group)})
+            res.append(v)
+
+        df_raw_res = pd.DataFrame(res)
+        try:
+            df_raw_res.drop(columns=['esti_graph'], inplace=True)
+        except KeyError:
+            pass
+        if prefix == 'ori':
+            df_raw_res['sample_augment_method'] = 'original'
+            subset = deepcopy(self.keys2group)
+            subset.remove('sample_augment_method')
+            df_raw_res.drop_duplicates(subset=subset, inplace=True)
+
+        metric_col = ['SHD', 'SHD Anti', 'Normalized SHD', 'Normalized SHD Anti', 'TPR', 'FPR', 'TP', 'FP', 'FN',
+                      'TN', 'precision', 'recall', 'F1', 'Accuracy', 'time_spent']
+        col2drop = ['g_id', 'd_id']
+        col2group = [c for c in df_raw_res.columns if c not in col2drop + metric_col]
+        df_raw_res.drop(col2drop, axis=1, inplace=True)
+        df_ori_pc_res_grouped = df_raw_res.groupby(col2group)
+        data = []
+        for n, g in df_ori_pc_res_grouped:
+            data.append(list(n) + [str(round(g[metric].mean(), 3)) + '(' + str(
+                round(g[metric].std(), 3)) + ')' for metric in metric_col])
+        col2group.extend(metric_col)
+        df_agg_res = pd.DataFrame(data=data, columns=col2group)
+
+        df_agg_res.loc[:, 'uit'] = self.test_config.uit
+        df_agg_res.loc[:, 'cit'] = self.test_config.cit
+        df_agg_res.loc[:, 'Augment Size'] = self.simu_config.augment.n_samples
+        agg_mask = df_agg_res['sample_augment_method'] == 'original'
+        df_agg_res.loc[agg_mask, 'Augment Size'] = pd.NA
+        df_agg_res.loc[:, 'algo'] = self.eval_config.algorithm.algo
+        df_agg_res.loc[
+            :, 'procedure'] = self.eval_config.algorithm.fdr_pc.procedure if self.eval_config.algorithm.algo == 'fdr_pc' else pd.NA
+        df_agg_res.loc[
+            :, 'fdr_alpha'] = self.eval_config.multiple_test_kwargs.alpha if self.eval_config.algorithm.algo == 'fdr_pc' else pd.NA
+        df_agg_res.loc[
+            :, 'p_combination'] = self.test_config.pval_ensemble.p_combination if self.test_config.cit == 'pval_ensemble' else pd.NA
+
+        df_raw_res.loc[:, 'uit'] = self.test_config.uit
+        df_raw_res.loc[:, 'cit'] = self.test_config.cit
+        df_raw_res.loc[:, 'Augment Size'] = self.simu_config.augment.n_samples
+        raw_mask = df_raw_res['sample_augment_method'] == 'original'
+        df_raw_res.loc[raw_mask, 'Augment Size'] = pd.NA
+        df_raw_res.loc[:, 'algo'] = self.eval_config.algorithm.algo
+        df_raw_res.loc[
+            :, 'procedure'] = self.eval_config.algorithm.fdr_pc.procedure if self.eval_config.algorithm.algo == 'fdr_pc' else pd.NA
+        df_raw_res.loc[
+            :, 'fdr_alpha'] = self.eval_config.multiple_test_kwargs.alpha if self.eval_config.algorithm.algo == 'fdr_pc' else pd.NA
+        df_raw_res.loc[
+            :, 'p_combination'] = self.test_config.pval_ensemble.p_combination if self.test_config.cit == 'fdr_pc' else pd.NA
+
+        df_agg_res.to_excel(os.path.join(self.storage.eval_dir, agg_file_name), index=False)
+        df_raw_res.to_excel(os.path.join(self.storage.eval_dir, raw_file_name), index=False)
+        return df_agg_res
+
+    def save_ori_pc_result(self):
+        create_folder(self.storage.eval_dir)
+
+        self.df_ori_pc_agg_res = self.eval_result_aggregation(prefix='ori')
+
     def save_aug_pc_result(self):
         create_folder(self.storage.eval_dir)
 
-        def eval_result_aggregation(obj, prefix):
-            result = getattr(obj, f'{prefix}_pc_eval_result')
-            agg_file_name = f'{prefix}_pc_eval_res.xlsx'
-            raw_file_name = f'{prefix}_pc_raw_eval_res.xlsx'
+        self.df_aug_pc_agg_res = self.eval_result_aggregation(prefix='aug')
 
-            res = []
-            for key, v in result.items():
-                v.update({k: key[i] for i, k in enumerate(obj.keys2group)})
-                res.append(v)
-
-            df_raw_res = pd.DataFrame(res)
-            df_raw_res.drop(columns=['esti_graph'], inplace=True)
-            if prefix == 'ori':
-                df_raw_res['sample_augment_method'] = 'original'
-                subset = deepcopy(obj.keys2group)
-                subset.remove('sample_augment_method')
-                df_raw_res.drop_duplicates(subset=subset, inplace=True)
-
-            metric_col = ['SHD', 'SHD Anti', 'Normalized SHD', 'Normalized SHD Anti', 'TPR', 'FPR', 'TP', 'FP', 'FN',
-                          'TN', 'precision', 'recall', 'F1', 'Accuracy', 'time_spent']
-            col2drop = ['g_id', 'd_id']
-            col2group = [c for c in df_raw_res.columns if c not in col2drop + metric_col]
-            df_raw_res.drop(col2drop, axis=1, inplace=True)
-            df_ori_pc_res_grouped = df_raw_res.groupby(col2group)
-            data = []
-            for n, g in df_ori_pc_res_grouped:
-                # data.append(list(n) + [str(round(g[metric].mean(), 3)) + '(' + str(
-                #     round(g[metric].std(), 3)) + ')' if not 'time' in metric else format_time(g[metric].mean()) for metric
-                #                        in metric_col])
-                data.append(list(n) + [str(round(g[metric].mean(), 3)) + '(' + str(
-                    round(g[metric].std(), 3)) + ')' for metric in metric_col])
-            col2group.extend(metric_col)
-            df_agg_res = pd.DataFrame(data=data, columns=col2group)
-
-            df_agg_res.loc[:, 'uit'] = self.test_config.uit
-            df_agg_res.loc[:, 'cit'] = self.test_config.cit
-            df_agg_res.loc[:, 'Augment Size'] = self.simu_config.augment.n_samples
-            df_agg_res.loc[:, 'algo'] = self.eval_config.algorithm.algo
-            df_agg_res.loc[:, 'procedure'] = self.eval_config.algorithm.fdr_pc.procedure if self.eval_config.algorithm.algo == 'fdr_pc' else '-'
-            df_agg_res.loc[:, 'fdr_alpha'] = self.eval_config.multiple_test_kwargs.alpha if self.eval_config.algorithm.algo == 'fdr_pc' else '-'
-            df_agg_res.loc[:, 'p_combination'] = self.test_config.pval_ensemble.p_combination if self.test_config.cit == 'pval_ensemble' else '-'
-
-            df_raw_res.loc[:, 'uit'] = self.test_config.uit
-            df_raw_res.loc[:, 'cit'] = self.test_config.cit
-            df_raw_res.loc[:, 'Augment Size'] = self.simu_config.augment.n_samples
-            df_raw_res.loc[:, 'algo'] = self.eval_config.algorithm.algo
-            df_raw_res.loc[:, 'procedure'] = self.eval_config.algorithm.fdr_pc.procedure if self.eval_config.algorithm.algo == 'fdr_pc' else '-'
-            df_raw_res.loc[:, 'fdr_alpha'] = self.eval_config.multiple_test_kwargs.alpha if self.eval_config.algorithm.algo == 'fdr_pc' else '-'
-            df_raw_res.loc[:, 'p_combination'] = self.test_config.pval_ensemble.p_combination if self.test_config.cit == 'fdr_pc' else '-'
-
-            df_agg_res.to_excel(os.path.join(obj.storage.eval_dir, agg_file_name), index=False)
-            df_raw_res.to_excel(os.path.join(obj.storage.eval_dir, raw_file_name), index=False)
-            return df_agg_res
-
-        df_ori_pc_agg_res = eval_result_aggregation(self, prefix='ori')
-        df_aug_pc_agg_res = eval_result_aggregation(self, prefix='aug')
-        df_agg_res = pd.concat([df_ori_pc_agg_res, df_aug_pc_agg_res], ignore_index=True)
-        df_agg_res.to_excel(os.path.join(self.storage.eval_dir, 'results.xlsx'), index=False)
+        if self.configs.mode.eval_original_sample:
+            df_agg_res = pd.concat([self.df_ori_pc_agg_res, self.df_aug_pc_agg_res], ignore_index=True)
+            df_agg_res.to_excel(os.path.join(self.storage.eval_dir, 'results.xlsx'), index=False)
 
     def __call__(self, *args, **kwargs):
         SimulationAugPC.__call__(self, *args, **kwargs)
+        if not self.configs.mode.eval_augment_sample and not self.configs.mode.eval_original_sample:
+            logging.info('*' * 100)
+            logging.info(f'There is no evaluation task specified.')
+        elif self.configs.mode.eval_original_sample:
+                logging.info('*' * 100)
+                logging.info('Evaluating Original data!')
+                self.eval_original_sample()
+                logging.info('*' * 100)
+                logging.info('Evaluation Results of Original Samples are Saved!')
+                self.save_ori_pc_result()
+        else:
+            logging.info('*' * 100)
+            logging.info('Loading Augment testers!')
+            if not self.configs.mode.eval_original_sample:
+                del_attr = ['model_params', 'ori_simu_config', 'ori_pc_eval_result', 'ori_pc_eval_res',
+                            'params_combination']
+                for attr_name in del_attr:
+                    if hasattr(self, attr_name):
+                        delattr(self, attr_name)
+            self.loading_augment_tester()
+            self.tester_aggregation()
+            logging.info('*' * 100)
+            logging.info('Testers are loaded!')
+            logging.info('*' * 100)
+            logging.info('Run Aug-PC !')
+            self.eval_augment_sample()
+            logging.info('*' * 100)
+            logging.info('Evaluation Results with Augment Samples are Saved!')
+            self.save_aug_pc_result()
+            logging.info('*' * 100)
+            logging.info('Evaluation is over! Programs Terminated.')
+
         logging.info('*' * 100)
-        logging.info(' ' * 100)
-        logging.info('Evaluating Original data !')
-        logging.info(' ' * 100)
-        logging.info('*' * 100)
-        self.eval_original_sample()
-        logging.info('*' * 100)
-        logging.info('Loading Augment testers !')
-        logging.info('*' * 100)
-        self.loading_augment_tester()
-        logging.info('*' * 100)
-        self.tester_aggregation()
-        logging.info('*' * 100)
-        logging.info('Testers are loaded !')
-        logging.info('*' * 100)
-        logging.info('Run Aug-PC !')
-        self.eval_augment_sample()
-        logging.info('*' * 100)
-        logging.info('Saving Evaluation Result !')
-        logging.info('*' * 100)
-        self.save_aug_pc_result()
-        logging.info('*' * 100)
-        logging.info('Evaluation is over !')
+        logging.info(f'Program is terminated!')
         logging.info('*' * 100)
