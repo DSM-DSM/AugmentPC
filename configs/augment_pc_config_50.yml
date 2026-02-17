@@ -1,10 +1,12 @@
 mode:
   parallel: True
   n_jobs: 64
+  eval_original_sample: False
+  eval_augment_sample: True
 
 simulation:
   augment:
-    n_samples: 20
+    n_samples: 100
     models: [ 'gt_graph','AdaSyn' ]  # 'gt_graph', 'SMOTE', 'tabDiffusion', 'AdaSyn'
     model_params:
       tabDiffusion:
@@ -87,15 +89,15 @@ test:
 
   eval_ensemble:
     func: product  # mean
-    uit_l: [ spearman,kci,classifier,gcm,dgan ]
-    cit_l: [ spearman,kci,classifier,gcm,dgan ]
+    uit_l: [ spearman,kci ]
+    cit_l: [ spearman,kci ]
   pval_ensemble:
     p_combination: 'stouffer'  # 'cauchy', 'stouffer', 'fisher'
-    uit_l: [ spearman,kci,classifier,gcm,dgan ]
-    cit_l: [ spearman,kci,classifier,gcm,dgan ]
+    uit_l: [ spearman,kci ]
+    cit_l: [ spearman,kci ]
   vt:
-    uit_l: [ spearman,kci,classifier,gcm,dgan ]
-    cit_l: [ spearman,kci,classifier,gcm,dgan ]
+    uit_l: [ spearman,kci ]
+    cit_l: [ spearman,kci ]
   dgan:
     batch_size: 64  # default value
     dgan_n_iter: 1000  # default value

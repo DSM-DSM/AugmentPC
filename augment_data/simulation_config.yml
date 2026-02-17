@@ -42,7 +42,7 @@ ori: !!python/object:argparse.Namespace
   - GaussianMixture5
   root:
   - Gaussian
-  replicates: 64
+  replicates: 4
   graph_num: 1
   designate: true
   dag_type: erdos

@@ -1,6 +1,8 @@
 mode:
-  parallel: True
+  parallel: False
   n_jobs: 64
+  eval_original_sample: True
+  eval_augment_sample: False
 
 simulation:
   augment:
@@ -61,7 +63,7 @@ simulation:
 
 evaluation:
   algorithm:
-    algo: 'pc' # pc, deduce_dep_pc, fdr_pc
+    algo: 'fdr_pc' # pc, deduce_dep_pc, fdr_pc
     fdr_pc:
       # Option for p-value-based Procedure:
       # BHProcedure, BCProcedure,
@@ -71,7 +73,7 @@ evaluation:
       deduce_dep_k: 1
 
   multiple_test_kwargs: {
-    alpha: 0.05,
+    alpha: 0.01,
     epsilon: 0.001,
   }
 
@@ -83,7 +85,7 @@ test:
   uit: d_separation
   # d_separation, fisherz, spearman, kendall, robustQn, conditional_distance, kci, gcm, classifier, wgcm,
   # lp, knn, gan, dgan, diffusion, vt, pval_ensemble, eval_ensemble
-  cit: pval_ensemble
+  cit: kci
 
   eval_ensemble:
     func: product  # mean
