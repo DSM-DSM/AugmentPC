@@ -1,0 +1,78 @@
+INFO - run_aug_pc.py - 2026-02-12 17:31:02,284 - Using device: cuda
+INFO - run_aug_pc.py - 2026-02-12 17:31:02,300 - Writing evaluation result to 2026_Feb_12_17_31_02_d_separation_spearman_pc_gt_graph_AdaSyn_20_29160
+INFO - run_aug_pc.py - 2026-02-12 17:31:02,300 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 17:31:02,300 - Experiment instance id = 29160
+INFO - run_aug_pc.py - 2026-02-12 17:31:02,300 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 17:31:02,300 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-02-12 17:31:02,300 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 17:31:02,301 - augment sample generating models: ['gt_graph', 'AdaSyn']
+INFO - run_aug_pc.py - 2026-02-12 17:31:02,301 - augment sample size: 20
+INFO - run_aug_pc.py - 2026-02-12 17:31:02,301 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 17:31:02,301 - Using UIT is d_separation, CIT is spearman
+INFO - run_aug_pc.py - 2026-02-12 17:31:02,301 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 17:31:02,301 - Algorithm is pc
+INFO - run_aug_pc.py - 2026-02-12 17:31:02,301 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 17:31:02,301 - gt_graph training kwargs is Namespace(kwarg='None')
+INFO - run_aug_pc.py - 2026-02-12 17:31:02,302 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 17:31:02,302 - AdaSyn training kwargs is Namespace(n_neighbors=5)
+INFO - run_aug_pc.py - 2026-02-12 17:31:02,302 - ----------------------------------------------------------------------------------------------------
+INFO - aug_pc_simulation.py - 2026-02-12 17:31:02,619 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-12 17:31:02,619 - Start to generate Original and Augment samples !
+INFO - aug_pc_simulation.py - 2026-02-12 17:31:02,639 - Original data has been loaded from D:\CausalLearning\code\augment_data\original_sample_group.pkl
+INFO - aug_pc_simulation.py - 2026-02-12 17:31:02,645 - Augmented data of gt_graph have been loaded from D:\CausalLearning\code\augment_data\gt_graph_augmented_sample_group.pkl
+INFO - aug_pc_simulation.py - 2026-02-12 17:31:02,646 - Augmented data of AdaSyn have been loaded from D:\CausalLearning\code\augment_data\AdaSyn_augmented_sample_group.pkl
+INFO - aug_pc_simulation.py - 2026-02-12 17:31:02,654 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-12 17:31:02,654 - Generating  Original and Augment samples is over !
+INFO - aug_pc_simulation.py - 2026-02-12 17:31:02,654 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-12 17:31:02,654 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-12 17:31:02,654 - Evaluating Original data!
+INFO - tools.py - 2026-02-12 17:31:02,680 - Empty file scanning done! We find empty file(s) and Delete them.
+ERROR - run_aug_pc.py - 2026-02-12 17:31:57,859 - Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 121, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 265, in __call__
+    self.eval_original_sample()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 133, in eval_original_sample
+    pc_fit_res = eval_func(key, aug=False)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 48, in pc
+    param, uit, cit = Evaluation._evaluate_grid_parameter(self, param)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\evaluation.py", line 38, in _evaluate_grid_parameter
+    estimate_graph = algo(
+                     ^^^^^
+  File "D:\CausalLearning\code\algo\pc_extension.py", line 54, in pc
+    return pc_alg(data=data, uit=uit, cit=cit, node_names=node_names, alpha=alpha, stable=stable,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\algo\pc_extension.py", line 63, in pc_alg
+    cg_1 = skeleton_discovery(data, uit, cit, alpha, stable, background_knowledge=background_knowledge, verbose=verbose,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\algo\skeleton_discovery.py", line 145, in skeleton_discovery
+    p = cg.idep_test(x, y, S)
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\algo\graphs.py", line 26, in idep_test
+    return self.citest_instance(i, j, S)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\stat_test\u_cit\correlation.py", line 54, in __call__
+    return self.cache_management(X, Y, condition_set, self.p_cal_func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\stat_test\init.py", line 111, in cache_management
+    if self.save_cache: self.save_to_local_cache()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\causallearn\utils\cit.py", line 126, in save_to_local_cache
+    with codecs.open(self.cache_path, 'w') as fout: fout.write(json.dumps(self.pvalue_cache, indent=2))
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\json\encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\json\encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 1528, in _pydevd_bundle.pydevd_cython_win32_311_64.ThreadTracer.__call__
+  File "D:\PyCharm 2025.2.5\plugins\python-ce\helpers\pydev\_pydev_bundle\pydev_is_thread_alive.py", line 20, in is_thread_alive
+    def is_thread_alive(t):
+    
+KeyboardInterrupt
+

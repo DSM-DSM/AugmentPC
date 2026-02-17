@@ -1,0 +1,39 @@
+INFO - run_aug_pc.py - 2026-02-12 17:55:18,530 - Using device: cuda
+INFO - run_aug_pc.py - 2026-02-12 17:55:18,547 - Writing evaluation result to 2026_Feb_12_17_55_18_d_separation_fisherz_pc_gt_graph_AdaSyn_20_34612
+INFO - run_aug_pc.py - 2026-02-12 17:55:18,547 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 17:55:18,547 - Experiment instance id = 34612
+INFO - run_aug_pc.py - 2026-02-12 17:55:18,547 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 17:55:18,547 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-02-12 17:55:18,547 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 17:55:18,548 - augment sample generating models: ['gt_graph', 'AdaSyn']
+INFO - run_aug_pc.py - 2026-02-12 17:55:18,548 - augment sample size: 20
+INFO - run_aug_pc.py - 2026-02-12 17:55:18,548 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 17:55:18,548 - Using UIT is d_separation, CIT is fisherz
+INFO - run_aug_pc.py - 2026-02-12 17:55:18,548 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 17:55:18,548 - Algorithm is pc
+INFO - run_aug_pc.py - 2026-02-12 17:55:18,549 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 17:55:18,549 - gt_graph training kwargs is Namespace(kwarg='None')
+INFO - run_aug_pc.py - 2026-02-12 17:55:18,549 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 17:55:18,549 - AdaSyn training kwargs is Namespace(n_neighbors=5)
+INFO - run_aug_pc.py - 2026-02-12 17:55:18,549 - ----------------------------------------------------------------------------------------------------
+INFO - aug_pc_simulation.py - 2026-02-12 17:55:18,861 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-12 17:55:18,862 - Start to generate Original and Augment samples !
+INFO - aug_pc_simulation.py - 2026-02-12 17:55:18,883 - Original data has been loaded from D:\CausalLearning\code\augment_data\original_sample_group.pkl
+INFO - aug_pc_simulation.py - 2026-02-12 17:55:18,889 - Augmented data of gt_graph have been loaded from D:\CausalLearning\code\augment_data\gt_graph_augmented_sample_group.pkl
+INFO - aug_pc_simulation.py - 2026-02-12 17:55:18,889 - Augmented data of AdaSyn have been loaded from D:\CausalLearning\code\augment_data\AdaSyn_augmented_sample_group.pkl
+INFO - aug_pc_simulation.py - 2026-02-12 17:55:18,897 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-12 17:55:18,897 - Generating  Original and Augment samples is over !
+INFO - aug_pc_simulation.py - 2026-02-12 17:55:18,897 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-12 17:55:18,897 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-12 17:55:18,897 - Evaluating Original data!
+INFO - tools.py - 2026-02-12 17:55:18,910 - Empty file scanning done! We find empty file(s) and Delete them.
+INFO - aug_pc_evaluation.py - 2026-02-12 17:55:20,154 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-12 17:55:20,154 - Evaluation Results of Original Samples are Saved!
+ERROR - run_aug_pc.py - 2026-02-12 17:55:20,388 - Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 121, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 272, in __call__
+    if self.configs.mode.use_augment_sample:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Namespace' object has no attribute 'use_augment_sample'
+

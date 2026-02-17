@@ -1,0 +1,55 @@
+INFO - run_aug_pc.py - 2026-02-12 17:32:01,644 - Using device: cuda
+INFO - run_aug_pc.py - 2026-02-12 17:32:01,659 - Writing evaluation result to 2026_Feb_12_17_32_01_d_separation_fisherz_pc_gt_graph_AdaSyn_20_20360
+INFO - run_aug_pc.py - 2026-02-12 17:32:01,659 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 17:32:01,660 - Experiment instance id = 20360
+INFO - run_aug_pc.py - 2026-02-12 17:32:01,660 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 17:32:01,660 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-02-12 17:32:01,660 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 17:32:01,661 - augment sample generating models: ['gt_graph', 'AdaSyn']
+INFO - run_aug_pc.py - 2026-02-12 17:32:01,661 - augment sample size: 20
+INFO - run_aug_pc.py - 2026-02-12 17:32:01,661 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 17:32:01,661 - Using UIT is d_separation, CIT is fisherz
+INFO - run_aug_pc.py - 2026-02-12 17:32:01,661 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 17:32:01,661 - Algorithm is pc
+INFO - run_aug_pc.py - 2026-02-12 17:32:01,661 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 17:32:01,661 - gt_graph training kwargs is Namespace(kwarg='None')
+INFO - run_aug_pc.py - 2026-02-12 17:32:01,661 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 17:32:01,661 - AdaSyn training kwargs is Namespace(n_neighbors=5)
+INFO - run_aug_pc.py - 2026-02-12 17:32:01,661 - ----------------------------------------------------------------------------------------------------
+INFO - aug_pc_simulation.py - 2026-02-12 17:32:01,969 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-12 17:32:01,970 - Start to generate Original and Augment samples !
+INFO - simulation.py - 2026-02-12 17:32:01,988 - previous hash does not match current hash.
+INFO - simulation.py - 2026-02-12 17:32:03,253 - previous hash does not match current hash.
+INFO - aug_pc_simulation.py - 2026-02-12 17:32:03,255 - Using gt_graph to generate augmented sample !
+INFO - aug_pc_simulation.py - 2026-02-12 17:32:03,643 - Using AdaSyn to generate augmented sample !
+INFO - aug_pc_simulation.py - 2026-02-12 17:32:03,787 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-12 17:32:03,787 - Generating  Original and Augment samples is over !
+INFO - aug_pc_simulation.py - 2026-02-12 17:32:03,787 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-12 17:32:03,787 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-12 17:32:03,787 - Evaluating Original data!
+INFO - tools.py - 2026-02-12 17:32:03,799 - Empty file scanning done! We find empty file(s) and Delete them.
+INFO - aug_pc_evaluation.py - 2026-02-12 17:32:47,215 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-12 17:32:47,215 - Saving Evaluation Result of Original Samples!
+ERROR - run_aug_pc.py - 2026-02-12 17:34:52,896 - Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 121, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 268, in __call__
+    self.save_ori_pc_result()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 245, in save_ori_pc_result
+    self.df_ori_pc_agg_res = self.eval_result_aggregation(prefix='ori')
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 193, in eval_result_aggregation
+    df_raw_res.drop(columns=['esti_graph'], inplace=True)
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\pandas\core\frame.py", line 5603, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\pandas\core\generic.py", line 4810, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\pandas\core\generic.py", line 4852, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\pandas\core\indexes\base.py", line 7136, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: "['esti_graph'] not found in axis"
+

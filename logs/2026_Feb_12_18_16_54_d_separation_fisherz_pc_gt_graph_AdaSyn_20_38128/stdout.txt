@@ -1,0 +1,40 @@
+INFO - run_aug_pc.py - 2026-02-12 18:16:55,011 - Using device: cuda
+INFO - run_aug_pc.py - 2026-02-12 18:16:55,028 - Writing evaluation result to 2026_Feb_12_18_16_54_d_separation_fisherz_pc_gt_graph_AdaSyn_20_38128
+INFO - run_aug_pc.py - 2026-02-12 18:16:55,028 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 18:16:55,028 - Experiment instance id = 38128
+INFO - run_aug_pc.py - 2026-02-12 18:16:55,028 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 18:16:55,028 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-02-12 18:16:55,028 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 18:16:55,029 - augment sample generating models: ['gt_graph', 'AdaSyn']
+INFO - run_aug_pc.py - 2026-02-12 18:16:55,029 - augment sample size: 20
+INFO - run_aug_pc.py - 2026-02-12 18:16:55,029 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 18:16:55,029 - Using UIT is d_separation, CIT is fisherz
+INFO - run_aug_pc.py - 2026-02-12 18:16:55,029 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 18:16:55,029 - Algorithm is pc
+INFO - run_aug_pc.py - 2026-02-12 18:16:55,029 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 18:16:55,029 - gt_graph training kwargs is Namespace(kwarg='None')
+INFO - run_aug_pc.py - 2026-02-12 18:16:55,029 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-12 18:16:55,029 - AdaSyn training kwargs is Namespace(n_neighbors=5)
+INFO - run_aug_pc.py - 2026-02-12 18:16:55,029 - ----------------------------------------------------------------------------------------------------
+INFO - aug_pc_simulation.py - 2026-02-12 18:16:55,339 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-12 18:16:55,339 - Start to generate Original and Augment samples !
+INFO - aug_pc_simulation.py - 2026-02-12 18:16:55,358 - Original data has been loaded from D:\CausalLearning\code\augment_data\original_sample_group.pkl
+INFO - aug_pc_simulation.py - 2026-02-12 18:16:55,364 - Augmented data of gt_graph have been loaded from D:\CausalLearning\code\augment_data\gt_graph_augmented_sample_group.pkl
+INFO - aug_pc_simulation.py - 2026-02-12 18:16:55,364 - Augmented data of AdaSyn have been loaded from D:\CausalLearning\code\augment_data\AdaSyn_augmented_sample_group.pkl
+INFO - aug_pc_simulation.py - 2026-02-12 18:16:55,373 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-12 18:16:55,373 - Generating  Original and Augment samples is over !
+INFO - aug_pc_simulation.py - 2026-02-12 18:16:55,373 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-12 18:16:55,373 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-12 18:16:55,373 - Evaluating Original data!
+INFO - tools.py - 2026-02-12 18:16:55,385 - Empty file scanning done! We find empty file(s) and Delete them.
+INFO - aug_pc_evaluation.py - 2026-02-12 18:16:56,614 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-12 18:16:56,614 - Evaluation Results of Original Samples are Saved!
+INFO - aug_pc_evaluation.py - 2026-02-12 18:16:56,850 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-12 18:16:56,850 - Loading Augment testers!
+ERROR - run_aug_pc.py - 2026-02-12 18:17:03,132 - Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 121, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 276, in __call__
+    delattr(self, attr_name)
+AttributeError: 'EvaluationAugPC' object has no attribute 'ori_pc_eval_res'
+
