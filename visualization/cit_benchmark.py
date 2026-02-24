@@ -281,7 +281,7 @@ for noise in noise_type:
                  color=font_color,
                  ha='right',
                  va='center')
-        fig_name = f'figure/{causal}_{node}_{noise}.png'
+        fig_name = f'figure/benchmark/{causal}_{node}_{noise}.png'
         print(fig_name)
         fig.savefig(fig_name, dpi=dpi, bbox_inches='tight')
         plt.close(fig)

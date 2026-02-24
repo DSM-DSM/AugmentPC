@@ -2,7 +2,7 @@
 ## 1. Introduction
 This Library is a supplementary material for paper(**paper**).
 
-CaSLearn simulation platform for PC algorithm in causal structure learning research. In this platform, researcher can easily
+AugmentPC simulation platform for PC algorithm in causal structure learning research. In this platform, researcher can easily
 take experiments on their conditional independence tests(CITs), according to the following steps.
 
 Currently, we support 14 CITs. There are *fisherz*, *spearman*, *kendall*, *robustQn*, *kci*, *gcm*, *wgcm*, *classifier*,
