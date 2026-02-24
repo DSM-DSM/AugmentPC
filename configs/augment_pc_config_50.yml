@@ -6,7 +6,7 @@ mode:
 
 simulation:
   augment:
-    n_samples: 100
+    n_samples: 50
     models: [ 'gt_graph','AdaSyn' ]  # 'gt_graph', 'SMOTE', 'tabDiffusion', 'AdaSyn'
     model_params:
       tabDiffusion:
@@ -68,12 +68,12 @@ evaluation:
       # Option for p-value-based Procedure:
       # BHProcedure, BCProcedure,
       # HybAdaProcedure, FastHybAdaProcedure
-      procedure: BHProcedure
+      procedure: BCProcedure
     deduce_dep_pc:
       deduce_dep_k: 1
 
   multiple_test_kwargs: {
-    alpha: 0.05,
+    alpha: 0.01,
     epsilon: 0.001,
   }
 
@@ -92,7 +92,7 @@ test:
     uit_l: [ spearman,kci ]
     cit_l: [ spearman,kci ]
   pval_ensemble:
-    p_combination: 'stouffer'  # 'cauchy', 'stouffer', 'fisher'
+    p_combination: 'fisher'  # 'cauchy', 'stouffer', 'fisher'
     uit_l: [ spearman,kci ]
     cit_l: [ spearman,kci ]
   vt:

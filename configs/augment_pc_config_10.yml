@@ -1,5 +1,5 @@
 mode:
-  parallel: False
+  parallel: True
   n_jobs: 64
   eval_original_sample: True
   eval_augment_sample: False
