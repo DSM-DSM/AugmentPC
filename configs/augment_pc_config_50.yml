@@ -1,6 +1,6 @@
 mode:
   parallel: True
-  n_jobs: 40
+  n_jobs: 38
   eval_original_sample: False
   eval_augment_sample: True
 
