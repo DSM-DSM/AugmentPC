@@ -2,13 +2,13 @@
 
 #SBATCH --account=u2024104095
 #SBATCH --comment=causal_learning
-#SBATCH --job-name=50_2_pc_spearman_gt_graph_Adasyn_50
+#SBATCH --job-name=50_2_pc_spearman_gt_graph_AdaSyn_50
 #SBATCH --nodes=1
 
-#SBATCH --partition=cpu64c # cpu64c6530, cpu64c1t, cpu64c, cpu40c, cpu24c, gpu-titan, gpu-5090
+#SBATCH --partition=cpu40c # cpu64c6530, cpu64c1t, cpu64c, cpu40c, cpu24c, gpu-titan, gpu-5090
 ###SBATCH --gres=gpu:1
-#SBATCH --ntasks=64
-#SBATCH --output=logs/hpc/50_2_pc_spearman_gt_graph_Adasyn_50.out
+#SBATCH --ntasks=40
+#SBATCH --output=logs/hpc/50_2_pc_spearman_gt_graph_AdaSyn_50.out
 
 ### hostname
 # 使用 bash 显式解释器
