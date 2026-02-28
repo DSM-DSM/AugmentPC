@@ -3,7 +3,6 @@ augment: !!python/object:argparse.Namespace
   n_samples: 20
   models:
   - gt_graph
-  - AdaSyn
   model_params: !!python/object:argparse.Namespace
     tabDiffusion: !!python/object:argparse.Namespace
       batch_size: 4096
@@ -34,7 +33,6 @@ ori: !!python/object:argparse.Namespace
   exp_degree:
   - 3
   causal_mechanism:
-  - polynomial
   - nn
   noise_coeff: 1.0
   noise_type:
@@ -42,7 +40,7 @@ ori: !!python/object:argparse.Namespace
   - GaussianMixture5
   root:
   - Gaussian
-  replicates: 4
+  replicates: 64
   graph_num: 1
   designate: true
   dag_type: erdos

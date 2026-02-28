@@ -1,12 +1,12 @@
 mode:
   parallel: True
-  n_jobs: 38
+  n_jobs: 63
   eval_original_sample: False
   eval_augment_sample: True
 
 simulation:
   augment:
-    n_samples: 50
+    n_samples: 150
     models: [ 'gt_graph','AdaSyn' ]  # 'gt_graph', 'SMOTE', 'tabDiffusion', 'AdaSyn'
     model_params:
       tabDiffusion:

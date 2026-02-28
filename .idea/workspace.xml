@@ -4,49 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="359de60c-710e-472c-9f0d-0a7dd658a83a" name="更改" comment="visualization data augmentation">
+    <list default="true" id="359de60c-710e-472c-9f0d-0a7dd658a83a" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_05_15_06_05_d_separation_kci_fdr_pc_BCProcedure_gt_graph_AdaSyn_20_841758/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_05_15_06_05_d_separation_kci_fdr_pc_BCProcedure_gt_graph_AdaSyn_20_841758/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_11_29_43_d_separation_kci_fdr_pc_BCProcedure_gt_graph_AdaSyn_20_3003955/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_11_29_43_d_separation_kci_fdr_pc_BCProcedure_gt_graph_AdaSyn_20_3003955/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_11_31_29_d_separation_kci_fdr_pc_BCProcedure_gt_graph_AdaSyn_20_3004858/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_11_31_29_d_separation_kci_fdr_pc_BCProcedure_gt_graph_AdaSyn_20_3004858/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_13_21_32_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_20_3015242/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_13_21_32_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_20_3015242/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_13_23_46_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_20_1011484/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_13_23_46_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_20_1011484/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_13_24_04_d_separation_kci_fdr_pc_BCProcedure_gt_graph_AdaSyn_20_1012743/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_13_24_04_d_separation_kci_fdr_pc_BCProcedure_gt_graph_AdaSyn_20_1012743/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_13_26_26_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_1014004/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_13_26_26_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_1014004/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_14_33_30_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_1023033/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_14_33_30_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_1023033/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_14_34_08_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_1680941/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_14_34_08_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_1680941/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_14_35_02_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_2162607/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_14_35_02_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_2162607/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_14_35_50_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_2163691/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_14_35_50_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_2163691/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_14_36_32_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_20_2164772/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_14_36_32_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_20_2164772/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_14_36_58_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_20_2165817/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_14_36_58_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_20_2165817/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_14_38_22_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_20_1716993/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_14_38_22_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_20_1716993/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_14_39_54_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_20_1718168/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_14_39_54_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_20_1718168/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_14_40_40_d_separation_kci_fdr_pc_BCProcedure_gt_graph_AdaSyn_20_1719256/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_14_40_40_d_separation_kci_fdr_pc_BCProcedure_gt_graph_AdaSyn_20_1719256/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_14_41_07_d_separation_kci_fdr_pc_BCProcedure_gt_graph_AdaSyn_20_1720320/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_14_41_07_d_separation_kci_fdr_pc_BCProcedure_gt_graph_AdaSyn_20_1720320/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_17_17_23_d_separation_kci_fdr_pc_BCProcedure_gt_graph_AdaSyn_20_3036003/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_17_17_23_d_separation_kci_fdr_pc_BCProcedure_gt_graph_AdaSyn_20_3036003/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_17_18_53_d_separation_kci_fdr_pc_BCProcedure_gt_graph_AdaSyn_20_3036893/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_06_17_18_53_d_separation_kci_fdr_pc_BCProcedure_gt_graph_AdaSyn_20_3036893/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_07_11_46_50_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_20_1383963/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_07_11_46_50_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_20_1383963/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_17_21_18_02_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_643558/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_17_21_18_02_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_643558/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_17_21_18_35_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_3167158/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_17_21_18_35_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_3167158/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_17_21_19_26_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_3255240/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_17_21_19_26_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_3255240/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_17_21_38_56_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_100_1208989/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_17_21_38_56_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_100_1208989/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_17_21_57_38_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_100_445791/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_17_21_57_38_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_100_445791/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_17_22_12_49_d_separation_kci_fdr_pc_BCProcedure_gt_graph_AdaSyn_100_1212612/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_17_22_12_49_d_separation_kci_fdr_pc_BCProcedure_gt_graph_AdaSyn_100_1212612/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_17_22_18_25_d_separation_kci_fdr_pc_BCProcedure_gt_graph_AdaSyn_100_448604/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_17_22_18_25_d_separation_kci_fdr_pc_BCProcedure_gt_graph_AdaSyn_100_448604/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_19_22_47_07_d_separation_kci_fdr_pc_BCProcedure_gt_graph_AdaSyn_50_3718296/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_19_22_47_07_d_separation_kci_fdr_pc_BCProcedure_gt_graph_AdaSyn_50_3718296/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_20_11_07_16_d_separation_kci_fdr_pc_BCProcedure_gt_graph_AdaSyn_50_3770135/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_20_11_07_16_d_separation_kci_fdr_pc_BCProcedure_gt_graph_AdaSyn_50_3770135/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_20_12_08_51_d_separation_kci_fdr_pc_BCProcedure_gt_graph_AdaSyn_50_3775893/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_20_12_08_51_d_separation_kci_fdr_pc_BCProcedure_gt_graph_AdaSyn_50_3775893/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Jan_21_11_32_30_d_separation_kci_pc_gt_graph_AdaSyn_20_909088/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Jan_21_11_32_30_d_separation_kci_pc_gt_graph_AdaSyn_20_909088/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Jan_21_12_32_24_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_20_920341/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Jan_21_12_32_24_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_20_920341/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Jan_21_12_32_24_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_20_920341/results.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Jan_21_12_32_24_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_20_920341/results.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Jan_21_14_40_02_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_50_932839/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Jan_21_14_40_02_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_50_932839/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Jan_21_14_41_59_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_100_934008/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Jan_21_14_41_59_d_separation_kci_fdr_pc_BHProcedure_gt_graph_AdaSyn_100_934008/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Jan_21_14_44_36_d_separation_spearman_fdr_pc_BHProcedure_gt_graph_AdaSyn_100_3723214/ori_pc_raw_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Jan_21_14_44_36_d_separation_spearman_fdr_pc_BHProcedure_gt_graph_AdaSyn_100_3723214/ori_pc_raw_eval_res.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Jan_21_14_44_36_d_separation_spearman_fdr_pc_BHProcedure_gt_graph_AdaSyn_100_3723214/results.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Jan_21_14_44_36_d_separation_spearman_fdr_pc_BHProcedure_gt_graph_AdaSyn_100_3723214/results.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Jan_21_15_32_43_d_separation_spearman_fdr_pc_BHProcedure_gt_graph_AdaSyn_150_938785/results.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Jan_21_15_32_43_d_separation_spearman_fdr_pc_BHProcedure_gt_graph_AdaSyn_150_938785/results.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/data_augment.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/data_augment.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aug_pc_result/fdr_control.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/fdr_control.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aug_pc_result/~$fdr_control.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/augment_data/AdaSyn_augmented_sample_group.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/augment_data/AdaSyn_augmented_sample_group.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/augment_data/gt_graph_augmented_sample_group.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/augment_data/gt_graph_augmented_sample_group.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/augment_data/original_sample_group.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/augment_data/original_sample_group.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/augment_data/simulation_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/augment_data/simulation_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/augment_data_gen/aug_data_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/augment_data_gen/aug_data_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/aa1aca5d7f6402c74957d56dcfe8c4ed.json" beforeDir="false" afterPath="$PROJECT_DIR$/cache/aa1aca5d7f6402c74957d56dcfe8c4ed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/augment_pc_config_10.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/augment_pc_config_10.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/augment_pc_config_50.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/augment_pc_config_50.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_aug_pc.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run_aug_pc.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aug_pc_simulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/aug_pc_simulation.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +102,7 @@
     "Python.pipeline.executor": "Debug",
     "Python.plot_test.executor": "Run",
     "Python.run.executor": "Run",
-    "Python.run_aug_pc.executor": "Debug",
+    "Python.run_aug_pc.executor": "Run",
     "Python.run_ebh_pc.executor": "Debug",
     "Python.run_vpca.executor": "Run",
     "Python.s.executor": "Debug",
@@ -183,7 +154,7 @@
       <recent name="D:\CausalLearning\code\augment_pc\data_augment" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.fdr_control">
+  <component name="RunManager" selected="Python.run_aug_pc">
     <configuration name="data_augmentation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CausalLearning" />
       <option name="ENV_FILES" value="" />
@@ -301,10 +272,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.fdr_control" />
-        <item itemvalue="Python.data_augmentation" />
-        <item itemvalue="Python.p_value_ensemble" />
         <item itemvalue="Python.run_aug_pc" />
+        <item itemvalue="Python.data_augmentation" />
+        <item itemvalue="Python.fdr_control" />
+        <item itemvalue="Python.p_value_ensemble" />
         <item itemvalue="Python.run" />
       </list>
     </recent_temporary>
@@ -737,7 +708,12 @@
       <workItem from="1771917187923" duration="10013000" />
       <workItem from="1771939106252" duration="1440000" />
       <workItem from="1771944208059" duration="3605000" />
-      <workItem from="1771991108878" duration="11006000" />
+      <workItem from="1771991108878" duration="11224000" />
+      <workItem from="1772012956028" duration="1375000" />
+      <workItem from="1772098010262" duration="268000" />
+      <workItem from="1772103948550" duration="1372000" />
+      <workItem from="1772242539798" duration="4875000" />
+      <workItem from="1772261232630" duration="8686000" />
     </task>
     <task id="LOCAL-00001" summary="Init Upload">
       <option name="closed" value="true" />
@@ -923,7 +899,23 @@
       <option name="project" value="LOCAL" />
       <updated>1771998344180</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="modify aug pc result">
+      <option name="closed" value="true" />
+      <created>1772005346037</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1772005346038</updated>
+    </task>
+    <task id="LOCAL-00025" summary="update fdr visualization code and figure">
+      <option name="closed" value="true" />
+      <created>1772005374576</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1772005374576</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -974,26 +966,13 @@
     <MESSAGE value="add pval ensemble visualization" />
     <MESSAGE value="modify aug pc results" />
     <MESSAGE value="visualization data augmentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="visualization data augmentation" />
+    <MESSAGE value="modify aug pc result" />
+    <MESSAGE value="update fdr visualization code and figure" />
+    <option name="LAST_COMMIT_MESSAGE" value="update fdr visualization code and figure" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/algo/skeleton_discovery.py</url>
-          <line>359</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/algo/skeleton_discovery.py</url>
-          <line>362</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/visualization/data_augmentation.py</url>
-          <line>95</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/visualization/fdr_control.py</url>
           <line>93</line>
@@ -1025,18 +1004,18 @@
     <SUITE FILE_PATH="coverage/code$grid_data_generator.coverage" NAME="grid_data_generator 覆盖结果" MODIFIED="1750320812291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils/Data_gen" />
     <SUITE FILE_PATH="coverage/code$demo.coverage" NAME="demo 覆盖结果" MODIFIED="1770274299913" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fdr_control" />
     <SUITE FILE_PATH="coverage/code$pipeline.coverage" NAME="pipeline 覆盖结果" MODIFIED="1753523565552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pseudo_data_gen" />
-    <SUITE FILE_PATH="coverage/code$data_augmentation.coverage" NAME="data_augmentation 覆盖结果" MODIFIED="1771994856138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
+    <SUITE FILE_PATH="coverage/code$data_augmentation.coverage" NAME="data_augmentation 覆盖结果" MODIFIED="1772247875283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
     <SUITE FILE_PATH="coverage/code$sdas.coverage" NAME="sdas 覆盖结果" MODIFIED="1750304326298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/config" />
     <SUITE FILE_PATH="coverage/code$p_value_ensemble.coverage" NAME="p_value_ensemble 覆盖结果" MODIFIED="1771937403970" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
     <SUITE FILE_PATH="coverage/CausalLearning$adasyn.coverage" NAME="adasyn 覆盖结果" MODIFIED="1767947319887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/augment_data_gen/SMOTE" />
     <SUITE FILE_PATH="coverage/CausalLearning$enn.coverage" NAME="enn 覆盖结果" MODIFIED="1767871380810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/augdata_postprocess" />
-    <SUITE FILE_PATH="coverage/code$run_aug_pc.coverage" NAME="run_aug_pc 覆盖结果" MODIFIED="1770895777913" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/code$run_aug_pc.coverage" NAME="run_aug_pc 覆盖结果" MODIFIED="1772269760145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CausalLearning$test.coverage" NAME="test 覆盖结果" MODIFIED="1765856374314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CausalLearning$p_value_fdr.coverage" NAME="p_value_fdr 覆盖结果" MODIFIED="1768205760833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fdr_control" />
     <SUITE FILE_PATH="coverage/code$experiment.coverage" NAME="experiment 覆盖结果" MODIFIED="1750644679696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/run" />
     <SUITE FILE_PATH="coverage/CausalLearning$s.coverage" NAME="s 覆盖结果" MODIFIED="1766736774637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CausalLearning$sdgfsd.coverage" NAME="sdgfsd 覆盖结果" MODIFIED="1757077126425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Desktop/夏令营拍照图片" />
-    <SUITE FILE_PATH="coverage/code$fdr_control.coverage" NAME="fdr_control 覆盖结果" MODIFIED="1772005236012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
+    <SUITE FILE_PATH="coverage/code$fdr_control.coverage" NAME="fdr_control 覆盖结果" MODIFIED="1772005299777" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
     <SUITE FILE_PATH="coverage/code$noise_generator.coverage" NAME="noise_generator 覆盖结果" MODIFIED="1750397165975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils/data_gen" />
   </component>
 </project>

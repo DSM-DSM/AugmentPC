@@ -1,6 +1,9 @@
 import numpy as np
 from copy import deepcopy
-from utils.tools import namespace2dict, dict2namespace, WeightDistributionFunction
+
+from cdt.data import AcyclicGraphGenerator
+
+from utils.tools import namespace2dict, dict2namespace, WeightDistributionFunction, TemporaryRandomSeed
 from torch import device
 import logging
 from argparse import Namespace
@@ -34,39 +37,7 @@ class AugDataGenerator(object):
             param['data'], param['graph'] = augment_data.numpy(), self.gt_graph
 
         elif self.generator_method == 'gt_graph':
-            from data_gen.dag_generator import AcyclicGraphGeneratorPlus
-
-            param_dc = deepcopy(param)
-            # Specifying DAG Generator Kwargs
-            param_dc['n_samples'] = self.aug_sample_number
-            param_dc['copula_trans'] = self.obj.simu_config.ori.copula_trans
-            param_dc['copula_trans_kwargs'] = self.obj.simu_config.ori.copula_trans_kwargs
-            param_dc['dag_type'] = self.obj.simu_config.ori.dag_type
-            param_dc['noise_coeff'] = self.obj.simu_config.ori.noise_coeff
-            param_dc['designate'] = self.obj.simu_config.ori.designate
-            wdf = eval('WeightDistributionFunction')(
-                self.obj.weight_distribution_function,
-                random_state=self.seed,
-                **self.obj.simu_config.weight_kwargs
-            )
-            param_dc['weight_distribution_function'] = wdf()
-            param_dc.update(namespace2dict(self.obj.simu_config.ori.mechanism_kwargs))
-            param_dc['noise'], param_dc['root'] = noise_func_chooser(param['noise']), cause_func_chooser(param['root'])
-
-            generator = AcyclicGraphGeneratorPlus(**param_dc)
-            generator.designate_graph = self.gt_graph
-            # To Confirm Generator Equal to Original One
-            # genrator2 = self.obj.original_sample_group[self.kv]['generator']
-            # If Mechanism is Polynomial, then
-            # flag = genrator2.cfunctions[0].polycause == genrator2.cfunctions[0].polycause
-
-            augment_data, pure_signal, graph = generator.generate(False)
-            if param_dc['copula_trans']:
-                dfn, dfd = param_dc['copula_trans_kwargs'].dfn, param_dc['copula_trans_kwargs'].dfd
-                augment_data = copula_transform(augment_data, dfn=dfn, dfd=dfd)
-                pure_signal = copula_transform(pure_signal, dfn=dfn, dfd=dfd)
-
-            param['data'], param['graph'] = augment_data.values, self.gt_graph
+            param['data'], param['graph'] = self.obj.original_sample_group[self.kv]['gt_aug_sample'], self.gt_graph
 
         elif self.generator_method == 'SMOTE':
             from imblearn.over_sampling import SMOTE

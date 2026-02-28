@@ -1,0 +1,50 @@
+INFO - run_aug_pc.py - 2026-02-28 17:08:43,649 - Using device: cuda
+INFO - run_aug_pc.py - 2026-02-28 17:08:43,655 - Writing evaluation result to 2026_Feb_28_17_08_43_d_separation_kci_pc_gt_graph_20_119460
+INFO - run_aug_pc.py - 2026-02-28 17:08:43,655 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:08:43,655 - Experiment instance id = 119460
+INFO - run_aug_pc.py - 2026-02-28 17:08:43,656 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:08:43,656 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-02-28 17:08:43,656 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:08:43,656 - augment sample generating models: ['gt_graph']
+INFO - run_aug_pc.py - 2026-02-28 17:08:43,656 - augment sample size: 20
+INFO - run_aug_pc.py - 2026-02-28 17:08:43,656 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:08:43,656 - Using UIT is d_separation, CIT is kci
+INFO - run_aug_pc.py - 2026-02-28 17:08:43,656 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:08:43,656 - Algorithm is pc
+INFO - run_aug_pc.py - 2026-02-28 17:08:43,656 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:08:43,656 - gt_graph training kwargs is Namespace(kwarg='None')
+INFO - run_aug_pc.py - 2026-02-28 17:08:43,656 - ----------------------------------------------------------------------------------------------------
+INFO - aug_pc_simulation.py - 2026-02-28 17:08:43,802 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-28 17:08:43,802 - Start to generate Original and Augment samples !
+INFO - simulation.py - 2026-02-28 17:08:43,807 - previous hash does not match current hash.
+INFO - simulation.py - 2026-02-28 17:09:01,118 - previous hash does not match current hash.
+INFO - simulation.py - 2026-02-28 17:09:01,119 - previous hash does not match current hash.
+INFO - aug_pc_simulation.py - 2026-02-28 17:09:01,119 - Using gt_graph to generate augmented sample !
+INFO - aug_pc_simulation.py - 2026-02-28 17:09:01,138 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-28 17:09:01,138 - Generating  Original and Augment samples is over !
+INFO - aug_pc_simulation.py - 2026-02-28 17:09:01,138 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-28 17:09:01,138 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-28 17:09:01,138 - Loading Augment testers!
+INFO - tools.py - 2026-02-28 17:09:01,213 - Empty file scanning done! We find empty file(s) and Delete them.
+INFO - aug_pc_evaluation.py - 2026-02-28 17:09:01,322 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-28 17:09:01,322 - Testers are loaded!
+INFO - aug_pc_evaluation.py - 2026-02-28 17:09:01,322 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-28 17:09:01,322 - Run Aug-PC !
+INFO - tools.py - 2026-02-28 17:09:01,337 - Empty file scanning done! We find empty file(s) and Delete them.
+ERROR - run_aug_pc.py - 2026-02-28 17:09:13,890 - Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 123, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 285, in __call__
+    self.eval_augment_sample()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 173, in eval_augment_sample
+    augment_pc_fit_list = Parallel(n_jobs=self.mode.n_jobs, temp_folder=temp_folder)(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 1952, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 1595, in _get_outputs
+    yield from self._retrieve()
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 1707, in _retrieve
+    time.sleep(0.01)
+KeyboardInterrupt
+

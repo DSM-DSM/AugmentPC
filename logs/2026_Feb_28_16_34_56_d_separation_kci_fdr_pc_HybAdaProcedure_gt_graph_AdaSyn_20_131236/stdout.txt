@@ -1,0 +1,55 @@
+INFO - run_aug_pc.py - 2026-02-28 16:34:56,808 - Using device: cuda
+INFO - run_aug_pc.py - 2026-02-28 16:34:56,824 - Writing evaluation result to 2026_Feb_28_16_34_56_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_131236
+INFO - run_aug_pc.py - 2026-02-28 16:34:56,824 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 16:34:56,824 - Experiment instance id = 131236
+INFO - run_aug_pc.py - 2026-02-28 16:34:56,824 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 16:34:56,824 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-02-28 16:34:56,824 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 16:34:56,825 - Using UIT is d_separation, CIT is kci
+INFO - run_aug_pc.py - 2026-02-28 16:34:56,825 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 16:34:56,825 - Algorithm is fdr_pc
+INFO - run_aug_pc.py - 2026-02-28 16:34:56,825 - FDR Method is HybAdaProcedure
+INFO - run_aug_pc.py - 2026-02-28 16:34:56,825 - FDR Significant Level is 0.01
+INFO - aug_pc_simulation.py - 2026-02-28 16:34:57,136 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-28 16:34:57,137 - Start to generate Original and Augment samples !
+INFO - simulation.py - 2026-02-28 16:34:57,154 - previous hash does not match current hash.
+INFO - simulation.py - 2026-02-28 16:35:01,089 - previous hash does not match current hash.
+INFO - aug_pc_simulation.py - 2026-02-28 16:35:01,091 - Using gt_graph to generate augmented sample !
+INFO - aug_pc_simulation.py - 2026-02-28 16:35:01,700 - Using AdaSyn to generate augmented sample !
+INFO - aug_pc_simulation.py - 2026-02-28 16:35:01,922 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-28 16:35:01,923 - Generating  Original and Augment samples is over !
+INFO - aug_pc_simulation.py - 2026-02-28 16:35:01,923 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-28 16:35:01,923 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-28 16:35:01,923 - Evaluating Original data!
+INFO - tools.py - 2026-02-28 16:35:01,936 - Empty file scanning done! We find empty file(s) and Delete them.
+ERROR - run_aug_pc.py - 2026-02-28 16:35:20,595 - Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 123, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 266, in __call__
+    self.eval_original_sample()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 131, in eval_original_sample
+    pc_fit_res = eval_func(key, aug=False)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 87, in fdr_pc
+    param['esti_graph'] = algo(
+                          ^^^^^
+  File "D:\CausalLearning\code\algo\pc_extension.py", line 22, in fdr_pc
+    return fdr_pc_alg(data=data, uit=uit, cit=cit, alpha=alpha, hmt=hmt, node_names=node_names,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\algo\pc_extension.py", line 32, in fdr_pc_alg
+    cg_1 = fdr_skeleton_discovery(data, uit, cit, hmt, alpha, stable, background_knowledge=background_knowledge,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\algo\skeleton_discovery.py", line 360, in fdr_skeleton_discovery
+    df_unique = df_unique.assign(
+                ^^^^^^^^^
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 1186, in _pydevd_bundle.pydevd_cython_win32_311_64.SafeCallWrapper.__call__
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 627, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 937, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 928, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 585, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.do_wait_suspend
+  File "D:\PyCharm 2025.2.5\plugins\python-ce\helpers\pydev\pydevd.py", line 1196, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "D:\PyCharm 2025.2.5\plugins\python-ce\helpers\pydev\pydevd.py", line 1211, in _do_wait_suspend
+    time.sleep(0.01)
+KeyboardInterrupt
+

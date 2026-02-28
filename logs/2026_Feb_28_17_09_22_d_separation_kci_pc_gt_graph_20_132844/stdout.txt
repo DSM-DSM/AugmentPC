@@ -1,0 +1,48 @@
+INFO - run_aug_pc.py - 2026-02-28 17:09:22,532 - Using device: cuda
+INFO - run_aug_pc.py - 2026-02-28 17:09:22,537 - Writing evaluation result to 2026_Feb_28_17_09_22_d_separation_kci_pc_gt_graph_20_132844
+INFO - run_aug_pc.py - 2026-02-28 17:09:22,537 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:09:22,537 - Experiment instance id = 132844
+INFO - run_aug_pc.py - 2026-02-28 17:09:22,537 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:09:22,537 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-02-28 17:09:22,537 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:09:22,537 - augment sample generating models: ['gt_graph']
+INFO - run_aug_pc.py - 2026-02-28 17:09:22,537 - augment sample size: 20
+INFO - run_aug_pc.py - 2026-02-28 17:09:22,537 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:09:22,537 - Using UIT is d_separation, CIT is kci
+INFO - run_aug_pc.py - 2026-02-28 17:09:22,537 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:09:22,537 - Algorithm is pc
+INFO - run_aug_pc.py - 2026-02-28 17:09:22,537 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:09:22,537 - gt_graph training kwargs is Namespace(kwarg='None')
+INFO - run_aug_pc.py - 2026-02-28 17:09:22,537 - ----------------------------------------------------------------------------------------------------
+INFO - aug_pc_simulation.py - 2026-02-28 17:09:22,685 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-28 17:09:22,685 - Start to generate Original and Augment samples !
+INFO - aug_pc_simulation.py - 2026-02-28 17:09:22,694 - Original data has been loaded from D:\CausalLearning\code\augment_data\original_sample_group.pkl
+INFO - aug_pc_simulation.py - 2026-02-28 17:09:22,697 - Augmented data of gt_graph have been loaded from D:\CausalLearning\code\augment_data\gt_graph_augmented_sample_group.pkl
+INFO - aug_pc_simulation.py - 2026-02-28 17:09:22,703 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-28 17:09:22,703 - Generating  Original and Augment samples is over !
+INFO - aug_pc_simulation.py - 2026-02-28 17:09:22,703 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-28 17:09:22,703 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-28 17:09:22,703 - Loading Augment testers!
+INFO - tools.py - 2026-02-28 17:09:22,754 - Empty file scanning done! We find empty file(s) and Delete them.
+INFO - aug_pc_evaluation.py - 2026-02-28 17:09:22,853 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-28 17:09:22,853 - Testers are loaded!
+INFO - aug_pc_evaluation.py - 2026-02-28 17:09:22,853 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-28 17:09:22,853 - Run Aug-PC !
+INFO - tools.py - 2026-02-28 17:09:22,865 - Empty file scanning done! We find empty file(s) and Delete them.
+ERROR - run_aug_pc.py - 2026-02-28 17:09:34,709 - Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 123, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 285, in __call__
+    self.eval_augment_sample()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 173, in eval_augment_sample
+    augment_pc_fit_list = Parallel(n_jobs=self.mode.n_jobs, temp_folder=temp_folder)(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 1952, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 1595, in _get_outputs
+    yield from self._retrieve()
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 1707, in _retrieve
+    time.sleep(0.01)
+KeyboardInterrupt
+

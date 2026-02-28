@@ -1,0 +1,50 @@
+INFO - run_aug_pc.py - 2026-02-28 17:00:49,168 - Using device: cuda
+INFO - run_aug_pc.py - 2026-02-28 17:00:49,193 - Writing evaluation result to 2026_Feb_28_17_00_49_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_130548
+INFO - run_aug_pc.py - 2026-02-28 17:00:49,193 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:00:49,193 - Experiment instance id = 130548
+INFO - run_aug_pc.py - 2026-02-28 17:00:49,193 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:00:49,193 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-02-28 17:00:49,193 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:00:49,193 - augment sample generating models: ['gt_graph', 'AdaSyn']
+INFO - run_aug_pc.py - 2026-02-28 17:00:49,194 - augment sample size: 20
+INFO - run_aug_pc.py - 2026-02-28 17:00:49,194 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:00:49,194 - Using UIT is d_separation, CIT is kci
+INFO - run_aug_pc.py - 2026-02-28 17:00:49,194 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:00:49,194 - Algorithm is fdr_pc
+INFO - run_aug_pc.py - 2026-02-28 17:00:49,194 - FDR Method is HybAdaProcedure
+INFO - run_aug_pc.py - 2026-02-28 17:00:49,194 - FDR Significant Level is 0.01
+INFO - run_aug_pc.py - 2026-02-28 17:00:49,194 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:00:49,194 - gt_graph training kwargs is Namespace(kwarg='None')
+INFO - run_aug_pc.py - 2026-02-28 17:00:49,194 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:00:49,194 - AdaSyn training kwargs is Namespace(n_neighbors=5)
+INFO - run_aug_pc.py - 2026-02-28 17:00:49,194 - ----------------------------------------------------------------------------------------------------
+INFO - aug_pc_simulation.py - 2026-02-28 17:00:49,494 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-28 17:00:49,495 - Start to generate Original and Augment samples !
+INFO - simulation.py - 2026-02-28 17:00:49,512 - previous hash does not match current hash.
+INFO - simulation.py - 2026-02-28 17:01:03,569 - previous hash does not match current hash.
+INFO - aug_pc_simulation.py - 2026-02-28 17:01:03,570 - Using gt_graph to generate augmented sample !
+ERROR - run_aug_pc.py - 2026-02-28 17:02:03,255 - Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 123, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 259, in __call__
+    SimulationAugPC.__call__(self, *args, **kwargs)
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 248, in __call__
+    self.generate_augment_sample()
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 179, in generate_augment_sample
+    augment_sample_group = self.generate_aug_sample(model)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 194, in generate_aug_sample
+    augment_sample_group.append(generator.generate())
+                                ^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\augment_data_gen\aug_data_generator.py", line 41, in generate
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 1186, in _pydevd_bundle.pydevd_cython_win32_311_64.SafeCallWrapper.__call__
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 627, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 937, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 928, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 585, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.do_wait_suspend
+  File "D:\PyCharm 2025.2.5\plugins\python-ce\helpers\pydev\pydevd.py", line 1196, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "D:\PyCharm 2025.2.5\plugins\python-ce\helpers\pydev\pydevd.py", line 1211, in _do_wait_suspend
+    time.sleep(0.01)
+KeyboardInterrupt
+

@@ -1,13 +1,13 @@
 mode:
   parallel: True
   n_jobs: 64
-  eval_original_sample: True
-  eval_augment_sample: False
+  eval_original_sample: False
+  eval_augment_sample: True
 
 simulation:
   augment:
-    n_samples: 20
-    models: [ 'gt_graph','AdaSyn' ]  # 'gt_graph', 'SMOTE', 'tabDiffusion', 'AdaSyn'
+    n_samples: 100
+    models: [ 'gt_graph' ]  # 'gt_graph', 'SMOTE', 'tabDiffusion', 'AdaSyn'
     model_params:
       tabDiffusion:
         batch_size: 4096
@@ -34,7 +34,7 @@ simulation:
     n_samples: [ 200 ]
     n_points: [ 10 ]  # 10, 50
     exp_degree: [ 3 ]  # expectation of edge is n_points * exp_degree
-    causal_mechanism: [ 'polynomial','nn' ] # ['linear', 'polynomial', 'sigmoid_add', 'sigmoid_mix', 'gp_add', 'gp_mix', 'nn']
+    causal_mechanism: [ 'nn' ] # ['linear', 'polynomial', 'sigmoid_add', 'sigmoid_mix', 'gp_add', 'gp_mix', 'nn']
     noise_coeff: 1.
     noise_type: [ 'Cauchy','GaussianMixture5' ] # 'Gaussian', 'GaussianMixture5', 'Cauchy', 'T5'
     root: [ 'Gaussian' ]  # 'Gaussian', 'Cauchy', 'Uniform'
@@ -63,7 +63,7 @@ simulation:
 
 evaluation:
   algorithm:
-    algo: 'fdr_pc' # pc, deduce_dep_pc, fdr_pc
+    algo: 'pc' # pc, deduce_dep_pc, fdr_pc
     fdr_pc:
       # Option for p-value-based Procedure:
       # BHProcedure, BCProcedure,

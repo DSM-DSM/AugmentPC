@@ -1,0 +1,79 @@
+INFO - run_aug_pc.py - 2026-02-28 16:35:24,185 - Using device: cuda
+INFO - run_aug_pc.py - 2026-02-28 16:35:24,200 - Writing evaluation result to 2026_Feb_28_16_35_24_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_119880
+INFO - run_aug_pc.py - 2026-02-28 16:35:24,200 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 16:35:24,200 - Experiment instance id = 119880
+INFO - run_aug_pc.py - 2026-02-28 16:35:24,201 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 16:35:24,201 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-02-28 16:35:24,201 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 16:35:24,211 - augment sample generating models: ['gt_graph', 'AdaSyn']
+INFO - run_aug_pc.py - 2026-02-28 16:35:24,211 - augment sample size: 20
+INFO - run_aug_pc.py - 2026-02-28 16:35:24,211 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 16:35:24,211 - Using UIT is d_separation, CIT is kci
+INFO - run_aug_pc.py - 2026-02-28 16:35:24,211 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 16:35:24,211 - Algorithm is fdr_pc
+INFO - run_aug_pc.py - 2026-02-28 16:35:24,211 - FDR Method is HybAdaProcedure
+INFO - run_aug_pc.py - 2026-02-28 16:35:24,211 - FDR Significant Level is 0.01
+INFO - run_aug_pc.py - 2026-02-28 16:35:24,211 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 16:35:24,211 - gt_graph training kwargs is Namespace(kwarg='None')
+INFO - run_aug_pc.py - 2026-02-28 16:35:24,211 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 16:35:24,211 - AdaSyn training kwargs is Namespace(n_neighbors=5)
+INFO - run_aug_pc.py - 2026-02-28 16:35:24,211 - ----------------------------------------------------------------------------------------------------
+INFO - aug_pc_simulation.py - 2026-02-28 16:35:24,508 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-28 16:35:24,508 - Start to generate Original and Augment samples !
+INFO - aug_pc_simulation.py - 2026-02-28 16:35:24,527 - Original data has been loaded from D:\CausalLearning\code\augment_data\original_sample_group.pkl
+INFO - aug_pc_simulation.py - 2026-02-28 16:35:24,533 - Augmented data of gt_graph have been loaded from D:\CausalLearning\code\augment_data\gt_graph_augmented_sample_group.pkl
+INFO - aug_pc_simulation.py - 2026-02-28 16:35:24,534 - Augmented data of AdaSyn have been loaded from D:\CausalLearning\code\augment_data\AdaSyn_augmented_sample_group.pkl
+INFO - aug_pc_simulation.py - 2026-02-28 16:35:24,541 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-28 16:35:24,541 - Generating  Original and Augment samples is over !
+INFO - aug_pc_simulation.py - 2026-02-28 16:35:24,541 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-28 16:35:24,541 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-28 16:35:24,541 - Evaluating Original data!
+INFO - tools.py - 2026-02-28 16:35:24,554 - Empty file scanning done! We find empty file(s) and Delete them.
+ERROR - run_aug_pc.py - 2026-02-28 16:35:32,481 - Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 123, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 266, in __call__
+    self.eval_original_sample()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 131, in eval_original_sample
+    pc_fit_res = eval_func(key, aug=False)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 87, in fdr_pc
+    param['esti_graph'] = algo(
+                          ^^^^^
+  File "D:\CausalLearning\code\algo\pc_extension.py", line 22, in fdr_pc
+    return fdr_pc_alg(data=data, uit=uit, cit=cit, alpha=alpha, hmt=hmt, node_names=node_names,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\algo\pc_extension.py", line 32, in fdr_pc_alg
+    cg_1 = fdr_skeleton_discovery(data, uit, cit, hmt, alpha, stable, background_knowledge=background_knowledge,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\algo\skeleton_discovery.py", line 339, in fdr_skeleton_discovery
+    p = cg.idep_test(x, y, S)
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\algo\graphs.py", line 26, in idep_test
+    return self.citest_instance(i, j, S)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\stat_test\u_cit\kernel.py", line 18, in __call__
+    return self.cache_management(X, Y, condition_set, self.p_cal_func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\stat_test\init.py", line 111, in cache_management
+    if self.save_cache: self.save_to_local_cache()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\causallearn\utils\cit.py", line 126, in save_to_local_cache
+    with codecs.open(self.cache_path, 'w') as fout: fout.write(json.dumps(self.pvalue_cache, indent=2))
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\json\encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\json\encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "D:\Anaconda\envs\CausalLearning\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 1528, in _pydevd_bundle.pydevd_cython_win32_311_64.ThreadTracer.__call__
+  File "D:\PyCharm 2025.2.5\plugins\python-ce\helpers\pydev\_pydev_bundle\pydev_is_thread_alive.py", line 20, in is_thread_alive
+    def is_thread_alive(t):
+    
+KeyboardInterrupt
+

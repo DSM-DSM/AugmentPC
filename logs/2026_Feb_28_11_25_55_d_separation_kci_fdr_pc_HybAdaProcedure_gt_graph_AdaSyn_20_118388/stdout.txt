@@ -1,0 +1,35 @@
+INFO - run_aug_pc.py - 2026-02-28 11:25:55,495 - Using device: cuda
+INFO - run_aug_pc.py - 2026-02-28 11:25:55,518 - Writing evaluation result to 2026_Feb_28_11_25_55_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_118388
+INFO - run_aug_pc.py - 2026-02-28 11:25:55,518 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 11:25:55,518 - Experiment instance id = 118388
+INFO - run_aug_pc.py - 2026-02-28 11:25:55,518 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 11:25:55,518 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-02-28 11:25:55,518 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 11:25:55,519 - Using UIT is d_separation, CIT is kci
+INFO - run_aug_pc.py - 2026-02-28 11:25:55,519 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 11:25:55,520 - Algorithm is fdr_pc
+INFO - run_aug_pc.py - 2026-02-28 11:25:55,520 - FDR Method is HybAdaProcedure
+INFO - run_aug_pc.py - 2026-02-28 11:25:55,520 - FDR Significant Level is 0.01
+INFO - aug_pc_simulation.py - 2026-02-28 11:25:55,851 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-28 11:25:55,851 - Start to generate Original and Augment samples !
+INFO - simulation.py - 2026-02-28 11:25:55,871 - previous hash does not match current hash.
+INFO - simulation.py - 2026-02-28 11:26:25,467 - previous hash does not match current hash.
+INFO - aug_pc_simulation.py - 2026-02-28 11:26:25,469 - Using gt_graph to generate augmented sample !
+ERROR - run_aug_pc.py - 2026-02-28 11:26:46,187 - Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 123, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 259, in __call__
+    SimulationAugPC.__call__(self, *args, **kwargs)
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 235, in __call__
+    self.generate_augment_sample()
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 166, in generate_augment_sample
+    augment_sample_group = self.generate_aug_sample(model)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 181, in generate_aug_sample
+    augment_sample_group.append(generator.generate())
+                                ^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\augment_data_gen\aug_data_generator.py", line 59, in generate
+    genrator2 = self.obj.original_sample_group[self.kv]['generator']
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'generator'
+

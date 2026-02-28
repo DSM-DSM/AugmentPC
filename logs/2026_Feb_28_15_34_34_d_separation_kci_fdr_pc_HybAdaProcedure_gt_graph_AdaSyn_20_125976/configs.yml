@@ -1,0 +1,195 @@
+!!python/object:argparse.Namespace
+cache: !!python/object:argparse.Namespace
+  save_cache: true
+  save_cache_cycle_seconds: -1
+  use_cache: true
+doc: 2026_Feb_28_15_34_34_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_125976
+evaluation: !!python/object:argparse.Namespace
+  algorithm: !!python/object:argparse.Namespace
+    algo: fdr_pc
+    deduce_dep_pc: !!python/object:argparse.Namespace
+      deduce_dep_k: 1
+    fdr_pc: !!python/object:argparse.Namespace
+      procedure: HybAdaProcedure
+  multiple_test_kwargs: !!python/object:argparse.Namespace
+    alpha: 0.01
+    epsilon: 0.001
+mode: !!python/object:argparse.Namespace
+  eval_augment_sample: false
+  eval_original_sample: true
+  n_jobs: 64
+  parallel: false
+other: !!python/object:argparse.Namespace
+  description: Running !
+simulation: !!python/object:argparse.Namespace
+  augment: !!python/object:argparse.Namespace
+    model_params: !!python/object:argparse.Namespace
+      AdaSyn: !!python/object:argparse.Namespace
+        n_neighbors: 5
+      SMOTE: !!python/object:argparse.Namespace
+        k_neighbors: 5
+      gt_graph: !!python/object:argparse.Namespace
+        kwarg: None
+      tabDiffusion: !!python/object:argparse.Namespace
+        batch_size: 4096
+        dim_t: 128
+        dropout: 0.0
+        epochs: 60000
+        eval_freq: 10000
+        fold: 5
+        gaussian_loss_type: kl
+        hidden_dim_layer:
+        - 512
+        - 256
+        is_y_cond: false
+        lr: 0.001
+        num_timesteps: 1000
+        print_freq: 5000
+    models:
+    - gt_graph
+    - AdaSyn
+    n_samples: 20
+  ori: !!python/object:argparse.Namespace
+    causal_mechanism:
+    - polynomial
+    - nn
+    copula_trans: false
+    copula_trans_kwargs: !!python/object:argparse.Namespace
+      dfd: 3
+      dfn: 3
+    dag_type: erdos
+    designate: true
+    exp_degree:
+    - 3
+    graph_num: 1
+    mechanism_kwargs: !!python/object:argparse.Namespace
+      activation_function: Tanh
+      d: 3
+      hidden_layer_num: 5
+      nh: 20
+      rescale: false
+    n_points:
+    - 10
+    n_samples:
+    - 200
+    noise_coeff: 1.0
+    noise_type:
+    - Cauchy
+    - GaussianMixture5
+    replicates: 8
+    root:
+    - Gaussian
+    weight_distribution_function: normal
+    weight_kwargs: !!python/object:argparse.Namespace
+      clip: 0.1
+      mu: 0
+      sigma: 1
+  seed: 8888
+  weight_kwargs:
+    clip: 0.1
+    mu: 0
+    sigma: 1
+storage: !!python/object:argparse.Namespace
+  auxiliary: sbt_auxiliary
+  cache_dir: D:\CausalLearning\code\cache
+  data_dir: D:\CausalLearning\code\augment_data
+  eval_dir: D:\CausalLearning\code\aug_pc_result\2026_Feb_28_15_34_34_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_125976
+  log_dir: D:\CausalLearning\code\logs\2026_Feb_28_15_34_34_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_125976
+  model_dir: D:\CausalLearning\code\model_dir
+  root_dir: D:\CausalLearning\code
+  temp_dir: D:\CausalLearning\code\temp_dir
+test: !!python/object:argparse.Namespace
+  alpha: 0.05
+  cit: kci
+  classifier: !!python/object:argparse.Namespace
+    bootstrap: false
+    classifier_k: 1
+    colsample_bytrees:
+    - 0.8
+    feature_selection: 0
+    max_depths:
+    - 6
+    - 10
+    - 13
+    n_estimators:
+    - 100
+    - 200
+    - 300
+    nfold: 5
+    nthread: 8
+    num_iter: 20
+    threshold: 0.03
+    train_samp: -1
+  conditional_distance: !!python/object:argparse.Namespace
+    cdcov_seed: 8888
+    num_bootstrap: 99
+    num_thread: 16
+  device: !!python/object/apply:torch.device
+  - cuda
+  dgan: !!python/object:argparse.Namespace
+    M: 500
+    b: 30
+    batch_size: 64
+    dgan_kold: 2
+    dgan_n_iter: 1000
+    j: 1000
+  diffusion: !!python/object:argparse.Namespace
+    centralize: false
+    diffusion_seed: 8888
+    num_steps: 1000
+    repeat: 100
+    sampling_model: ddpm
+    stat: cmi
+  eval_ensemble: !!python/object:argparse.Namespace
+    cit_l:
+    - spearman
+    - kci
+    func: product
+    uit_l:
+    - spearman
+    - kci
+  gan: !!python/object:argparse.Namespace
+    gan_n_iter: 1000
+    gan_normalize: true
+    lamda: 10
+    statistic: rdc
+  gcm: !!python/object:argparse.Namespace
+    gcm_nsim: 499
+    regr_method: xgboost
+  knn: !!python/object:argparse.Namespace
+    classifier: xgb
+    knn_normalize: false
+    shuffle_neighbors: 7
+    sig_samples: 200
+  lp: !!python/object:argparse.Namespace
+    J: 5
+    mu: 0.0001
+    optimizer: false
+    p_norm: 2
+    rank: 1000
+    rank_GP: 200
+  pval_ensemble: !!python/object:argparse.Namespace
+    cit_l:
+    - spearman
+    - kci
+    p_combination: stouffer
+    uit_l:
+    - spearman
+    - kci
+  rr: !!python/object:argparse.Namespace
+    lp: 1
+    rr_n_sim: 20
+  uit: d_separation
+  vt: !!python/object:argparse.Namespace
+    cit_l:
+    - spearman
+    - kci
+    uit_l:
+    - spearman
+    - kci
+  wgcm: !!python/object:argparse.Namespace
+    beta: 0.3
+    regr_meth: gam
+    weight_meth: sign
+    weight_num: 7
+    wgcm_nsim: 499

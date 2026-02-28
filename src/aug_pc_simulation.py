@@ -39,6 +39,7 @@ class SimulationAugPC(Simulation):
         self.model_params = self.augment_simu_config.model_params
         self.train_hash = compute_hash(namespace2dict(self.model_params))
         self.augment_file_info = {}
+        self.gt_aug_flag = self.mode.eval_augment_sample and 'gt_graph' in self.simu_config.augment.models
 
     def generate_param_list(self):
         param_combinations = list(
@@ -62,6 +63,8 @@ class SimulationAugPC(Simulation):
     def generate_original_sample(self):
         def generate_original_sample_group(obj):
             param_df = pd.DataFrame(self.params_combination, columns=self.keys2group + ['seed'])
+            if self.gt_aug_flag:
+                param_df.loc[:, 'n_samples'] += self.simu_config.augment.n_samples
             true_sample_param_list_dict = [{k: v for k, v in m.items()} for m in param_df.to_dict(orient='records')]
             loop = tqdm(true_sample_param_list_dict, desc='Original Sample Simulation:', leave=True)
 
@@ -82,9 +85,18 @@ class SimulationAugPC(Simulation):
 
             original_sample_group = {}
             for simu_id, param in enumerate(true_sample_param_list_dict):
+                if self.gt_aug_flag:
+                    param['n_samples'] -= self.simu_config.augment.n_samples
                 kv = tuple(list(param.values()))
                 data, graph = original_simu_res_list[simu_id]
-                original_sample_group[kv] = {'ori_data': data, 'gt_graph': graph}
+                if self.gt_aug_flag:
+                    ori_n_sample = data.shape[0] - self.simu_config.augment.n_samples
+                    ori_data = data[:ori_n_sample, :]
+                    gt_aug_sample = data[ori_n_sample:, :]
+                    original_sample_group[kv] = {'ori_data': ori_data, 'gt_graph': graph,
+                                                 'gt_aug_sample': gt_aug_sample}
+                else:
+                    original_sample_group[kv] = {'ori_data': data, 'gt_graph': graph}
             return original_sample_group
 
         self.pre_simu_config_path = os.path.join(self.storage.data_dir, 'simulation_config.yml')
@@ -99,7 +111,8 @@ class SimulationAugPC(Simulation):
                 if self.check_config(self.pre_simu_config.ori, self.ori_simu_config) and os.path.exists(pkl_file_path):
                     with open(pkl_file_path, 'rb') as f:
                         file = pickle.load(f)
-                        self.original_sample_group = {k: v for k, v in file['sample_group'].items() if k[-2] in self.augment_simu_config.models}
+                        self.original_sample_group = {k: v for k, v in file['sample_group'].items() if
+                                                      k[-2] in self.augment_simu_config.models}
                         if not self.original_sample_group:
                             self.original_sample_group = generate_original_sample_group(self)
                         else:

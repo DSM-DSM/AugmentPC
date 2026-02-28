@@ -1,0 +1,59 @@
+INFO - run_aug_pc.py - 2026-02-28 11:37:38,100 - Using device: cuda
+INFO - run_aug_pc.py - 2026-02-28 11:37:38,116 - Writing evaluation result to 2026_Feb_28_11_37_38_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_128096
+INFO - run_aug_pc.py - 2026-02-28 11:37:38,116 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 11:37:38,116 - Experiment instance id = 128096
+INFO - run_aug_pc.py - 2026-02-28 11:37:38,116 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 11:37:38,116 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-02-28 11:37:38,116 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 11:37:38,127 - Using UIT is d_separation, CIT is kci
+INFO - run_aug_pc.py - 2026-02-28 11:37:38,127 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 11:37:38,127 - Algorithm is fdr_pc
+INFO - run_aug_pc.py - 2026-02-28 11:37:38,127 - FDR Method is HybAdaProcedure
+INFO - run_aug_pc.py - 2026-02-28 11:37:38,127 - FDR Significant Level is 0.01
+INFO - aug_pc_simulation.py - 2026-02-28 11:37:38,430 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-28 11:37:38,430 - Start to generate Original and Augment samples !
+INFO - simulation.py - 2026-02-28 11:37:38,450 - previous hash does not match current hash.
+INFO - simulation.py - 2026-02-28 11:39:22,444 - previous hash does not match current hash.
+INFO - aug_pc_simulation.py - 2026-02-28 11:39:22,446 - Using gt_graph to generate augmented sample !
+ERROR - run_aug_pc.py - 2026-02-28 11:42:51,093 - Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 123, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 259, in __call__
+    SimulationAugPC.__call__(self, *args, **kwargs)
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 235, in __call__
+    self.generate_augment_sample()
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 166, in generate_augment_sample
+    augment_sample_group = self.generate_aug_sample(model)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 181, in generate_aug_sample
+    augment_sample_group.append(generator.generate())
+                                ^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\augment_data_gen\aug_data_generator.py", line 59, in generate
+    augment_data, pure_signal, graph = generator.generate(False)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\data_gen\dag_generator.py", line 114, in generate
+    self.data['V{}'.format(i)], self.pure_signal['V{}'.format(i)] = self.cfunctions[i](
+                                                                    ^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\data_gen\dag_generator.py", line 375, in __call__
+    pure_signal = self.mechanism(causes)
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\data_gen\dag_generator.py", line 364, in mechanism
+    self.layers.apply(self._initialize_weights)
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\torch\nn\modules\module.py", line 1063, in apply
+    module.apply(fn)
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\torch\nn\modules\module.py", line 1064, in apply
+    fn(self)
+  File "D:\CausalLearning\code\data_gen\dag_generator.py", line 339, in _initialize_weights
+    module.weight.data = th.from_numpy(self.weight_distribution_function(w_shape))
+                         ^^
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 1186, in _pydevd_bundle.pydevd_cython_win32_311_64.SafeCallWrapper.__call__
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 627, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 937, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 928, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 585, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.do_wait_suspend
+  File "D:\PyCharm 2025.2.5\plugins\python-ce\helpers\pydev\pydevd.py", line 1196, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "D:\PyCharm 2025.2.5\plugins\python-ce\helpers\pydev\pydevd.py", line 1211, in _do_wait_suspend
+    time.sleep(0.01)
+KeyboardInterrupt
+

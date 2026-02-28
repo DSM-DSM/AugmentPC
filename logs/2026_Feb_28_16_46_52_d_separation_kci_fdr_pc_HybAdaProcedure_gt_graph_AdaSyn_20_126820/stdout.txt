@@ -1,0 +1,43 @@
+INFO - run_aug_pc.py - 2026-02-28 16:46:52,526 - Using device: cuda
+INFO - run_aug_pc.py - 2026-02-28 16:46:52,542 - Writing evaluation result to 2026_Feb_28_16_46_52_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_126820
+INFO - run_aug_pc.py - 2026-02-28 16:46:52,542 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 16:46:52,542 - Experiment instance id = 126820
+INFO - run_aug_pc.py - 2026-02-28 16:46:52,543 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 16:46:52,543 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-02-28 16:46:52,543 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 16:46:52,544 - augment sample generating models: ['gt_graph', 'AdaSyn']
+INFO - run_aug_pc.py - 2026-02-28 16:46:52,544 - augment sample size: 20
+INFO - run_aug_pc.py - 2026-02-28 16:46:52,544 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 16:46:52,544 - Using UIT is d_separation, CIT is kci
+INFO - run_aug_pc.py - 2026-02-28 16:46:52,545 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 16:46:52,545 - Algorithm is fdr_pc
+INFO - run_aug_pc.py - 2026-02-28 16:46:52,545 - FDR Method is HybAdaProcedure
+INFO - run_aug_pc.py - 2026-02-28 16:46:52,545 - FDR Significant Level is 0.01
+INFO - run_aug_pc.py - 2026-02-28 16:46:52,545 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 16:46:52,546 - gt_graph training kwargs is Namespace(kwarg='None')
+INFO - run_aug_pc.py - 2026-02-28 16:46:52,546 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 16:46:52,546 - AdaSyn training kwargs is Namespace(n_neighbors=5)
+INFO - run_aug_pc.py - 2026-02-28 16:46:52,546 - ----------------------------------------------------------------------------------------------------
+INFO - aug_pc_simulation.py - 2026-02-28 16:46:52,863 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-28 16:46:52,864 - Start to generate Original and Augment samples !
+INFO - simulation.py - 2026-02-28 16:46:52,882 - previous hash does not match current hash.
+INFO - simulation.py - 2026-02-28 16:47:18,915 - previous hash does not match current hash.
+INFO - aug_pc_simulation.py - 2026-02-28 16:47:18,917 - Using gt_graph to generate augmented sample !
+ERROR - run_aug_pc.py - 2026-02-28 16:47:18,922 - Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 123, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 259, in __call__
+    SimulationAugPC.__call__(self, *args, **kwargs)
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 245, in __call__
+    self.generate_augment_sample()
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 176, in generate_augment_sample
+    augment_sample_group = self.generate_aug_sample(model)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 190, in generate_aug_sample
+    generator = AugDataGenerator(self, param, ori_original_data[num])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\augment_data_gen\aug_data_generator.py", line 21, in __init__
+    self.gt_graph = self.obj.original_sample_group[self.kv]['gt_graph']
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: ('Cauchy', 'Gaussian', 'polynomial', 200, 10, 3, 0, 0, 'gt_graph', 8888)
+

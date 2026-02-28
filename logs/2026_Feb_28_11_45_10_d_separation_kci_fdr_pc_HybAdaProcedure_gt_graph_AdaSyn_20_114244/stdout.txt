@@ -1,0 +1,69 @@
+INFO - run_aug_pc.py - 2026-02-28 11:45:10,509 - Using device: cuda
+INFO - run_aug_pc.py - 2026-02-28 11:45:10,525 - Writing evaluation result to 2026_Feb_28_11_45_10_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_114244
+INFO - run_aug_pc.py - 2026-02-28 11:45:10,525 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 11:45:10,525 - Experiment instance id = 114244
+INFO - run_aug_pc.py - 2026-02-28 11:45:10,525 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 11:45:10,525 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-02-28 11:45:10,525 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 11:45:10,526 - Using UIT is d_separation, CIT is kci
+INFO - run_aug_pc.py - 2026-02-28 11:45:10,526 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 11:45:10,526 - Algorithm is fdr_pc
+INFO - run_aug_pc.py - 2026-02-28 11:45:10,526 - FDR Method is HybAdaProcedure
+INFO - run_aug_pc.py - 2026-02-28 11:45:10,526 - FDR Significant Level is 0.01
+INFO - aug_pc_simulation.py - 2026-02-28 11:45:10,834 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-28 11:45:10,834 - Start to generate Original and Augment samples !
+INFO - simulation.py - 2026-02-28 11:45:10,855 - previous hash does not match current hash.
+ERROR - run_aug_pc.py - 2026-02-28 11:45:21,927 - Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 123, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 259, in __call__
+    SimulationAugPC.__call__(self, *args, **kwargs)
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 235, in __call__
+    self.generate_augment_sample()
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 157, in generate_augment_sample
+    self.generate_original_sample()  # self.original_sample_group has been created
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 108, in generate_original_sample
+    self.original_sample_group = generate_original_sample_group(self)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 71, in generate_original_sample_group
+    true_simu_res = obj.generate_grid_true_sample(param)  # true data and graph
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 59, in generate_grid_true_sample
+    simu_param = Simulation._get_grid_simulation(obj, param)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\simulation.py", line 128, in _get_grid_simulation
+    param_dp['data'], param_dp['graph'] = data_graph_generator(generator_config)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\data_gen\grid_data_generator.py", line 27, in data_graph_generator
+    return _data_graph_generator(configs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\data_gen\grid_data_generator.py", line 53, in _data_graph_generator
+    data, pure_signal, graph = generator.generate(configs.rescale)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\data_gen\dag_generator.py", line 114, in generate
+    self.data['V{}'.format(i)], self.pure_signal['V{}'.format(i)] = self.cfunctions[i](
+                                                                    ^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\data_gen\dag_generator.py", line 375, in __call__
+    pure_signal = self.mechanism(causes)
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\data_gen\dag_generator.py", line 364, in mechanism
+    self.layers.apply(self._initialize_weights)
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\torch\nn\modules\module.py", line 1063, in apply
+    module.apply(fn)
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\torch\nn\modules\module.py", line 1064, in apply
+    fn(self)
+  File "D:\CausalLearning\code\data_gen\dag_generator.py", line 339, in _initialize_weights
+    module.weight.data = th.from_numpy(self.weight_distribution_function(w_shape))
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\data_gen\dag_generator.py", line 330, in weight_distribution_function
+    flat_array = np.array([wdf() for _ in range(total_elements)], dtype=np.float32)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\data_gen\dag_generator.py", line 330, in <listcomp>
+    flat_array = np.array([wdf() for _ in range(total_elements)], dtype=np.float32)
+                           ^^^^^
+  File "D:\CausalLearning\code\utils\tools.py", line 410, in __call__
+    samples = np.random.normal(self.mu, self.sigma)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+

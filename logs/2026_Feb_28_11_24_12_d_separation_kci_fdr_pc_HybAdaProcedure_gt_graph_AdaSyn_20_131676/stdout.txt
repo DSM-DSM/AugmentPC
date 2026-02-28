@@ -1,0 +1,15 @@
+INFO - run_aug_pc.py - 2026-02-28 11:24:13,141 - Using device: cuda
+INFO - run_aug_pc.py - 2026-02-28 11:24:13,166 - Writing evaluation result to 2026_Feb_28_11_24_12_d_separation_kci_fdr_pc_HybAdaProcedure_gt_graph_AdaSyn_20_131676
+INFO - run_aug_pc.py - 2026-02-28 11:24:13,166 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 11:24:13,166 - Experiment instance id = 131676
+INFO - run_aug_pc.py - 2026-02-28 11:24:13,166 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 11:24:13,166 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-02-28 11:24:13,166 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 11:24:13,166 - Using UIT is d_separation, CIT is kci
+INFO - run_aug_pc.py - 2026-02-28 11:24:13,167 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 11:24:13,167 - Algorithm is fdr_pc
+INFO - run_aug_pc.py - 2026-02-28 11:24:13,167 - FDR Method is HybAdaProcedure
+INFO - run_aug_pc.py - 2026-02-28 11:24:13,167 - FDR Significant Level is 0.01
+INFO - aug_pc_simulation.py - 2026-02-28 11:24:13,501 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-28 11:24:13,502 - Start to generate Original and Augment samples !
+INFO - simulation.py - 2026-02-28 11:24:13,522 - previous hash does not match current hash.
