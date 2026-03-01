@@ -4,20 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="359de60c-710e-472c-9f0d-0a7dd658a83a" name="更改" comment="">
+    <list default="true" id="359de60c-710e-472c-9f0d-0a7dd658a83a" name="更改" comment="modify code of ground truth augmentation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/fdr_control.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/fdr_control.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aug_pc_result/~$fdr_control.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/augment_data/AdaSyn_augmented_sample_group.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/augment_data/AdaSyn_augmented_sample_group.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/augment_data/gt_graph_augmented_sample_group.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/augment_data/gt_graph_augmented_sample_group.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/augment_data/original_sample_group.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/augment_data/original_sample_group.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/augment_data/simulation_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/augment_data/simulation_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/augment_data_gen/aug_data_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/augment_data_gen/aug_data_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/aa1aca5d7f6402c74957d56dcfe8c4ed.json" beforeDir="false" afterPath="$PROJECT_DIR$/cache/aa1aca5d7f6402c74957d56dcfe8c4ed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aug_pc_result/2026_Feb_12_20_14_09_d_separation_spearman_pc_gt_graph_AdaSyn_20_640076/aug_pc_eval_res.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/2026_Feb_12_20_14_09_d_separation_spearman_pc_gt_graph_AdaSyn_20_640076/aug_pc_eval_res.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aug_pc_result/data_augment.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/data_augment.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/ed74c94557c23311c1c694637ddab327.json" beforeDir="false" afterPath="$PROJECT_DIR$/cache/ed74c94557c23311c1c694637ddab327.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/augment_pc_config_10.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/augment_pc_config_10.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/augment_pc_config_50.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/augment_pc_config_50.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/figure/data_augmentation/F1_vs_ensemble.png" beforeDir="false" afterPath="$PROJECT_DIR$/figure/data_augmentation/F1_vs_ensemble.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/figure/data_augmentation/FPR_vs_ensemble.png" beforeDir="false" afterPath="$PROJECT_DIR$/figure/data_augmentation/FPR_vs_ensemble.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/figure/data_augmentation/SHD_vs_ensemble.png" beforeDir="false" afterPath="$PROJECT_DIR$/figure/data_augmentation/SHD_vs_ensemble.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/figure/data_augmentation/TPR_vs_ensemble.png" beforeDir="false" afterPath="$PROJECT_DIR$/figure/data_augmentation/TPR_vs_ensemble.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/figure/data_augmentation/precision_vs_ensemble.png" beforeDir="false" afterPath="$PROJECT_DIR$/figure/data_augmentation/precision_vs_ensemble.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/figure/data_augmentation/recall_vs_ensemble.png" beforeDir="false" afterPath="$PROJECT_DIR$/figure/data_augmentation/recall_vs_ensemble.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run_aug_pc.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run_aug_pc.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aug_pc_simulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/aug_pc_simulation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visualization/data_augmentation.py" beforeDir="false" afterPath="$PROJECT_DIR$/visualization/data_augmentation.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,62 +80,62 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Notification.DisplayName-DoNotAsk-DSTableLoadingError": "加载表数据失败",
-    "Notification.DoNotAsk-DSTableLoadingError": "true",
-    "Python.1.executor": "Debug",
-    "Python.adasyn.executor": "Run",
-    "Python.aug_pc.executor": "Run",
-    "Python.data_augmentation.executor": "Run",
-    "Python.demo (1).executor": "Run",
-    "Python.demo.executor": "Debug",
-    "Python.enn.executor": "Run",
-    "Python.evaluation.executor": "Debug",
-    "Python.experiment.executor": "Debug",
-    "Python.fdr_control.executor": "Run",
-    "Python.grid_data_generator.executor": "Run",
-    "Python.noise_generator.executor": "Run",
-    "Python.p_value_ensemble.executor": "Run",
-    "Python.p_value_fdr.executor": "Run",
-    "Python.pc.executor": "Debug",
-    "Python.pipeline.executor": "Debug",
-    "Python.plot_test.executor": "Run",
-    "Python.run.executor": "Run",
-    "Python.run_aug_pc.executor": "Run",
-    "Python.run_ebh_pc.executor": "Debug",
-    "Python.run_vpca.executor": "Run",
-    "Python.s.executor": "Debug",
-    "Python.sdas.executor": "Run",
-    "Python.sdgfsd.executor": "Run",
-    "Python.test.executor": "Run",
-    "Python.tools.executor": "Run",
-    "Python.visualize.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHELLCHECK.PATH": "C:\\Users\\YJY\\AppData\\Roaming\\JetBrains\\PyCharm2025.2\\plugins\\Shell Script\\shellcheck.exe",
-    "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
-    "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
-    "WebServerToolWindowPanel.toolwindow.show.date": "false",
-    "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
-    "WebServerToolWindowPanel.toolwindow.show.size": "false",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "D:/CausalLearning/code/figure/benchmark",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "terminal",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-DSTableLoadingError&quot;: &quot;加载表数据失败&quot;,
+    &quot;Notification.DoNotAsk-DSTableLoadingError&quot;: &quot;true&quot;,
+    &quot;Python.1.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.adasyn.executor&quot;: &quot;Run&quot;,
+    &quot;Python.aug_pc.executor&quot;: &quot;Run&quot;,
+    &quot;Python.data_augmentation.executor&quot;: &quot;Run&quot;,
+    &quot;Python.demo (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.demo.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.enn.executor&quot;: &quot;Run&quot;,
+    &quot;Python.evaluation.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.experiment.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.fdr_control.executor&quot;: &quot;Run&quot;,
+    &quot;Python.grid_data_generator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.noise_generator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.p_value_ensemble.executor&quot;: &quot;Run&quot;,
+    &quot;Python.p_value_fdr.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pc.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.pipeline.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.plot_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run_aug_pc.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.run_ebh_pc.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.run_vpca.executor&quot;: &quot;Run&quot;,
+    &quot;Python.s.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.sdas.executor&quot;: &quot;Run&quot;,
+    &quot;Python.sdgfsd.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tools.executor&quot;: &quot;Run&quot;,
+    &quot;Python.visualize.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHELLCHECK.PATH&quot;: &quot;C:\\Users\\YJY\\AppData\\Roaming\\JetBrains\\PyCharm2025.2\\plugins\\Shell Script\\shellcheck.exe&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/CausalLearning/code/figure/benchmark&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReadonlyStatusHandler">
     <option name="SHOW_DIALOG" value="false" />
   </component>
@@ -154,7 +155,7 @@
       <recent name="D:\CausalLearning\code\augment_pc\data_augment" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.run_aug_pc">
+  <component name="RunManager" selected="Python.data_augmentation">
     <configuration name="data_augmentation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CausalLearning" />
       <option name="ENV_FILES" value="" />
@@ -272,8 +273,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.run_aug_pc" />
         <item itemvalue="Python.data_augmentation" />
+        <item itemvalue="Python.run_aug_pc" />
         <item itemvalue="Python.fdr_control" />
         <item itemvalue="Python.p_value_ensemble" />
         <item itemvalue="Python.run" />
@@ -713,7 +714,10 @@
       <workItem from="1772098010262" duration="268000" />
       <workItem from="1772103948550" duration="1372000" />
       <workItem from="1772242539798" duration="4875000" />
-      <workItem from="1772261232630" duration="8686000" />
+      <workItem from="1772261232630" duration="11190000" />
+      <workItem from="1772277993088" duration="1212000" />
+      <workItem from="1772281283443" duration="8692000" />
+      <workItem from="1772328051373" duration="1744000" />
     </task>
     <task id="LOCAL-00001" summary="Init Upload">
       <option name="closed" value="true" />
@@ -915,7 +919,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772005374576</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="modify code of ground truth augmentation">
+      <option name="closed" value="true" />
+      <created>1772270043955</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1772270043955</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -968,7 +980,8 @@
     <MESSAGE value="visualization data augmentation" />
     <MESSAGE value="modify aug pc result" />
     <MESSAGE value="update fdr visualization code and figure" />
-    <option name="LAST_COMMIT_MESSAGE" value="update fdr visualization code and figure" />
+    <MESSAGE value="modify code of ground truth augmentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify code of ground truth augmentation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -977,6 +990,16 @@
           <url>file://$PROJECT_DIR$/visualization/fdr_control.py</url>
           <line>93</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/aug_pc_evaluation.py</url>
+          <line>165</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/aug_pc_evaluation.py</url>
+          <line>161</line>
+          <option name="timeStamp" value="71" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -1004,12 +1027,12 @@
     <SUITE FILE_PATH="coverage/code$grid_data_generator.coverage" NAME="grid_data_generator 覆盖结果" MODIFIED="1750320812291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils/Data_gen" />
     <SUITE FILE_PATH="coverage/code$demo.coverage" NAME="demo 覆盖结果" MODIFIED="1770274299913" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fdr_control" />
     <SUITE FILE_PATH="coverage/code$pipeline.coverage" NAME="pipeline 覆盖结果" MODIFIED="1753523565552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pseudo_data_gen" />
-    <SUITE FILE_PATH="coverage/code$data_augmentation.coverage" NAME="data_augmentation 覆盖结果" MODIFIED="1772247875283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
+    <SUITE FILE_PATH="coverage/code$data_augmentation.coverage" NAME="data_augmentation 覆盖结果" MODIFIED="1772328208560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
     <SUITE FILE_PATH="coverage/code$sdas.coverage" NAME="sdas 覆盖结果" MODIFIED="1750304326298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/config" />
     <SUITE FILE_PATH="coverage/code$p_value_ensemble.coverage" NAME="p_value_ensemble 覆盖结果" MODIFIED="1771937403970" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
     <SUITE FILE_PATH="coverage/CausalLearning$adasyn.coverage" NAME="adasyn 覆盖结果" MODIFIED="1767947319887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/augment_data_gen/SMOTE" />
     <SUITE FILE_PATH="coverage/CausalLearning$enn.coverage" NAME="enn 覆盖结果" MODIFIED="1767871380810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/augdata_postprocess" />
-    <SUITE FILE_PATH="coverage/code$run_aug_pc.coverage" NAME="run_aug_pc 覆盖结果" MODIFIED="1772269760145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/code$run_aug_pc.coverage" NAME="run_aug_pc 覆盖结果" MODIFIED="1772270841952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CausalLearning$test.coverage" NAME="test 覆盖结果" MODIFIED="1765856374314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CausalLearning$p_value_fdr.coverage" NAME="p_value_fdr 覆盖结果" MODIFIED="1768205760833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fdr_control" />
     <SUITE FILE_PATH="coverage/code$experiment.coverage" NAME="experiment 覆盖结果" MODIFIED="1750644679696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/run" />

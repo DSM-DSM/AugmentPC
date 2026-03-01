@@ -1,12 +1,12 @@
 mode:
-  parallel: True
-  n_jobs: 64
+  parallel: False
+  n_jobs: 8
   eval_original_sample: False
   eval_augment_sample: True
 
 simulation:
   augment:
-    n_samples: 100
+    n_samples: 20
     models: [ 'gt_graph' ]  # 'gt_graph', 'SMOTE', 'tabDiffusion', 'AdaSyn'
     model_params:
       tabDiffusion:
@@ -85,7 +85,7 @@ test:
   uit: d_separation
   # d_separation, fisherz, spearman, kendall, robustQn, conditional_distance, kci, gcm, classifier, wgcm,
   # lp, knn, gan, dgan, diffusion, vt, pval_ensemble, eval_ensemble
-  cit: kci
+  cit: spearman
 
   eval_ensemble:
     func: product  # mean
