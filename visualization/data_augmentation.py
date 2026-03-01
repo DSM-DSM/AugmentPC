@@ -10,7 +10,7 @@ df = pd.read_excel(data_path, sheet_name='raw')
 mechanism_mask = df['causal_mechanism'] == 'polynomial'
 df.loc[mechanism_mask, 'causal_mechanism'] = 'Polynomial'
 
-metric = 'recall'  # Optional Metrics: SHD,TPR,FPR,F1,precision,recall
+metric = 'SHD'  # Optional Metrics: SHD,TPR,FPR,F1,precision,recall
 fig_path = f'../figure/data_augmentation/{metric}_vs_ensemble.png'
 # 预先定义所有可能的 CIT 方法及其颜色映射
 fixed_cit_values = df['cit'].unique()
