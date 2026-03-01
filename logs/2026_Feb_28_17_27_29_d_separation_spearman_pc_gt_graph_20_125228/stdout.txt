@@ -1,0 +1,54 @@
+INFO - run_aug_pc.py - 2026-02-28 17:27:29,340 - Using device: cuda
+INFO - run_aug_pc.py - 2026-02-28 17:27:29,364 - Writing evaluation result to 2026_Feb_28_17_27_29_d_separation_spearman_pc_gt_graph_20_125228
+INFO - run_aug_pc.py - 2026-02-28 17:27:29,364 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:27:29,364 - Experiment instance id = 125228
+INFO - run_aug_pc.py - 2026-02-28 17:27:29,364 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:27:29,364 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-02-28 17:27:29,364 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:27:29,365 - augment sample generating models: ['gt_graph']
+INFO - run_aug_pc.py - 2026-02-28 17:27:29,366 - augment sample size: 20
+INFO - run_aug_pc.py - 2026-02-28 17:27:29,366 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:27:29,366 - Using UIT is d_separation, CIT is spearman
+INFO - run_aug_pc.py - 2026-02-28 17:27:29,366 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:27:29,366 - Algorithm is pc
+INFO - run_aug_pc.py - 2026-02-28 17:27:29,366 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:27:29,366 - gt_graph training kwargs is Namespace(kwarg='None')
+INFO - run_aug_pc.py - 2026-02-28 17:27:29,366 - ----------------------------------------------------------------------------------------------------
+INFO - aug_pc_simulation.py - 2026-02-28 17:27:29,794 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-28 17:27:29,794 - Start to generate Original and Augment samples !
+INFO - aug_pc_simulation.py - 2026-02-28 17:27:29,818 - Original data has been loaded from D:\CausalLearning\code\augment_data\original_sample_group.pkl
+INFO - aug_pc_simulation.py - 2026-02-28 17:27:29,826 - Augmented data of gt_graph have been loaded from D:\CausalLearning\code\augment_data\gt_graph_augmented_sample_group.pkl
+INFO - aug_pc_simulation.py - 2026-02-28 17:27:29,837 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-28 17:27:29,837 - Generating  Original and Augment samples is over !
+INFO - aug_pc_simulation.py - 2026-02-28 17:27:29,837 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-28 17:27:29,837 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-28 17:27:29,837 - Loading Augment testers!
+INFO - tools.py - 2026-02-28 17:27:30,101 - Empty file scanning done! We find empty file(s) and Delete them.
+INFO - aug_pc_evaluation.py - 2026-02-28 17:27:30,613 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-28 17:27:30,613 - Testers are loaded!
+INFO - aug_pc_evaluation.py - 2026-02-28 17:27:30,613 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-28 17:27:30,613 - Run Aug-PC !
+INFO - tools.py - 2026-02-28 17:27:30,669 - Empty file scanning done! We find empty file(s) and Delete them.
+INFO - tools.py - 2026-02-28 17:27:46,303 - Empty file scanning done! We find empty file(s) and Delete them.
+ERROR - run_aug_pc.py - 2026-02-28 17:31:48,921 - Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 123, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 285, in __call__
+    self.eval_augment_sample()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 166, in eval_augment_sample
+    aug_pc_res = eval_func(key, aug=True)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 46, in pc
+    param, uit, cit = Evaluation._evaluate_grid_parameter(self, param)
+                      ^^^^^^^^^^
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 1186, in _pydevd_bundle.pydevd_cython_win32_311_64.SafeCallWrapper.__call__
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 627, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 1103, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 1065, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 585, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.do_wait_suspend
+  File "D:\PyCharm 2025.2.5\plugins\python-ce\helpers\pydev\pydevd.py", line 1196, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "D:\PyCharm 2025.2.5\plugins\python-ce\helpers\pydev\pydevd.py", line 1211, in _do_wait_suspend
+    time.sleep(0.01)
+KeyboardInterrupt
+

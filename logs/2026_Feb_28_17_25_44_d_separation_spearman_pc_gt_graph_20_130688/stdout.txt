@@ -1,0 +1,31 @@
+INFO - run_aug_pc.py - 2026-02-28 17:25:44,650 - Using device: cuda
+INFO - run_aug_pc.py - 2026-02-28 17:25:44,674 - Writing evaluation result to 2026_Feb_28_17_25_44_d_separation_spearman_pc_gt_graph_20_130688
+INFO - run_aug_pc.py - 2026-02-28 17:25:44,674 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:25:44,674 - Experiment instance id = 130688
+INFO - run_aug_pc.py - 2026-02-28 17:25:44,674 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:25:44,674 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-02-28 17:25:44,674 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:25:44,675 - augment sample generating models: ['gt_graph']
+INFO - run_aug_pc.py - 2026-02-28 17:25:44,675 - augment sample size: 20
+INFO - run_aug_pc.py - 2026-02-28 17:25:44,675 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:25:44,675 - Using UIT is d_separation, CIT is spearman
+INFO - run_aug_pc.py - 2026-02-28 17:25:44,675 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:25:44,675 - Algorithm is pc
+INFO - run_aug_pc.py - 2026-02-28 17:25:44,675 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-02-28 17:25:44,675 - gt_graph training kwargs is Namespace(kwarg='None')
+INFO - run_aug_pc.py - 2026-02-28 17:25:44,675 - ----------------------------------------------------------------------------------------------------
+INFO - aug_pc_simulation.py - 2026-02-28 17:25:45,113 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-28 17:25:45,113 - Start to generate Original and Augment samples !
+INFO - aug_pc_simulation.py - 2026-02-28 17:25:45,142 - Original data has been loaded from D:\CausalLearning\code\augment_data\original_sample_group.pkl
+INFO - aug_pc_simulation.py - 2026-02-28 17:25:45,151 - Augmented data of gt_graph have been loaded from D:\CausalLearning\code\augment_data\gt_graph_augmented_sample_group.pkl
+INFO - aug_pc_simulation.py - 2026-02-28 17:25:45,165 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-02-28 17:25:45,165 - Generating  Original and Augment samples is over !
+INFO - aug_pc_simulation.py - 2026-02-28 17:25:45,165 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-28 17:25:45,165 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-28 17:25:45,166 - Loading Augment testers!
+INFO - tools.py - 2026-02-28 17:25:45,513 - Empty file scanning done! We find empty file(s) and Delete them.
+INFO - aug_pc_evaluation.py - 2026-02-28 17:25:46,034 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-28 17:25:46,034 - Testers are loaded!
+INFO - aug_pc_evaluation.py - 2026-02-28 17:25:46,034 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-02-28 17:25:46,034 - Run Aug-PC !
+INFO - tools.py - 2026-02-28 17:25:46,084 - Empty file scanning done! We find empty file(s) and Delete them.
