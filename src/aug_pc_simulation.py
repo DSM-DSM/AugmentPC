@@ -174,7 +174,6 @@ class SimulationAugPC(Simulation):
         # Training augment Sample Generative Models
         for model, value in self.augment_file_info.items():
             if not value['load']:
-                self.train_augment_sample_generator(model)
                 logging.info(f'Using {model} to generate augmented sample !')
                 augment_sample_group = self.generate_aug_sample(model)
                 self.augment_file_info[model]['sample_group'] = augment_sample_group
@@ -230,15 +229,6 @@ class SimulationAugPC(Simulation):
             else:
                 return None
 
-        sub_original_sample_group = {k: v for k, v in self.original_sample_group.items() if k[-1] == gen_method}
-        train_loop = tqdm(sub_original_sample_group.items(), desc=f'Training Data Augment Generator: {gen_method}',
-                          leave=True)
-
-        model_obj_list = []
-        for key, value in train_loop:
-            model_obj = _train_grid_augment_sample_generator(self, key, value)
-            model_obj_list.append(model_obj)
-            self.original_sample_group[key]['model'] = model_obj
 
     def __call__(self, *args, **kwargs):
         logging.info('*' * 100)

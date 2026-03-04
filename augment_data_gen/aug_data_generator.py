@@ -3,7 +3,7 @@ from copy import deepcopy
 
 from cdt.data import AcyclicGraphGenerator
 
-from utils.tools import namespace2dict, dict2namespace, WeightDistributionFunction, TemporaryRandomSeed
+from utils.tools import namespace2dict, dict2namespace, WeightDistributionFunction, TemporaryRandomSeed, compute_hash
 from torch import device
 import logging
 from argparse import Namespace
@@ -28,13 +28,30 @@ class AugDataGenerator(object):
 
     def generate(self):
         param = deepcopy(self.param)
-        if self.generator_method == 'tabdiffusion':
-            tabDiffusion = self.obj.original_sample_group[self.kv]['model']
-            np.random.seed(self.seed)
-            augment_data = tabDiffusion.sample(self.aug_sample_number).detach()
+        if self.generator_method == 'tabDiffusion':
+            # Initialize Tabular Diffusion Model
+            from augment_data_gen.tabDiffusion.pipeline import tabDiffusionPipeline
+
+            np.random.seed(param['seed'])
+            y = np.random.rand(self.ori_n, 1)
+            data_hash = compute_hash({'original_data': str(self.original_data), 'y': str(y)})
+            tabDiffusion_model = tabDiffusionPipeline(
+                self.original_data, y, X_cat=None, device=self.obj.configs.test.device, data_hash=data_hash,
+                train_hash=self.obj.train_hash,
+                model_dir=self.obj.model_dir, **namespace2dict(self.obj.model_params.tabDiffusion)
+            )
+            # Training
+            tabDiffusion_model.train()
+            augment_data = tabDiffusion_model.sample(self.ori_n * 10).detach()
             if augment_data.device != device('cpu'):
-                augment_data = augment_data.cpu()
-            param['data'], param['graph'] = augment_data.numpy(), self.gt_graph
+                augment_data = augment_data.cpu().numpy()
+
+            from imblearn.under_sampling import EditedNearestNeighbours
+            enn = EditedNearestNeighbours(**namespace2dict(self.obj.model_params.ENN))
+            y = np.random.binomial(1, self.imbalance_ratio, self.ori_n * 10)
+            data, _ = enn.fit_resample(augment_data, y)
+
+            param['data'], param['graph'] = data[:self.aug_sample_number, :], self.gt_graph
 
         elif self.generator_method == 'gt_graph':
             param['data'], param['graph'] = self.obj.original_sample_group[self.kv]['gt_aug_sample'], self.gt_graph

@@ -1,0 +1,38 @@
+INFO - run_aug_pc.py - 2026-03-04 20:27:14,043 - Using device: cuda
+INFO - run_aug_pc.py - 2026-03-04 20:27:14,073 - Writing evaluation result to 2026_Mar_04_20_27_14_d_separation_spearman_pc_tabDiffusion_20_198724
+INFO - run_aug_pc.py - 2026-03-04 20:27:14,073 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 20:27:14,073 - Experiment instance id = 198724
+INFO - run_aug_pc.py - 2026-03-04 20:27:14,073 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 20:27:14,073 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-03-04 20:27:14,073 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 20:27:14,075 - augment sample generating models: ['tabDiffusion']
+INFO - run_aug_pc.py - 2026-03-04 20:27:14,075 - augment sample size: 20
+INFO - run_aug_pc.py - 2026-03-04 20:27:14,075 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 20:27:14,075 - Using UIT is d_separation, CIT is spearman
+INFO - run_aug_pc.py - 2026-03-04 20:27:14,075 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 20:27:14,075 - Algorithm is pc
+INFO - run_aug_pc.py - 2026-03-04 20:27:14,075 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 20:27:14,075 - tabDiffusion training kwargs is Namespace(batch_size=4096, dropout=0.0, hidden_dim_layer=[512, 256], dim_t=128, num_timesteps=1000, gaussian_loss_type='kl', lr=0.001, fold=5, is_y_cond=False, epochs=60000, eval_freq=10000, print_freq=5000)
+INFO - run_aug_pc.py - 2026-03-04 20:27:14,075 - ----------------------------------------------------------------------------------------------------
+INFO - aug_pc_simulation.py - 2026-03-04 20:27:14,382 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-03-04 20:27:14,382 - Start to generate Original and Augment samples !
+INFO - simulation.py - 2026-03-04 20:27:20,360 - previous hash does not match current hash.
+INFO - aug_pc_simulation.py - 2026-03-04 20:27:20,361 - Using tabDiffusion to generate augmented sample !
+ERROR - aug_data_generator.py - 2026-03-04 20:27:30,321 - Augment data generation method tabDiffusion is not valid !
+ERROR - run_aug_pc.py - 2026-03-04 20:27:30,324 - Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 123, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 259, in __call__
+    SimulationAugPC.__call__(self, *args, **kwargs)
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 248, in __call__
+    self.generate_augment_sample()
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 179, in generate_augment_sample
+    augment_sample_group = self.generate_aug_sample(model)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 194, in generate_aug_sample
+    augment_sample_group.append(generator.generate())
+                                ^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\augment_data_gen\aug_data_generator.py", line 72, in generate
+    raise NotImplementedError
+NotImplementedError
+

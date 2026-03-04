@@ -1,0 +1,75 @@
+INFO - run_aug_pc.py - 2026-03-04 21:09:23,573 - Using device: cuda
+INFO - run_aug_pc.py - 2026-03-04 21:09:23,579 - Writing evaluation result to 2026_Mar_04_21_09_23_d_separation_spearman_pc_tabDiffusion_20_202536
+INFO - run_aug_pc.py - 2026-03-04 21:09:23,579 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 21:09:23,579 - Experiment instance id = 202536
+INFO - run_aug_pc.py - 2026-03-04 21:09:23,579 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 21:09:23,579 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-03-04 21:09:23,579 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 21:09:23,579 - augment sample generating models: ['tabDiffusion']
+INFO - run_aug_pc.py - 2026-03-04 21:09:23,579 - augment sample size: 20
+INFO - run_aug_pc.py - 2026-03-04 21:09:23,579 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 21:09:23,579 - Using UIT is d_separation, CIT is spearman
+INFO - run_aug_pc.py - 2026-03-04 21:09:23,579 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 21:09:23,579 - Algorithm is pc
+INFO - run_aug_pc.py - 2026-03-04 21:09:23,579 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 21:09:23,579 - tabDiffusion training kwargs is Namespace(batch_size=4096, dropout=0.0, hidden_dim_layer=[512, 256], dim_t=128, num_timesteps=1000, gaussian_loss_type='kl', lr=0.001, fold=5, is_y_cond=False, epochs=60000, eval_freq=10000, print_freq=5000)
+INFO - run_aug_pc.py - 2026-03-04 21:09:23,579 - ----------------------------------------------------------------------------------------------------
+INFO - aug_pc_simulation.py - 2026-03-04 21:09:23,736 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-03-04 21:09:23,736 - Start to generate Original and Augment samples !
+INFO - simulation.py - 2026-03-04 21:09:26,829 - previous hash does not match current hash.
+INFO - aug_pc_simulation.py - 2026-03-04 21:09:26,831 - Using tabDiffusion to generate augmented sample !
+INFO - trainer.py - 2026-03-04 21:09:45,376 - Epoch 5000 - Total Train Loss: 0.0148, GLoss: 0.0148, MLoss: 0.0000
+INFO - trainer.py - 2026-03-04 21:10:02,119 - Epoch 10000 - Total Train Loss: 0.0159, GLoss: 0.0159, MLoss: 0.0000
+INFO - trainer.py - 2026-03-04 21:10:02,122 - Epoch 10000 - Val Loss: 0.0156
+INFO - trainer.py - 2026-03-04 21:10:18,682 - Epoch 15000 - Total Train Loss: 0.0128, GLoss: 0.0128, MLoss: 0.0000
+INFO - trainer.py - 2026-03-04 21:10:35,078 - Epoch 20000 - Total Train Loss: 0.0214, GLoss: 0.0214, MLoss: 0.0000
+INFO - trainer.py - 2026-03-04 21:10:35,082 - Epoch 20000 - Val Loss: 0.0090
+INFO - trainer.py - 2026-03-04 21:10:51,625 - Epoch 25000 - Total Train Loss: 0.0114, GLoss: 0.0114, MLoss: 0.0000
+INFO - trainer.py - 2026-03-04 21:11:08,233 - Epoch 30000 - Total Train Loss: 0.0145, GLoss: 0.0145, MLoss: 0.0000
+INFO - trainer.py - 2026-03-04 21:11:08,237 - Epoch 30000 - Val Loss: 0.0188
+INFO - trainer.py - 2026-03-04 21:11:24,764 - Epoch 35000 - Total Train Loss: 0.1230, GLoss: 0.1230, MLoss: 0.0000
+INFO - trainer.py - 2026-03-04 21:11:40,959 - Epoch 40000 - Total Train Loss: 0.0278, GLoss: 0.0278, MLoss: 0.0000
+INFO - trainer.py - 2026-03-04 21:11:40,962 - Epoch 40000 - Val Loss: 0.0142
+INFO - trainer.py - 2026-03-04 21:11:57,149 - Epoch 45000 - Total Train Loss: 0.1787, GLoss: 0.1787, MLoss: 0.0000
+INFO - trainer.py - 2026-03-04 21:12:13,326 - Epoch 50000 - Total Train Loss: 0.0531, GLoss: 0.0531, MLoss: 0.0000
+INFO - trainer.py - 2026-03-04 21:12:13,329 - Epoch 50000 - Val Loss: 0.0109
+INFO - trainer.py - 2026-03-04 21:12:29,459 - Epoch 55000 - Total Train Loss: 0.0099, GLoss: 0.0099, MLoss: 0.0000
+INFO - trainer.py - 2026-03-04 21:12:45,586 - Epoch 60000 - Total Train Loss: 0.0154, GLoss: 0.0154, MLoss: 0.0000
+INFO - trainer.py - 2026-03-04 21:12:45,589 - Epoch 60000 - Val Loss: 0.0238
+ERROR - run_aug_pc.py - 2026-03-04 21:12:46,485 - Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 123, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 259, in __call__
+    SimulationAugPC.__call__(self, *args, **kwargs)
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 238, in __call__
+    self.generate_augment_sample()
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 178, in generate_augment_sample
+    augment_sample_group = self.generate_aug_sample(model)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 193, in generate_aug_sample
+    augment_sample_group.append(generator.generate())
+                                ^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\augment_data_gen\aug_data_generator.py", line 53, in generate
+    data, _ = enn.fit_resample(raw_data, y)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\imblearn\base.py", line 204, in fit_resample
+    return super().fit_resample(X, y, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\sklearn\base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\imblearn\base.py", line 101, in fit_resample
+    X, y, binarize_y = self._check_X_y(X, y)
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\imblearn\base.py", line 159, in _check_X_y
+    X, y = validate_data(self, X=X, y=y, reset=True, accept_sparse=accept_sparse)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\sklearn\utils\validation.py", line 2919, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\sklearn\utils\validation.py", line 1333, in check_X_y
+    check_consistent_length(X, y)
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\sklearn\utils\validation.py", line 464, in check_consistent_length
+    raise ValueError(
+ValueError: Found input variables with inconsistent numbers of samples: [20, 200]
+

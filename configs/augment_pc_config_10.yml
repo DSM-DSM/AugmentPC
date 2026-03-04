@@ -7,7 +7,7 @@ mode:
 simulation:
   augment:
     n_samples: 20
-    models: [ 'gt_graph' ]  # 'gt_graph', 'SMOTE', 'tabDiffusion', 'AdaSyn'
+    models: [ 'tabDiffusion' ]  # 'gt_graph', 'SMOTE', 'tabDiffusion', 'AdaSyn'
     model_params:
       tabDiffusion:
         batch_size: 4096
@@ -20,7 +20,7 @@ simulation:
         fold: 5
         is_y_cond: False
 
-        epochs: 60000
+        epochs: 6000
         eval_freq: 10000
         print_freq: 5000
       gt_graph:
@@ -28,6 +28,8 @@ simulation:
       # SMOTE has Resample Limitation !
       SMOTE:
         k_neighbors: 5
+      ENN:
+        n_neighbors: 3
       AdaSyn:
         n_neighbors: 5
   ori:

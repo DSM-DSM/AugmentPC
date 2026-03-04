@@ -28,6 +28,8 @@ simulation:
       # SMOTE has Resample Limitation !
       SMOTE:
         k_neighbors: 5
+      ENN:
+        n_neighbors: 3
       AdaSyn:
         n_neighbors: 5
   ori:

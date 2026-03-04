@@ -1,0 +1,42 @@
+INFO - run_aug_pc.py - 2026-03-04 20:58:24,840 - Using device: cuda
+INFO - run_aug_pc.py - 2026-03-04 20:58:24,867 - Writing evaluation result to 2026_Mar_04_20_58_24_d_separation_spearman_pc_tabDiffusion_20_202300
+INFO - run_aug_pc.py - 2026-03-04 20:58:24,867 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 20:58:24,867 - Experiment instance id = 202300
+INFO - run_aug_pc.py - 2026-03-04 20:58:24,867 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 20:58:24,867 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-03-04 20:58:24,867 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 20:58:24,868 - augment sample generating models: ['tabDiffusion']
+INFO - run_aug_pc.py - 2026-03-04 20:58:24,868 - augment sample size: 20
+INFO - run_aug_pc.py - 2026-03-04 20:58:24,868 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 20:58:24,868 - Using UIT is d_separation, CIT is spearman
+INFO - run_aug_pc.py - 2026-03-04 20:58:24,868 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 20:58:24,868 - Algorithm is pc
+INFO - run_aug_pc.py - 2026-03-04 20:58:24,868 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 20:58:24,868 - tabDiffusion training kwargs is Namespace(batch_size=4096, dropout=0.0, hidden_dim_layer=[512, 256], dim_t=128, num_timesteps=1000, gaussian_loss_type='kl', lr=0.001, fold=5, is_y_cond=False, epochs=60000, eval_freq=10000, print_freq=5000)
+INFO - run_aug_pc.py - 2026-03-04 20:58:24,868 - ----------------------------------------------------------------------------------------------------
+INFO - aug_pc_simulation.py - 2026-03-04 20:58:25,172 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-03-04 20:58:25,172 - Start to generate Original and Augment samples !
+INFO - simulation.py - 2026-03-04 20:58:33,586 - previous hash does not match current hash.
+ERROR - run_aug_pc.py - 2026-03-04 21:05:07,967 - Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 123, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 259, in __call__
+    SimulationAugPC.__call__(self, *args, **kwargs)
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 248, in __call__
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 177, in generate_augment_sample
+    logging.info(f'Using {model} to generate augmented sample !')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 237, in train_augment_sample_generator
+    self.generate_param_list()
+                     ^^
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 1186, in _pydevd_bundle.pydevd_cython_win32_311_64.SafeCallWrapper.__call__
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 627, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 937, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 928, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 585, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.do_wait_suspend
+  File "D:\PyCharm 2025.2.5\plugins\python-ce\helpers\pydev\pydevd.py", line 1196, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "D:\PyCharm 2025.2.5\plugins\python-ce\helpers\pydev\pydevd.py", line 1211, in _do_wait_suspend
+    time.sleep(0.01)
+KeyboardInterrupt
+
