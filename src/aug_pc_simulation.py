@@ -39,7 +39,7 @@ class SimulationAugPC(Simulation):
         self.model_params = self.augment_simu_config.model_params
         self.train_hash = compute_hash(namespace2dict(self.model_params))
         self.augment_file_info = {}
-        self.gt_aug_flag = self.mode.eval_augment_sample and 'gt_graph' in self.simu_config.augment.models
+        self.gt_aug_flag = 'gt_graph' in self.simu_config.augment.models
 
     def generate_param_list(self):
         param_combinations = list(
@@ -187,10 +187,23 @@ class SimulationAugPC(Simulation):
                               param['sample_augment_method'] == gen_method]
         loop = tqdm(params_combination, desc='Augmented Sample Simulation:', leave=True)
 
-        augment_sample_group = []
-        for num, param in enumerate(loop):
-            generator = AugDataGenerator(self, param, ori_original_data[num])
-            augment_sample_group.append(generator.generate())
+        if not self.mode.parallel:
+            augment_sample_group = []
+            for num, param in enumerate(loop):
+                generator = AugDataGenerator(self, param, ori_original_data[num])
+                augment_sample_group.append(generator.generate())
+        else:
+            temp_folder = tempfile.mkdtemp(prefix='augment_simu_', dir=self.storage.temp_dir)
+            def augment_sample_gen(parameters, index):
+                generator = AugDataGenerator(self, parameters, ori_original_data[index])
+                return generator.generate()
+            try:
+                n_jobs = min(len(loop), self.mode.n_jobs)
+                with joblib.parallel_backend('loky'):
+                    augment_sample_group = Parallel(n_jobs=n_jobs, temp_folder=temp_folder)(
+                        delayed(augment_sample_gen)(param, num) for num, param in enumerate(loop))
+            finally:
+                shutil.rmtree(temp_folder, ignore_errors=True)
 
         return augment_sample_group
 
@@ -207,28 +220,6 @@ class SimulationAugPC(Simulation):
 
         with open(os.path.join(self.storage.data_dir, 'original_sample_group.pkl'), 'wb') as f:
             pickle.dump({'sample_group': self.original_sample_group}, f)
-
-    def train_augment_sample_generator(self, gen_method):
-        def _train_grid_augment_sample_generator(obj, key, value):
-            from augment_data_gen.tabDiffusion.pipeline import tabDiffusionPipeline
-
-            gen_method = key[-1]
-            if gen_method == 'tabDiffusion':
-                np.random.seed(key[-2])
-                original_data = value['ori_data']
-                y = np.random.rand(original_data.shape[0], 1)
-                data_hash = compute_hash({'original_data': str(original_data), 'y': str(y)})
-                tabDiffusion_model = tabDiffusionPipeline(
-                    original_data, y, X_cat=None, device=obj.configs.test.device, data_hash=data_hash,
-                    train_hash=obj.train_hash,
-                    model_dir=obj.model_dir, **namespace2dict(obj.model_params.tabDiffusion)
-                )
-                # Loading Pre-Trained Models of Starting Training
-                tabDiffusion_model.train()
-                return tabDiffusion_model
-            else:
-                return None
-
 
     def __call__(self, *args, **kwargs):
         logging.info('*' * 100)
