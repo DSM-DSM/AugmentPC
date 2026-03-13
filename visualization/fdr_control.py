@@ -4,21 +4,32 @@ import seaborn as sns
 from matplotlib.font_manager import FontProperties
 from matplotlib.gridspec import GridSpec, GridSpecFromSubplotSpec
 from itertools import product
+import matplotlib.pyplot as mlp
 
+mlp.rcParams['font.sans-serif'] = ['SimHei']
+mlp.rcParams['axes.unicode_minus'] = False
+save = True
 data_path = '../aug_pc_result/fdr_control.xlsx'
 df = pd.read_excel(data_path, sheet_name='raw')
-mechanism_mask = df['causal_mechanism'] == 'polynomial'
-df.loc[mechanism_mask, 'causal_mechanism'] = 'Polynomial'
+df['noise'] = df['noise'].map({
+    'Cauchy': 'cauchy',
+    'GaussianMixture5': 'gm5'
+})
 
 metrics = ['F1', 'TPR', 'FPR', 'SHD']
 fig_path = f'../figure/fdr_control/bh_bc_hyb.png'
 # 预先定义所有可能的 CIT 方法及其颜色映射
-procedure = ['BCProcedure', 'BHProcedure', 'HybAdaProcedure']
+df['procedure'] = df['procedure'].map({
+    'BCProcedure': 'BC程序',
+    'BHProcedure': 'BH程序',
+    'HybAdaProcedure': 'HybAda程序'
+})
+procedure = ['BC程序', 'BH程序', 'HybAda程序']
 procedure_palette = sns.color_palette('Paired', len(procedure))
 procedure_color_map = dict(zip(procedure, procedure_palette))
 
 # 其余设置保持不变
-dpi = 300
+dpi = 400
 grid_info_font_size = 20
 fig_x_range = [0.08, 0.95]
 fig_y_range = [0.1, 0.9]
@@ -61,7 +72,7 @@ for i, row in enumerate(row_index):
             fig.text(
                 x=fig_x_range[0],
                 y=fig_y_range[0] + (fig_y_range[1] - fig_y_range[0]) * (i + 0.5) / len(row_index),
-                s=f'Mechanism: {row[0]}\nNoise: {row[1]}',
+                s=f'因果机制: {row[0]}\n噪声分布: {row[1]}',
                 ha='center',
                 va='center',
                 fontsize=grid_info_font_size,
@@ -75,7 +86,7 @@ for i, row in enumerate(row_index):
             fig.text(
                 x=fig_x_range[0] + (fig_x_range[1] - fig_x_range[0]) * (j + 0.5) / len(col_index),
                 y=fig_y_range[1],
-                s=f'Nodes: {col[0]}\nExpected Degree: {col[1]}',
+                s=f'节点数: {col[0]}，期望边数: {str(int(float(col[1]) * float(col[0])))}',
                 ha='center',
                 va='center',
                 fontsize=grid_info_font_size,
@@ -91,15 +102,27 @@ for i, row in enumerate(row_index):
         for k, metric in enumerate(metrics):
             df_filter2 = df_filter.loc[~pc_mask, :]
             ax = fig.add_subplot(inner_grid[k])
-            sns.boxplot(x='fdr_alpha', y=metric, data=df_filter2, hue='procedure',
-                        palette=procedure_palette, ax=ax, legend=False, showmeans=True,
-                        meanprops={'marker': 'o', 'markerfacecolor': 'white', 'markeredgecolor': 'black'},
-                        flierprops=dict(
-                            marker='*',
-                            markerfacecolor='red',
-                            markersize=5,
-                            markeredgecolor='red'
-                        ))
+            # HybAda Failed when p=50 and expected degree = 2
+            if j == 2:
+                sns.boxplot(x='fdr_alpha', y=metric, data=df_filter2, hue='procedure',
+                            palette=procedure_palette[:2], ax=ax, legend=False, showmeans=True, hue_order=procedure[:2],
+                            meanprops={'marker': 'o', 'markerfacecolor': 'white', 'markeredgecolor': 'black'},
+                            flierprops=dict(
+                                marker='*',
+                                markerfacecolor='red',
+                                markersize=5,
+                                markeredgecolor='red'
+                            ))
+            else:
+                sns.boxplot(x='fdr_alpha', y=metric, data=df_filter2, hue='procedure',
+                            palette=procedure_palette, ax=ax, legend=False, showmeans=True, hue_order=procedure,
+                            meanprops={'marker': 'o', 'markerfacecolor': 'white', 'markeredgecolor': 'black'},
+                            flierprops=dict(
+                                marker='*',
+                                markerfacecolor='red',
+                                markersize=5,
+                                markeredgecolor='red'
+                            ))
             df_filter3 = df_filter.loc[pc_mask, :]
             mean_val = float(df_filter3[metric].mean())
             # 计算 5% 和 95% 分位数
@@ -119,6 +142,10 @@ for i, row in enumerate(row_index):
             ax.spines['right'].set_visible(False)
             ax.set_ylabel('')
             ax.set_xlabel(str(metric))
+            if metric == 'FPR' and j:
+                ax.set_ylim(0, 0.1)  # 添加这一行，固定y轴范围
+            elif metric in ['TRP', 'F1']:
+                ax.set_ylim(0, 1)
             fig.add_subplot(ax)
 
 legend_elements = [plt.Line2D([0], [0], marker='s', color='w',
@@ -144,7 +171,7 @@ for handle in legend.legend_handles:
 
 legend_bbox = legend.get_window_extent().transformed(fig.transFigure.inverted())
 
-fig.text(legend_bbox.x0 - 0.02, (legend_bbox.y0 + legend_bbox.y1) / 2, 'FDR Control Methods:',
+fig.text(legend_bbox.x0 - 0.02, (legend_bbox.y0 + legend_bbox.y1) / 2, 'FDR控制方法：',
          fontsize=24,
          fontfamily=font_family,
          fontstyle=font_style,
@@ -152,6 +179,8 @@ fig.text(legend_bbox.x0 - 0.02, (legend_bbox.y0 + legend_bbox.y1) / 2, 'FDR Cont
          color=font_color,
          ha='right',
          va='center')
-# fig.show()
-fig.savefig(fig_path, dpi=dpi, bbox_inches='tight')
-plt.close(fig)
+if save:
+    fig.savefig(fig_path, dpi=dpi, bbox_inches='tight')
+    plt.close(fig)
+else:
+    fig.show()
