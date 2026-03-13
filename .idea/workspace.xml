@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="359de60c-710e-472c-9f0d-0a7dd658a83a" name="更改" comment="experiment modification">
+    <list default="true" id="359de60c-710e-472c-9f0d-0a7dd658a83a" name="更改" comment="modify figures">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/visualization/data_augmentation.py" beforeDir="false" afterPath="$PROJECT_DIR$/visualization/data_augmentation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/visualization/fdr_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/visualization/fdr_control.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/visualization/p_value_ensemble.py" beforeDir="false" afterPath="$PROJECT_DIR$/visualization/p_value_ensemble.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aug_pc_result/p_ensemble&amp;fdr_control.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/p_ensemble&amp;fdr_control.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aug_pc_result/p_ensemble&amp;fdr_control_average_rank.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/p_ensemble&amp;fdr_control_average_rank.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aug_pc_result/p_value_ensemble_fdr_control_ave_rank.py" beforeDir="false" afterPath="$PROJECT_DIR$/aug_pc_result/p_value_ensemble_fdr_control_ave_rank.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +84,7 @@
     "Python.1.executor": "Debug",
     "Python.adasyn.executor": "Run",
     "Python.aug_pc.executor": "Run",
-    "Python.cit_benchmark.executor": "Debug",
+    "Python.cit_benchmark.executor": "Run",
     "Python.data_augmentation.executor": "Run",
     "Python.demo (1).executor": "Run",
     "Python.demo.executor": "Run",
@@ -96,6 +96,7 @@
     "Python.noise_generator.executor": "Run",
     "Python.p_value_ensemble.executor": "Run",
     "Python.p_value_ensemble_fdr_control.executor": "Debug",
+    "Python.p_value_ensemble_fdr_control_ave_rank.executor": "Run",
     "Python.p_value_fdr.executor": "Run",
     "Python.pc.executor": "Debug",
     "Python.pipeline.executor": "Debug",
@@ -154,7 +155,7 @@
       <recent name="D:\CausalLearning\code" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.p_value_ensemble_fdr_control">
+  <component name="RunManager" selected="Python.data_augmentation">
     <configuration name="cit_benchmark" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CausalLearning" />
       <option name="ENV_FILES" value="" />
@@ -247,7 +248,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="p_value_ensemble_fdr_control" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="p_value_ensemble_fdr_control_ave_rank" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CausalLearning" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -256,12 +257,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/visualization" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aug_pc_result" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/visualization/p_value_ensemble_fdr_control.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/aug_pc_result/p_value_ensemble_fdr_control_ave_rank.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -272,11 +273,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.p_value_ensemble_fdr_control" />
-        <item itemvalue="Python.cit_benchmark" />
-        <item itemvalue="Python.p_value_ensemble" />
-        <item itemvalue="Python.fdr_control" />
         <item itemvalue="Python.data_augmentation" />
+        <item itemvalue="Python.p_value_ensemble" />
+        <item itemvalue="Python.cit_benchmark" />
+        <item itemvalue="Python.fdr_control" />
+        <item itemvalue="Python.p_value_ensemble_fdr_control_ave_rank" />
       </list>
     </recent_temporary>
   </component>
@@ -747,7 +748,8 @@
       <workItem from="1773242140995" duration="751000" />
       <workItem from="1773277529450" duration="6200000" />
       <workItem from="1773302098493" duration="9704000" />
-      <workItem from="1773359773437" duration="15501000" />
+      <workItem from="1773359773437" duration="19316000" />
+      <workItem from="1773411492456" duration="218000" />
     </task>
     <task id="LOCAL-00001" summary="Init Upload">
       <option name="closed" value="true" />
@@ -1085,7 +1087,23 @@
       <option name="project" value="LOCAL" />
       <updated>1773392553698</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="modify ':' to '：'">
+      <option name="closed" value="true" />
+      <created>1773394496203</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1773394496203</updated>
+    </task>
+    <task id="LOCAL-00044" summary="modify figures">
+      <option name="closed" value="true" />
+      <created>1773411707449</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1773411707449</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1118,11 +1136,9 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="update log print format" />
     <MESSAGE value="update" />
     <MESSAGE value="update results" />
     <MESSAGE value="update README.md" />
-    <MESSAGE value="modify figures" />
     <MESSAGE value="add pval ensemble visualization" />
     <MESSAGE value="modify aug pc results" />
     <MESSAGE value="visualization data augmentation" />
@@ -1143,7 +1159,9 @@
     <MESSAGE value="upload augment experiment results" />
     <MESSAGE value="modify chinese version figures" />
     <MESSAGE value="experiment modification" />
-    <option name="LAST_COMMIT_MESSAGE" value="experiment modification" />
+    <MESSAGE value="modify ':' to '：'" />
+    <MESSAGE value="modify figures" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify figures" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1194,6 +1212,7 @@
     <SUITE FILE_PATH="coverage/code$aug_pc.coverage" NAME="aug_pc 覆盖结果" MODIFIED="1772357086880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/workflow" />
     <SUITE FILE_PATH="coverage/code$evaluation.coverage" NAME="evaluation 覆盖结果" MODIFIED="1750411175957" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/CausalLearning$1.coverage" NAME="1 覆盖结果" MODIFIED="1757077000470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Desktop/夏令营拍照图片" />
+    <SUITE FILE_PATH="coverage/code$p_value_ensemble_fdr_control_ave_rank.coverage" NAME="p_value_ensemble_fdr_control_ave_rank 覆盖结果" MODIFIED="1773411517897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aug_pc_result" />
     <SUITE FILE_PATH="coverage/CausalLearning$run_aug_pc.coverage" NAME="run_aug_pc 覆盖结果" MODIFIED="1768878049744" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CausalLearning$visualize.coverage" NAME="visualize 覆盖结果" MODIFIED="1760767953053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CausalLearning$run_ebh_pc.coverage" NAME="run_aug_pc 覆盖结果" MODIFIED="1766838677972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -1207,19 +1226,19 @@
     <SUITE FILE_PATH="coverage/code$grid_data_generator.coverage" NAME="grid_data_generator 覆盖结果" MODIFIED="1750320812291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils/Data_gen" />
     <SUITE FILE_PATH="coverage/code$demo.coverage" NAME="demo 覆盖结果" MODIFIED="1773158413251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fdr_control" />
     <SUITE FILE_PATH="coverage/code$pipeline.coverage" NAME="pipeline 覆盖结果" MODIFIED="1753523565552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pseudo_data_gen" />
-    <SUITE FILE_PATH="coverage/code$data_augmentation.coverage" NAME="data_augmentation 覆盖结果" MODIFIED="1773386295545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
+    <SUITE FILE_PATH="coverage/code$data_augmentation.coverage" NAME="data_augmentation 覆盖结果" MODIFIED="1773411560306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
     <SUITE FILE_PATH="coverage/code$sdas.coverage" NAME="sdas 覆盖结果" MODIFIED="1750304326298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/config" />
-    <SUITE FILE_PATH="coverage/code$p_value_ensemble.coverage" NAME="p_value_ensemble 覆盖结果" MODIFIED="1773386581174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
+    <SUITE FILE_PATH="coverage/code$p_value_ensemble.coverage" NAME="p_value_ensemble 覆盖结果" MODIFIED="1773411539273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
     <SUITE FILE_PATH="coverage/CausalLearning$adasyn.coverage" NAME="adasyn 覆盖结果" MODIFIED="1767947319887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/augment_data_gen/SMOTE" />
     <SUITE FILE_PATH="coverage/CausalLearning$enn.coverage" NAME="enn 覆盖结果" MODIFIED="1767871380810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/augdata_postprocess" />
     <SUITE FILE_PATH="coverage/code$run_aug_pc.coverage" NAME="run_aug_pc 覆盖结果" MODIFIED="1773158367892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CausalLearning$test.coverage" NAME="test 覆盖结果" MODIFIED="1765856374314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CausalLearning$p_value_fdr.coverage" NAME="p_value_fdr 覆盖结果" MODIFIED="1768205760833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fdr_control" />
-    <SUITE FILE_PATH="coverage/code$cit_benchmark.coverage" NAME="cit_benchmark 覆盖结果" MODIFIED="1773393174139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
+    <SUITE FILE_PATH="coverage/code$cit_benchmark.coverage" NAME="cit_benchmark 覆盖结果" MODIFIED="1773411530056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
     <SUITE FILE_PATH="coverage/code$experiment.coverage" NAME="experiment 覆盖结果" MODIFIED="1750644679696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/run" />
     <SUITE FILE_PATH="coverage/CausalLearning$s.coverage" NAME="s 覆盖结果" MODIFIED="1766736774637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CausalLearning$sdgfsd.coverage" NAME="sdgfsd 覆盖结果" MODIFIED="1757077126425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Desktop/夏令营拍照图片" />
-    <SUITE FILE_PATH="coverage/code$fdr_control.coverage" NAME="fdr_control 覆盖结果" MODIFIED="1773386433203" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
+    <SUITE FILE_PATH="coverage/code$fdr_control.coverage" NAME="fdr_control 覆盖结果" MODIFIED="1773411521469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
     <SUITE FILE_PATH="coverage/code$noise_generator.coverage" NAME="noise_generator 覆盖结果" MODIFIED="1750397165975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils/data_gen" />
   </component>
 </project>

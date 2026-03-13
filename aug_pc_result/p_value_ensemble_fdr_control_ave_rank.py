@@ -6,16 +6,21 @@ df = pd.read_excel(data_path, sheet_name='summary')
 metric_l = ['F1', 'TPR', 'FPR', 'SHD', 'precision', 'recall']
 param_l = [(10, 3), (50, 0.4), (50, 2)]
 
+df_range_data = []
 df_new_data = []
 for p, expected_degree in param_l:
     mask = (df['nodes'] == p) & (df['expected_degree'] == expected_degree)
     df_slice = df.loc[mask, :]
     df_slice_group1 = df_slice.groupby(['causal_mechanism', 'noise'])
     for gid, data in df_slice_group1:
+        range_data = [p, expected_degree] + list(gid)
         for metric in metric_l:
             metric_mean = data[metric].str.extract(r'(\d+\.?\d*)', expand=False)
             metric_mean = pd.to_numeric(metric_mean, errors='coerce')
             data[f'{metric}_rank'] = metric_mean.rank(method="dense", ascending=False)
+            range_data = range_data + [metric_mean.max() - metric_mean.min()]
+
+        df_range_data.append(range_data)
         df_new_data.extend(data.values)
 
 rank_metric_col = [f'{m}_rank' for m in metric_l]
@@ -31,8 +36,21 @@ for p, expected_degree in param_l:
         average_rank_data = [p, expected_degree] + list(gid) + list(data.loc[:, rank_metric_col].mean().round(2))
         average_rank.append(average_rank_data)
 
-average_rank_columns = ['节点数', '期望边数', 'CIT', 'p值集成方式', '可容忍错误发现率'] + [f'{m}平均秩' for m in metric_l]
+average_rank_columns = ['节点数', '期望边数', 'CIT', 'p值集成方式', '可容忍错误发现率'] + [f'{m}平均秩' for m in
+                                                                                           metric_l]
 df_average_rank = pd.DataFrame(average_rank, columns=average_rank_columns)
-df_average_rank.loc[df_average_rank['CIT'] == 'pval_ensemble', 'CIT'] = df_average_rank.loc[df_average_rank['CIT'] == 'pval_ensemble', 'p值集成方式'] + ' ensemble'
-df_average_rank.loc[:,'期望边数'] = df_average_rank['期望边数'] * df_average_rank['节点数']
-df_average_rank.to_excel('../aug_pc_result/p_ensemble&fdr_control_average_rank.xlsx', index=False)
+df_average_rank.loc[df_average_rank['CIT'] == 'pval_ensemble', 'CIT'] = df_average_rank.loc[df_average_rank[
+                                                                                                'CIT'] == 'pval_ensemble', 'p值集成方式'] + ' ensemble'
+df_average_rank.loc[:, '期望边数'] = df_average_rank['期望边数'] * df_average_rank['节点数']
+
+range_columns = ['节点数', '期望边数', '因果机制', '噪声'] + [f'{m}极差' for m in metric_l]
+df_range = pd.DataFrame(df_range_data, columns=range_columns)
+df_range.loc[:, '期望边数'] = df_range['期望边数'] * df_range['节点数']
+df_range['噪声'] = df_range['噪声'].map({
+    'Cauchy': 'cauchy',
+    'GaussianMixture5': 'gm5'
+})
+
+with pd.ExcelWriter('../aug_pc_result/p_ensemble&fdr_control_average_rank.xlsx', engine='openpyxl') as writer:
+    df_average_rank.to_excel(writer, sheet_name='metric_ave_rank', index=False)
+    df_range.to_excel(writer, sheet_name='metric_range', index=False)
