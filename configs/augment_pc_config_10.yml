@@ -1,13 +1,13 @@
 mode:
-  parallel: False
-  n_jobs: 8
-  eval_original_sample: False
-  eval_augment_sample: True
+  parallel: True
+  n_jobs: 40
+  eval_original_sample: True
+  eval_augment_sample: False
 
 simulation:
   augment:
     n_samples: 20
-    models: [ 'tabDiffusion' ]  # 'gt_graph', 'SMOTE', 'tabDiffusion', 'AdaSyn'
+    models: [ 'gt_graph' ]  # 'gt_graph', 'SMOTE', 'tabDiffusion', 'AdaSyn'
     model_params:
       tabDiffusion:
         batch_size: 4096
@@ -20,7 +20,7 @@ simulation:
         fold: 5
         is_y_cond: False
 
-        epochs: 6000
+        epochs: 60000
         eval_freq: 10000
         print_freq: 5000
       gt_graph:
@@ -36,7 +36,7 @@ simulation:
     n_samples: [ 200 ]
     n_points: [ 10 ]  # 10, 50
     exp_degree: [ 3 ]  # expectation of edge is n_points * exp_degree
-    causal_mechanism: [ 'nn' ] # ['linear', 'polynomial', 'sigmoid_add', 'sigmoid_mix', 'gp_add', 'gp_mix', 'nn']
+    causal_mechanism: [ 'nn','polynomial' ] # ['linear', 'polynomial', 'sigmoid_add', 'sigmoid_mix', 'gp_add', 'gp_mix', 'nn']
     noise_coeff: 1.
     noise_type: [ 'Cauchy','GaussianMixture5' ] # 'Gaussian', 'GaussianMixture5', 'Cauchy', 'T5'
     root: [ 'Gaussian' ]  # 'Gaussian', 'Cauchy', 'Uniform'
@@ -65,17 +65,17 @@ simulation:
 
 evaluation:
   algorithm:
-    algo: 'pc' # pc, deduce_dep_pc, fdr_pc
+    algo: 'fdr_pc' # pc, deduce_dep_pc, fdr_pc
     fdr_pc:
       # Option for p-value-based Procedure:
       # BHProcedure, BCProcedure,
       # HybAdaProcedure, FastHybAdaProcedure
-      procedure: HybAdaProcedure
+      procedure: BHProcedure
     deduce_dep_pc:
       deduce_dep_k: 1
 
   multiple_test_kwargs: {
-    alpha: 0.01,
+    alpha: 0.25,
     epsilon: 0.001,
   }
 
@@ -87,14 +87,14 @@ test:
   uit: d_separation
   # d_separation, fisherz, spearman, kendall, robustQn, conditional_distance, kci, gcm, classifier, wgcm,
   # lp, knn, gan, dgan, diffusion, vt, pval_ensemble, eval_ensemble
-  cit: spearman
+  cit: pval_ensemble
 
   eval_ensemble:
     func: product  # mean
     uit_l: [ spearman,kci ]
     cit_l: [ spearman,kci ]
   pval_ensemble:
-    p_combination: 'stouffer'  # 'cauchy', 'stouffer', 'fisher'
+    p_combination: 'fisher'  # 'cauchy', 'stouffer', 'fisher'
     uit_l: [ spearman,kci ]
     cit_l: [ spearman,kci ]
   vt:

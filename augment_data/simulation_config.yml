@@ -23,17 +23,20 @@ augment: !!python/object:argparse.Namespace
       kwarg: None
     SMOTE: !!python/object:argparse.Namespace
       k_neighbors: 5
+    ENN: !!python/object:argparse.Namespace
+      n_neighbors: 3
     AdaSyn: !!python/object:argparse.Namespace
       n_neighbors: 5
 ori: !!python/object:argparse.Namespace
   n_samples:
   - 200
   n_points:
-  - 10
+  - 50
   exp_degree:
-  - 3
+  - 2
   causal_mechanism:
   - nn
+  - polynomial
   noise_coeff: 1.0
   noise_type:
   - Cauchy

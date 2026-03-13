@@ -18,5 +18,7 @@ gt_graph: !!python/object:argparse.Namespace
   kwarg: None
 SMOTE: !!python/object:argparse.Namespace
   k_neighbors: 5
+ENN: !!python/object:argparse.Namespace
+  n_neighbors: 3
 AdaSyn: !!python/object:argparse.Namespace
   n_neighbors: 5

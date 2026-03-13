@@ -42,16 +42,21 @@ class AugDataGenerator(object):
             )
             # Training
             tabDiffusion_model.train()
-            augment_data = tabDiffusion_model.sample(self.ori_n * 10).detach()
-            if augment_data.device != device('cpu'):
-                augment_data = augment_data.cpu().numpy()
 
-            from imblearn.under_sampling import EditedNearestNeighbours
-            enn = EditedNearestNeighbours(**namespace2dict(self.obj.model_params.ENN))
-            y = np.random.binomial(1, self.imbalance_ratio, self.ori_n * 10)
-            data, _ = enn.fit_resample(augment_data, y)
+            augment_sample_arr = np.zeros((0, self.ori_p))
+            while augment_sample_arr.shape[0] < self.aug_sample_number:
+                augment_data = tabDiffusion_model.sample(self.ori_n * 10).detach()
+                if augment_data.device != device('cpu'):
+                    augment_data = augment_data.cpu().numpy()
 
-            param['data'], param['graph'] = data[:self.aug_sample_number, :], self.gt_graph
+                from imblearn.under_sampling import EditedNearestNeighbours
+                enn = EditedNearestNeighbours(**namespace2dict(self.obj.model_params.ENN))
+                y = np.random.binomial(1, self.imbalance_ratio, self.ori_n * 10)
+                data, _ = enn.fit_resample(augment_data, y)
+                data = data.reshape(-1, self.ori_p)
+                augment_data_arr = np.concatenate((augment_sample_arr, data), axis=0)
+
+            param['data'], param['graph'] = augment_data_arr[:self.aug_sample_number, :], self.gt_graph
 
         elif self.generator_method == 'gt_graph':
             param['data'], param['graph'] = self.obj.original_sample_group[self.kv]['gt_aug_sample'], self.gt_graph
