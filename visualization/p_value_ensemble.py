@@ -73,7 +73,7 @@ for metric in metric_l:
                 fig.text(
                     x=fig_x_range[0],
                     y=fig_y_range[0] + (fig_y_range[1] - fig_y_range[0]) * (i + 0.5) / len(row_index),
-                    s=f'因果机制: {row[0]}\n噪声分布: {row[1]}',
+                    s=f'因果机制：{row[0]}\n噪声分布：{row[1]}',
                     ha='center',
                     va='center',
                     fontsize=grid_info_font_size,
@@ -87,7 +87,7 @@ for metric in metric_l:
                 fig.text(
                     x=fig_x_range[0] + (fig_x_range[1] - fig_x_range[0]) * (j + 0.5) / len(col_index),
                     y=fig_y_range[1],
-                    s=f'节点数: {col[0]}，期望边数: {str(int(float(col[1]) * float(col[0])))}',
+                    s=f'节点数：{col[0]}，期望边数：{str(int(float(col[1]) * float(col[0])))}',
                     ha='center',
                     va='center',
                     fontsize=grid_info_font_size,
