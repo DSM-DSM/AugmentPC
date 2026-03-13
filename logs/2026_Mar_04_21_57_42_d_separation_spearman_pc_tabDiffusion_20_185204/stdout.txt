@@ -1,0 +1,53 @@
+INFO - run_aug_pc.py - 2026-03-04 21:57:42,168 - Using device: cuda
+INFO - run_aug_pc.py - 2026-03-04 21:57:42,176 - Writing evaluation result to 2026_Mar_04_21_57_42_d_separation_spearman_pc_tabDiffusion_20_185204
+INFO - run_aug_pc.py - 2026-03-04 21:57:42,176 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 21:57:42,176 - Experiment instance id = 185204
+INFO - run_aug_pc.py - 2026-03-04 21:57:42,176 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 21:57:42,176 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-03-04 21:57:42,176 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 21:57:42,177 - augment sample generating models: ['tabDiffusion']
+INFO - run_aug_pc.py - 2026-03-04 21:57:42,177 - augment sample size: 20
+INFO - run_aug_pc.py - 2026-03-04 21:57:42,177 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 21:57:42,177 - Using UIT is d_separation, CIT is spearman
+INFO - run_aug_pc.py - 2026-03-04 21:57:42,177 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 21:57:42,177 - Algorithm is pc
+INFO - run_aug_pc.py - 2026-03-04 21:57:42,177 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 21:57:42,177 - tabDiffusion training kwargs is Namespace(batch_size=4096, dropout=0.0, hidden_dim_layer=[512, 256], dim_t=128, num_timesteps=1000, gaussian_loss_type='kl', lr=0.001, fold=5, is_y_cond=False, epochs=60000, eval_freq=10000, print_freq=5000)
+INFO - run_aug_pc.py - 2026-03-04 21:57:42,177 - ----------------------------------------------------------------------------------------------------
+INFO - aug_pc_simulation.py - 2026-03-04 21:57:42,434 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-03-04 21:57:42,434 - Start to generate Original and Augment samples !
+INFO - simulation.py - 2026-03-04 21:57:42,445 - previous hash does not match current hash.
+INFO - simulation.py - 2026-03-04 21:57:47,773 - previous hash does not match current hash.
+INFO - simulation.py - 2026-03-04 21:57:47,773 - previous hash does not match current hash.
+INFO - aug_pc_simulation.py - 2026-03-04 21:57:47,774 - Using tabDiffusion to generate augmented sample !
+INFO - trainer.py - 2026-03-04 21:58:07,299 - Epoch 5000 - Total Train Loss: 0.0143, GLoss: 0.0143, MLoss: 0.0000
+ERROR - run_aug_pc.py - 2026-03-04 21:58:22,567 - Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 123, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 259, in __call__
+    SimulationAugPC.__call__(self, *args, **kwargs)
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 238, in __call__
+    self.generate_augment_sample()
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 178, in generate_augment_sample
+    augment_sample_group = self.generate_aug_sample(model)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 193, in generate_aug_sample
+    augment_sample_group.append(generator.generate())
+                                ^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\augment_data_gen\aug_data_generator.py", line 44, in generate
+    tabDiffusion_model.train()
+  File "D:\CausalLearning\code\augment_data_gen\tabDiffusion\pipeline.py", line 107, in train
+    self.trainer.train(epochs=self.epochs, batch_size=self.batch_size, lr=self.lr, print_freq=self.print_freq,
+  File "D:\CausalLearning\code\augment_data_gen\tabDiffusion\trainer.py", line 47, in train
+    loss.backward()
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\torch\_tensor.py", line 625, in backward
+    torch.autograd.backward(
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\torch\autograd\__init__.py", line 354, in backward
+    _engine_run_backward(
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\torch\autograd\graph.py", line 837, in _engine_run_backward
+    attach_logging_hooks = log.getEffectiveLevel() <= logging.DEBUG
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\logging\__init__.py", line 1728, in getEffectiveLevel
+    while logger:
+KeyboardInterrupt
+

@@ -1,0 +1,75 @@
+INFO - run_aug_pc.py - 2026-03-08 19:52:16,411 - Using device: cuda
+INFO - run_aug_pc.py - 2026-03-08 19:52:16,417 - Writing evaluation result to 2026_Mar_08_19_52_16_d_separation_pval_ensemble_fdr_pc_BCProcedure_gt_graph_20_21368
+INFO - run_aug_pc.py - 2026-03-08 19:52:16,417 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-08 19:52:16,417 - Experiment instance id = 21368
+INFO - run_aug_pc.py - 2026-03-08 19:52:16,417 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-08 19:52:16,417 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-03-08 19:52:16,417 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-08 19:52:16,417 - Using UIT is d_separation, CIT is pval_ensemble
+INFO - run_aug_pc.py - 2026-03-08 19:52:16,417 - Using CIT List: ['spearman', 'kci']
+INFO - run_aug_pc.py - 2026-03-08 19:52:16,417 - P Value Ensemble Method is cauchy
+INFO - run_aug_pc.py - 2026-03-08 19:52:16,417 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-08 19:52:16,417 - Algorithm is fdr_pc
+INFO - run_aug_pc.py - 2026-03-08 19:52:16,417 - FDR Method is BCProcedure
+INFO - run_aug_pc.py - 2026-03-08 19:52:16,417 - FDR Significant Level is 0.2
+INFO - aug_pc_simulation.py - 2026-03-08 19:52:16,578 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-03-08 19:52:16,578 - Start to generate Original and Augment samples !
+INFO - simulation.py - 2026-03-08 19:52:16,582 - previous hash does not match current hash.
+INFO - simulation.py - 2026-03-08 19:52:22,027 - previous hash does not match current hash.
+INFO - simulation.py - 2026-03-08 19:52:22,027 - previous hash does not match current hash.
+INFO - aug_pc_simulation.py - 2026-03-08 19:52:22,028 - Using gt_graph to generate augmented sample !
+ERROR - run_aug_pc.py - 2026-03-08 19:52:23,482 - joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\externals\loky\process_executor.py", line 463, in _process_worker
+    r = call_item()
+        ^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\externals\loky\process_executor.py", line 291, in __call__
+    return self.fn(*self.args, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 589, in __call__
+    return [func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 589, in <listcomp>
+    return [func(*args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 199, in augment_sample_gen
+    return generator.generate()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\augment_data_gen\aug_data_generator.py", line 63, in generate
+    param['data'], param['graph'] = self.obj.original_sample_group[self.kv]['gt_aug_sample'], self.gt_graph
+                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'gt_aug_sample'
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 123, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 259, in __call__
+    SimulationAugPC.__call__(self, *args, **kwargs)
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 229, in __call__
+    self.generate_augment_sample()
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 178, in generate_augment_sample
+    augment_sample_group = self.generate_aug_sample(model)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 203, in generate_aug_sample
+    augment_sample_group = Parallel(n_jobs=n_jobs, temp_folder=temp_folder)(
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 1952, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 1595, in _get_outputs
+    yield from self._retrieve()
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 1699, in _retrieve
+    self._raise_error_fast()
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 1734, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 736, in get_result
+    return self._return_or_raise()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 754, in _return_or_raise
+    raise self._result
+KeyError: 'gt_aug_sample'
+

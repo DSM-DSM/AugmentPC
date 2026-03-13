@@ -1,0 +1,42 @@
+INFO - run_aug_pc.py - 2026-03-08 19:52:00,691 - Using device: cuda
+INFO - run_aug_pc.py - 2026-03-08 19:52:00,698 - Writing evaluation result to 2026_Mar_08_19_52_00_d_separation_pval_ensemble_fdr_pc_BCProcedure_gt_graph_20_21040
+INFO - run_aug_pc.py - 2026-03-08 19:52:00,698 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-08 19:52:00,698 - Experiment instance id = 21040
+INFO - run_aug_pc.py - 2026-03-08 19:52:00,698 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-08 19:52:00,698 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-03-08 19:52:00,698 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-08 19:52:00,698 - Using UIT is d_separation, CIT is pval_ensemble
+INFO - run_aug_pc.py - 2026-03-08 19:52:00,698 - Using CIT List: ['spearman', 'kci']
+INFO - run_aug_pc.py - 2026-03-08 19:52:00,698 - P Value Ensemble Method is cauchy
+INFO - run_aug_pc.py - 2026-03-08 19:52:00,698 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-08 19:52:00,698 - Algorithm is fdr_pc
+INFO - run_aug_pc.py - 2026-03-08 19:52:00,698 - FDR Method is BCProcedure
+INFO - run_aug_pc.py - 2026-03-08 19:52:00,698 - FDR Significant Level is 0.2
+INFO - aug_pc_simulation.py - 2026-03-08 19:52:00,908 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-03-08 19:52:00,908 - Start to generate Original and Augment samples !
+INFO - simulation.py - 2026-03-08 19:52:00,915 - previous hash does not match current hash.
+ERROR - run_aug_pc.py - 2026-03-08 19:52:12,413 - Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 123, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 259, in __call__
+    SimulationAugPC.__call__(self, *args, **kwargs)
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 229, in __call__
+    self.generate_augment_sample()
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 170, in generate_augment_sample
+    self.generate_original_sample()  # self.original_sample_group has been created
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 121, in generate_original_sample
+    self.original_sample_group = generate_original_sample_group(self)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 81, in generate_original_sample_group
+    original_simu_res_list = Parallel(n_jobs=n_jobs, temp_folder=temp_folder)(
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 1952, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 1595, in _get_outputs
+    yield from self._retrieve()
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 1707, in _retrieve
+    time.sleep(0.01)
+KeyboardInterrupt
+

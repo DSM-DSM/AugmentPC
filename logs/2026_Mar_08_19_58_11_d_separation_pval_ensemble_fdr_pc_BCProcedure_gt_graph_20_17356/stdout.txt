@@ -1,0 +1,47 @@
+INFO - run_aug_pc.py - 2026-03-08 19:58:11,357 - Using device: cuda
+INFO - run_aug_pc.py - 2026-03-08 19:58:11,373 - Writing evaluation result to 2026_Mar_08_19_58_11_d_separation_pval_ensemble_fdr_pc_BCProcedure_gt_graph_20_17356
+INFO - run_aug_pc.py - 2026-03-08 19:58:11,373 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-08 19:58:11,373 - Experiment instance id = 17356
+INFO - run_aug_pc.py - 2026-03-08 19:58:11,373 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-08 19:58:11,373 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-03-08 19:58:11,373 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-08 19:58:11,374 - Using UIT is d_separation, CIT is pval_ensemble
+INFO - run_aug_pc.py - 2026-03-08 19:58:11,374 - Using CIT List: ['spearman', 'kci']
+INFO - run_aug_pc.py - 2026-03-08 19:58:11,374 - P Value Ensemble Method is cauchy
+INFO - run_aug_pc.py - 2026-03-08 19:58:11,374 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-08 19:58:11,374 - Algorithm is fdr_pc
+INFO - run_aug_pc.py - 2026-03-08 19:58:11,374 - FDR Method is BCProcedure
+INFO - run_aug_pc.py - 2026-03-08 19:58:11,374 - FDR Significant Level is 0.2
+INFO - aug_pc_simulation.py - 2026-03-08 19:58:11,688 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-03-08 19:58:11,688 - Start to generate Original and Augment samples !
+INFO - simulation.py - 2026-03-08 19:58:11,707 - previous hash does not match current hash.
+INFO - simulation.py - 2026-03-08 19:58:25,242 - previous hash does not match current hash.
+INFO - simulation.py - 2026-03-08 19:58:25,243 - previous hash does not match current hash.
+INFO - aug_pc_simulation.py - 2026-03-08 19:58:25,244 - Using gt_graph to generate augmented sample !
+ERROR - run_aug_pc.py - 2026-03-08 19:58:30,064 - Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 123, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 259, in __call__
+    SimulationAugPC.__call__(self, *args, **kwargs)
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 229, in __call__
+    self.generate_augment_sample()
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 178, in generate_augment_sample
+    augment_sample_group = self.generate_aug_sample(model)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 194, in generate_aug_sample
+    augment_sample_group.append(generator.generate())
+                                ^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\augment_data_gen\aug_data_generator.py", line 63, in generate
+    param['data'], param['graph'] = self.obj.original_sample_group[self.kv]['gt_aug_sample'], self.gt_graph
+                                    ^^^^
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 1186, in _pydevd_bundle.pydevd_cython_win32_311_64.SafeCallWrapper.__call__
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 627, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 937, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 928, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 585, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.do_wait_suspend
+  File "D:\PyCharm 2025.2.5\plugins\python-ce\helpers\pydev\pydevd.py", line 1196, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "D:\PyCharm 2025.2.5\plugins\python-ce\helpers\pydev\pydevd.py", line 1211, in _do_wait_suspend
+    time.sleep(0.01)
+KeyboardInterrupt
+

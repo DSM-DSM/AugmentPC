@@ -1,0 +1,71 @@
+INFO - run_aug_pc.py - 2026-03-10 23:40:10,175 - Using device: cuda
+INFO - run_aug_pc.py - 2026-03-10 23:40:10,192 - Writing evaluation result to 2026_Mar_10_23_40_10_d_separation_kci_fdr_pc_FastHybAdaProcedure_gt_graph_20_43908
+INFO - run_aug_pc.py - 2026-03-10 23:40:10,192 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-10 23:40:10,192 - Experiment instance id = 43908
+INFO - run_aug_pc.py - 2026-03-10 23:40:10,192 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-10 23:40:10,192 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-03-10 23:40:10,192 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-10 23:40:10,193 - Using UIT is d_separation, CIT is kci
+INFO - run_aug_pc.py - 2026-03-10 23:40:10,193 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-10 23:40:10,193 - Algorithm is fdr_pc
+INFO - run_aug_pc.py - 2026-03-10 23:40:10,193 - FDR Method is FastHybAdaProcedure
+INFO - run_aug_pc.py - 2026-03-10 23:40:10,193 - FDR Significant Level is 0.01
+INFO - aug_pc_simulation.py - 2026-03-10 23:40:10,347 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-03-10 23:40:10,347 - Start to generate Original and Augment samples !
+INFO - aug_pc_simulation.py - 2026-03-10 23:40:10,376 - Original data has been loaded from D:\CausalLearning\code\augment_data\original_sample_group.pkl
+INFO - aug_pc_simulation.py - 2026-03-10 23:40:10,471 - Augmented data of gt_graph have been loaded from D:\CausalLearning\code\augment_data\gt_graph_augmented_sample_group.pkl
+INFO - aug_pc_simulation.py - 2026-03-10 23:40:10,501 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-03-10 23:40:10,501 - Generating  Original and Augment samples is over !
+INFO - aug_pc_simulation.py - 2026-03-10 23:40:10,501 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-03-10 23:40:10,502 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-03-10 23:40:10,502 - Evaluating Original data!
+INFO - tools.py - 2026-03-10 23:40:10,526 - Empty file scanning done! We find empty file(s) and Delete them.
+ERROR - run_aug_pc.py - 2026-03-10 23:55:39,149 - Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 123, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 266, in __call__
+    self.eval_original_sample()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 131, in eval_original_sample
+    pc_fit_res = eval_func(key, aug=False)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 87, in fdr_pc
+    param['esti_graph'] = algo(
+                          ^^^^^
+  File "D:\CausalLearning\code\algo\pc_extension.py", line 22, in fdr_pc
+    return fdr_pc_alg(data=data, uit=uit, cit=cit, alpha=alpha, hmt=hmt, node_names=node_names,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\algo\pc_extension.py", line 32, in fdr_pc_alg
+    cg_1 = fdr_skeleton_discovery(data, uit, cit, hmt, alpha, stable, background_knowledge=background_knowledge,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\algo\skeleton_discovery.py", line 339, in fdr_skeleton_discovery
+    p = cg.idep_test(x, y, S)
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\algo\graphs.py", line 26, in idep_test
+    return self.citest_instance(i, j, S)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\stat_test\u_cit\kernel.py", line 18, in __call__
+    return self.cache_management(X, Y, condition_set, self.p_cal_func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\stat_test\init.py", line 109, in cache_management
+    p = p_cal_func(Xs, Ys, condition_set)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\stat_test\u_cit\kernel.py", line 14, in p_cal_func
+    self.kci_ci.compute_pvalue(self.data[:, Xs], self.data[:, Ys], self.data[:, condition_set])[0]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\causallearn\utils\KCI\KCI.py", line 303, in compute_pvalue
+    test_stat, KxR, KyR = self.KCI_V_statistic(Kx, Ky, Kzx, Kzy)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\causallearn\utils\KCI\KCI.py", line 502, in KCI_V_statistic
+    KxR, Rzx = Kernel.center_kernel_matrix_regression(Kx, Kzx, self.epsilon_x)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\causallearn\utils\KCI\Kernel.py", line 48, in center_kernel_matrix_regression
+    Rz = epsilon * pinv(Kz + epsilon * eye(n))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\numpy\linalg\_linalg.py", line 2256, in pinv
+    u, s, vt = svd(a, full_matrices=False, hermitian=hermitian)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\numpy\linalg\_linalg.py", line 1841, in svd
+    u, s, vh = gufunc(a, signature=signature)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+

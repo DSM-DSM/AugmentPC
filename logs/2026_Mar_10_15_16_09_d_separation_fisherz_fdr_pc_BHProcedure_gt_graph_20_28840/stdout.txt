@@ -1,0 +1,54 @@
+INFO - run_aug_pc.py - 2026-03-10 15:16:09,773 - Using device: cuda
+INFO - run_aug_pc.py - 2026-03-10 15:16:09,800 - Writing evaluation result to 2026_Mar_10_15_16_09_d_separation_fisherz_fdr_pc_BHProcedure_gt_graph_20_28840
+INFO - run_aug_pc.py - 2026-03-10 15:16:09,800 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-10 15:16:09,800 - Experiment instance id = 28840
+INFO - run_aug_pc.py - 2026-03-10 15:16:09,800 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-10 15:16:09,800 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-03-10 15:16:09,800 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-10 15:16:09,800 - augment sample generating models: ['gt_graph']
+INFO - run_aug_pc.py - 2026-03-10 15:16:09,800 - augment sample size: 20
+INFO - run_aug_pc.py - 2026-03-10 15:16:09,800 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-10 15:16:09,800 - Using UIT is d_separation, CIT is fisherz
+INFO - run_aug_pc.py - 2026-03-10 15:16:09,801 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-10 15:16:09,801 - Algorithm is fdr_pc
+INFO - run_aug_pc.py - 2026-03-10 15:16:09,801 - FDR Method is BHProcedure
+INFO - run_aug_pc.py - 2026-03-10 15:16:09,801 - FDR Significant Level is 0.1
+INFO - run_aug_pc.py - 2026-03-10 15:16:09,801 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-10 15:16:09,801 - gt_graph training kwargs is Namespace(kwarg='None')
+INFO - run_aug_pc.py - 2026-03-10 15:16:09,801 - ----------------------------------------------------------------------------------------------------
+INFO - aug_pc_simulation.py - 2026-03-10 15:16:10,128 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-03-10 15:16:10,128 - Start to generate Original and Augment samples !
+INFO - simulation.py - 2026-03-10 15:16:10,146 - previous hash does not match current hash.
+INFO - simulation.py - 2026-03-10 15:16:11,469 - previous hash does not match current hash.
+INFO - simulation.py - 2026-03-10 15:16:11,471 - previous hash does not match current hash.
+INFO - aug_pc_simulation.py - 2026-03-10 15:16:11,471 - Using gt_graph to generate augmented sample !
+INFO - aug_pc_simulation.py - 2026-03-10 15:16:13,728 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-03-10 15:16:13,728 - Generating  Original and Augment samples is over !
+INFO - aug_pc_simulation.py - 2026-03-10 15:16:13,728 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-03-10 15:16:13,728 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-03-10 15:16:13,728 - Evaluating Original data!
+INFO - tools.py - 2026-03-10 15:16:13,741 - Empty file scanning done! We find empty file(s) and Delete them.
+INFO - aug_pc_evaluation.py - 2026-03-10 15:18:35,201 - ****************************************************************************************************
+INFO - aug_pc_evaluation.py - 2026-03-10 15:18:35,201 - Evaluation Results of Original Samples are Saved!
+ERROR - run_aug_pc.py - 2026-03-10 15:23:04,464 - Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 123, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 269, in __call__
+    self.save_ori_pc_result()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 247, in save_ori_pc_result
+    self.df_ori_pc_agg_res = self.eval_result_aggregation(prefix='ori')
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 181, in eval_result_aggregation
+    result = getattr(self, f'{prefix}_pc_eval_result')
+             ^^^^^^^
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 1186, in _pydevd_bundle.pydevd_cython_win32_311_64.SafeCallWrapper.__call__
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 627, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 1103, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 1065, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle/pydevd_cython_win32_311_64.pyx", line 585, in _pydevd_bundle.pydevd_cython_win32_311_64.PyDBFrame.do_wait_suspend
+  File "D:\PyCharm 2025.2.5\plugins\python-ce\helpers\pydev\pydevd.py", line 1196, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "D:\PyCharm 2025.2.5\plugins\python-ce\helpers\pydev\pydevd.py", line 1211, in _do_wait_suspend
+    time.sleep(0.01)
+KeyboardInterrupt
+

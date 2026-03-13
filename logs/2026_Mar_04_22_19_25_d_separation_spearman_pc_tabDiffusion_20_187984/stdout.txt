@@ -1,0 +1,101 @@
+INFO - run_aug_pc.py - 2026-03-04 22:19:25,715 - Using device: cuda
+INFO - run_aug_pc.py - 2026-03-04 22:19:25,720 - Writing evaluation result to 2026_Mar_04_22_19_25_d_separation_spearman_pc_tabDiffusion_20_187984
+INFO - run_aug_pc.py - 2026-03-04 22:19:25,720 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 22:19:25,720 - Experiment instance id = 187984
+INFO - run_aug_pc.py - 2026-03-04 22:19:25,720 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 22:19:25,720 - Experiment description = Running !
+INFO - run_aug_pc.py - 2026-03-04 22:19:25,720 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 22:19:25,720 - augment sample generating models: ['tabDiffusion']
+INFO - run_aug_pc.py - 2026-03-04 22:19:25,720 - augment sample size: 20
+INFO - run_aug_pc.py - 2026-03-04 22:19:25,720 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 22:19:25,720 - Using UIT is d_separation, CIT is spearman
+INFO - run_aug_pc.py - 2026-03-04 22:19:25,720 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 22:19:25,720 - Algorithm is pc
+INFO - run_aug_pc.py - 2026-03-04 22:19:25,720 - ----------------------------------------------------------------------------------------------------
+INFO - run_aug_pc.py - 2026-03-04 22:19:25,721 - tabDiffusion training kwargs is Namespace(batch_size=4096, dropout=0.0, hidden_dim_layer=[512, 256], dim_t=128, num_timesteps=1000, gaussian_loss_type='kl', lr=0.001, fold=5, is_y_cond=False, epochs=60000, eval_freq=10000, print_freq=5000)
+INFO - run_aug_pc.py - 2026-03-04 22:19:25,721 - ----------------------------------------------------------------------------------------------------
+INFO - aug_pc_simulation.py - 2026-03-04 22:19:25,874 - ****************************************************************************************************
+INFO - aug_pc_simulation.py - 2026-03-04 22:19:25,874 - Start to generate Original and Augment samples !
+INFO - simulation.py - 2026-03-04 22:19:25,879 - previous hash does not match current hash.
+INFO - simulation.py - 2026-03-04 22:19:30,135 - previous hash does not match current hash.
+INFO - simulation.py - 2026-03-04 22:19:30,135 - previous hash does not match current hash.
+INFO - aug_pc_simulation.py - 2026-03-04 22:19:30,135 - Using tabDiffusion to generate augmented sample !
+ERROR - run_aug_pc.py - 2026-03-04 22:19:34,596 - joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\externals\loky\process_executor.py", line 463, in _process_worker
+    r = call_item()
+        ^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\externals\loky\process_executor.py", line 291, in __call__
+    return self.fn(*self.args, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 589, in __call__
+    return [func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 589, in <listcomp>
+    return [func(*args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 199, in augment_sample_gen
+    return generator.generate()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\augment_data_gen\aug_data_generator.py", line 44, in generate
+    tabDiffusion_model.train()
+  File "D:\CausalLearning\code\augment_data_gen\tabDiffusion\pipeline.py", line 107, in train
+    self.trainer.train(epochs=self.epochs, batch_size=self.batch_size, lr=self.lr, print_freq=self.print_freq,
+  File "D:\CausalLearning\code\augment_data_gen\tabDiffusion\trainer.py", line 36, in train
+    x, y = torch.tensor(x.copy()), torch.tensor(y.copy())
+                        ^^^^^^
+AttributeError: 'Tensor' object has no attribute 'copy'
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 1595, in _get_outputs
+    yield from self._retrieve()
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 1699, in _retrieve
+    self._raise_error_fast()
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 1734, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 736, in get_result
+    return self._return_or_raise()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 754, in _return_or_raise
+    raise self._result
+AttributeError: 'Tensor' object has no attribute 'copy'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CausalLearning\code\run_aug_pc.py", line 123, in main
+    ebh_pc_evaluation()
+  File "D:\CausalLearning\code\src\aug_pc_evaluation.py", line 259, in __call__
+    SimulationAugPC.__call__(self, *args, **kwargs)
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 229, in __call__
+    self.generate_augment_sample()
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 178, in generate_augment_sample
+    augment_sample_group = self.generate_aug_sample(model)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CausalLearning\code\src\aug_pc_simulation.py", line 203, in generate_aug_sample
+    augment_sample_group = Parallel(n_jobs=n_jobs, temp_folder=temp_folder)(
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 1952, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 1648, in _get_outputs
+    self._abort()
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\parallel.py", line 1559, in _abort
+    backend.abort_everything(ensure_ready=ensure_ready)
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\_parallel_backends.py", line 632, in abort_everything
+    self._workers.terminate(kill_workers=True)
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\executor.py", line 75, in terminate
+    self.shutdown(kill_workers=kill_workers)
+  File "D:\Anaconda\envs\CausalLearning\Lib\site-packages\joblib\externals\loky\process_executor.py", line 1303, in shutdown
+    executor_manager_thread.join()
+  File "D:\Anaconda\envs\CausalLearning\Lib\threading.py", line 1119, in join
+    self._wait_for_tstate_lock()
+  File "D:\Anaconda\envs\CausalLearning\Lib\threading.py", line 1139, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
